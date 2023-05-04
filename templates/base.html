@@ -46,18 +46,103 @@
     <title>Purrfect Sitters {% block extra_title %}{% endblock %}</title>
 </head>
 
-  <body>
+  <body class="d-flex flex-column h-100">
     <header class="container-fluid fixed-top">
-        <nav>The navigation bar will go here</nav>
+        <!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg fixed-top navbar-dark bg-dark lighten-1">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item avatar">
+          <a class="nav-link p-0" href="#">
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.webp" class="rounded-circle z-depth-0"
+              alt="avatar image" height="35">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+
     </header>
 
-    <main>
-        <p>The main content will go here</p>
+    <main class="flex-shrink-0">
+        {% block content %}
+        <!-- website content -->
+        {% endblock content %}
     </main>
 
-    <footer>
-        <p>The footer will go here</p>
+    <footer class="page-footer fixed-bottom font-small bg-dark text-white pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Footer Content</h5>
+                    <p>Here you can use rows and columns to organize your footer content.</p>
+                </div>
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Links</h5>
+        
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+  
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="/"> MDBootstrap.com</a>
+        </div>
     </footer>
+  
 
     {% if messages %}
         <div class="message-container"></div>
@@ -66,11 +151,8 @@
     {% block page_header %}
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
-
     {% block postloadjs %}
     {% endblock %}
-    
+
   </body>
 </html>
