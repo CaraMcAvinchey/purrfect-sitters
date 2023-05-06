@@ -1,19 +1,29 @@
 /*----- GOOGLE FONTS IMPORT -----*/
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    }
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Patrick+Hand&display=swap');
 
 body {
-    font-family: 'Cabin', sans-serif;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.content-container {
+    padding: 5rem 3rem;
     
 }
 
 /*----- Headings & Text -----*/
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Patrick Hand', cursive;
+}
+
+/*----- Buttons -----*/
+.btn-custom {
+    font-family: 'Patrick Hand', cursive;
+    background-color: #eeeded;
+}
+
+.btn-custom:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 
 /*----- Footer -----*/

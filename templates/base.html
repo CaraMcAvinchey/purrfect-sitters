@@ -51,7 +51,7 @@
   <title>Purrfect Sitters{% block extra_title %}{% endblock %}</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100 gy-0">
+<body>
   <!-- SITE NAME & NAV -->
   <header>
     <nav class="navbar navbar-expand-lg bg-dark text-white">
@@ -99,13 +99,13 @@
   </header>
 
   <!-- PAGE CONTENT -->
-  <main>
+  <div class="content-container">
     {% block content %}
-    {% endblock content %}
-  </main>
+    {% endblock %}
+  </div>
 
   <!-- FOOTER -->
-  <div class="footer-container pt-5">
+  <div>
     {% include 'includes/footer.html' %}
   </div>
 
