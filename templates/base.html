@@ -17,6 +17,9 @@
         reliable cat sitting, trusted cat sitting, cat sitting testimonials">
     {% endblock %}
 
+    {% block extra_meta %}
+    {% endblock %}
+
     {% block corecss %}
         <!--favicon links -->
         <link rel="icon" type="image/ico" href="{% static 'favicon/favicon.ico' %}">
@@ -25,6 +28,9 @@
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+
+    {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
@@ -39,44 +45,45 @@
         </script>
     {% endblock %}
 
-    <title>Purrfect Sitters</title>
+    {% block extra_js %}
+    {% endblock %}
+
+    <title>Purrfect Sitters{% block extra_title %}{% endblock %}</title>
 </head>
 
   <body class="d-flex flex-column h-100">
     <header class="container-fluid fixed-top">
         <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg fixed-top navbar-dark bg-dark lighten-1">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item avatar">
-          <a class="nav-link p-0" href="#">
-            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.webp" class="rounded-circle z-depth-0"
-              alt="avatar image" height="35">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  
-
+        <!-- <nav class="mb-1 navbar navbar-expand-lg fixed-top navbar-dark bg-dark lighten-1">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+            aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item avatar">
+                <a class="nav-link p-0" href="#">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.webp" class="rounded-circle z-depth-0"
+                    alt="avatar image" height="35">
+                </a>
+                </li>
+            </ul>
+            </div>
+        </nav> -->
     </header>
 
     <main class="flex-shrink-0">
@@ -85,7 +92,7 @@
         {% endblock content %}
     </main>
 
-    <footer class="page-footer fixed-bottom font-small bg-dark text-white pt-4">
+    <!-- <footer class="page-footer fixed-bottom font-small bg-dark text-white pt-4">
         <div class="container-fluid text-center text-md-left">
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
@@ -137,7 +144,7 @@
         <div class="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="/"> MDBootstrap.com</a>
         </div>
-    </footer>
+    </footer> -->
   
 
     {% if messages %}
