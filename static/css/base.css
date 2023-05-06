@@ -11,6 +11,11 @@ body {
 
 /*----- Logo & Images -----*/
 
+/*----- Navigation -----*/
+header {
+    background-color: #2a2727;
+}
+
 
 /*----- Headings & Text -----*/
 h1, h2, h3, h4, h5, h6 {
