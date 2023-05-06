@@ -4,27 +4,29 @@
 <html lang="en">
 
 <head>
+
+  <!--META TAGS -->
   {% block meta %}
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Cara McAvinchey">
-  <meta name="description" content="Book trusted and affordable cat sitting services online. 
-      Our experienced cat sitters offer personalised care for your feline friends. 
-      Book now and enjoy peace of mind while you're away.">
-  <meta name="keywords" content="cat sitting, cat sitters, cat sitting service, affordable cat sitting, 
-      professional cat care, cat sitting rates, cat sitting company, cat sitting booking, cat sitting payment, 
-      cat sitters near me, cat sitting for vacation, experienced cat sitters, personalised cat care, cat boarding alternative, 
-      reliable cat sitting, trusted cat sitting, cat sitting testimonials">
   {% endblock %}
 
   {% block extra_meta %}
   {% endblock %}
 
+  <!-- FAVICON --> 
+  {% block favicon %}
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+  {% endblock %}
+
+
+  <!-- STYLESHEETS -->
   {% block corecss %}
-  <!--favicon links -->
-  <link rel="icon" type="image/ico" href="{% static 'favicon/favicon.ico' %}">
-  <!-- bootstrap & css stylesheet -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -33,17 +35,14 @@
   {% block extra_css %}
   {% endblock %}
 
+  <!-- SCRIPTS -->
+  <!-- Placed in the head so they load as early as possible -->
   {% block corejs %}
-  <!-- font awesome & bootstrap JS scripts -->
   <script src="https://kit.fontawesome.com/7cf492ae91.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   {% endblock %}
 
   {% block extra_js %}
@@ -53,6 +52,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100 gy-0">
+  <!-- SITE NAME & NAV -->
   <header>
     <nav class="navbar navbar-expand-lg bg-dark text-white">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -98,75 +98,16 @@
     </nav>
   </header>
 
+  <!-- PAGE CONTENT -->
   <main>
     {% block content %}
-    <!-- website content -->
     {% endblock content %}
   </main>
 
-
-  <footer class="page-footer font-small bg-dark text-white pt-4 fixed-bottom">
-    <div class="container-fluid text-center text-md-left">
-      <div class="row">
-        <div class="col-md-6 mt-md-0 mt-3">
-
-          <h5 class="text-uppercase">Footer Content</h5>
-          <p>Here you can use rows and columns to organize your footer content.</p>
-
-        </div>
-
-        <hr class="clearfix w-100 d-md-none pb-3">
-
-        <div class="col-md-3 mb-md-0 mb-3">
-
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
-
-        </div>
-
-        <div class="col-md-3 mb-md-0 mb-3">
-
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
-
-        </div>
-        <!-- Grid column -->
-
-      </div>
-    </div>
-
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="/"> MDBootstrap.com</a>
-    </div>
-  </footer>
+  <!-- FOOTER -->
+  <div class="footer-container pt-5">
+    {% include 'includes/footer.html' %}
+  </div>
 
 
   {% if messages %}
