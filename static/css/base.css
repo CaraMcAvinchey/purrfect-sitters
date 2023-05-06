@@ -6,9 +6,11 @@ body {
 }
 
 .content-container {
-    padding: 5rem 3rem;
-    
+    padding: 5rem 3rem;  
 }
+
+/*----- Logo & Images -----*/
+
 
 /*----- Headings & Text -----*/
 h1, h2, h3, h4, h5, h6 {
@@ -24,6 +26,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn-custom:hover {
     transform: scale(1.1);
     transition: 0.3s;
+}
+
+/*----- Navigation -----*/
+.navbar li {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.5rem;
 }
 
 /*----- Footer -----*/
@@ -53,7 +61,7 @@ li a {
     text-decoration: none;
 } */
 
-a:hover {
+.social-media a:hover {
     background-color: #111111;
     transform: scale(1.2);
     transition: 0.4s;
