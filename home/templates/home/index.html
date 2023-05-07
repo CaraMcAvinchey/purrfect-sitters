@@ -11,20 +11,45 @@
 {% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-12">
+<div class="row pb-4">
+    <div class="col-sm-12">
         <h1 class="text-center">Welcome to Purrfect Sitters!</h1>
     </div>
-    <div class="col-12">
-        <p class="text-center px-5">
-        We are a team of experienced cat lovers who are passionate about providing the best care for your feline friends. 
-        No matter if you're going on vacation, a business trip, or just need someone to check in on your cat while you're away, we've got you covered.
-        </p>
+    <div class="col-sm-12">
+        <p class="text-center font-weight-bold">A comprehensive cat sitting service for humans who are traveling.</p>
     </div>
 </div>
 <div class="row">
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    <h2 class="col-sm-12 text-center">ABOUT US</h2>
+    <div class="col-sm-12 text-center">
+        <img src="{% static 'images/cat-pose-three.png' %}" alt="site logo" width="100" height="100">
+    </div>
+    <div class="col-sm-12 text-center">
+        <p>
+        We love cats, they’re awesome. This is why we go above and beyond with our team of cat sitters, 
+        who are trained to provide personalised care to ensure your cat (and their human!) feels safe, 
+        less stressed and loved throughout. 
+        </p>
+        <p>
+        No matter if you're going on vacation, a business trip, 
+        or just need someone to check in on your cat while you're away, we'll handle it.
+        </p>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <h2 class="col-sm-12 text-center">OUR SITTERS</h2>
+    <div class="col-sm-12 text-center">
+        <img src="{% static 'images/cat-pose-one.png' %}" alt="site logo" width="100" height="100">
+    </div>
+    <div class="col-sm-12 text-center">
+        <p class="text-center">
+        We are a team of experienced cat lovers who are passionate about providing 
+        the best care for your feline friends whilst their humans aren't home. 
+        </p>
+        <p>
+        You can expect plenty of videos and photos from us whilst we visit your furries!
+        </p>
+    </div>
 </div>
 {% endblock %}
