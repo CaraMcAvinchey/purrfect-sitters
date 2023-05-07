@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block extra_title %} - 400 Error{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <h3>400 ERROR</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-10 offset-1 text-center">
+            <h4>Hello!</h4>
+            <p>
+                "Uh-oh! We've got a hairball here. 
+                Something went wrong with your request. 
+                The page you were looking for couldn't be found.
+                It's possible there was a typo or some missing information.
+            </p>
+            <p>Please use the navigation menu above to try again.</p>
+        </div>
+    </div>
+{% endblock %}
