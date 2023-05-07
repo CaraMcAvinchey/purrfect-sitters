@@ -6,14 +6,17 @@ body {
 }
 
 .content-container {
-    padding: 5rem 3rem;  
+    padding: 4rem 3rem;  
 }
-
-/*----- Logo & Images -----*/
 
 /*----- Navigation -----*/
 header {
     background-color: #2a2727;
+}
+
+.navbar li {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.5rem;
 }
 
 .nav-link:hover {
@@ -21,13 +24,12 @@ header {
     transition: .2s ease-in-out;
 }
 
-
 /*----- Headings & Text -----*/
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Patrick Hand', cursive;
 }
 
-/*----- Buttons -----*/
+/*----- Buttons & Links -----*/
 .btn-custom {
     font-family: 'Patrick Hand', cursive;
     background-color: white;
@@ -43,20 +45,13 @@ h1, h2, h3, h4, h5, h6 {
 .btn-custom-dark {
     font-family: 'Patrick Hand', cursive;
     background-color: #2a2727;
-    color: white;
-    
+    color: white; 
 }
 
 .btn-custom-dark:hover {
     transform: scale(1.1);
     transition: .5s ease-in-out;
     color: white;
-}
-
-/*----- Navigation -----*/
-.navbar li {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1.5rem;
 }
 
 /*----- Footer -----*/
@@ -74,21 +69,44 @@ footer p {
     gap: 1rem;
 }
 
-/* li {
-    float: left;
-  }
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-} */
-
 .social-media a:hover {
     background-color: #111111;
     transform: scale(1.1);
     transition: .2s ease-in-out;
+}
+
+/*----- Media Queries -----*/
+
+/* medium devices (tablets, less than 768px) */
+
+/* @media (min-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+} */
+
+/* large devices (laptops, less than 992px) */
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+    }
+
+    h2, h3 {
+        font-size: 2rem;
+    }
+
+    .text-container {
+        max-width: 80%;
+    }
 }
 

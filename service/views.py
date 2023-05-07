@@ -5,4 +5,4 @@ from .models import Services
 
 class ServiceList(generic.ListView):
     model = Services
-    template_name = 'services.html'
+    template_name = 'service/services.html'

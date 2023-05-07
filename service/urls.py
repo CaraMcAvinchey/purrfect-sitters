@@ -4,5 +4,5 @@ from .views import ServiceList
 
 
 urlpatterns = [
-    path('', ServiceList.as_view(), name='services'),
+    path('service/', ServiceList.as_view(), name='services'),
 ]
