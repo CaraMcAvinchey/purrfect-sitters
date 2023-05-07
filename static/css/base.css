@@ -75,6 +75,10 @@ footer p {
     transition: .2s ease-in-out;
 }
 
+.accordion-button {
+    font-size: 1.5rem;
+}
+
 /*----- Media Queries -----*/
 
 /* medium devices (tablets, less than 768px) */
