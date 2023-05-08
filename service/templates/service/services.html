@@ -4,13 +4,15 @@
 {% block content %}
 
 <!-- Package Description Section -->
-<h2>Our Services</h2>
+<img src="{% static 'images/cat-pose-two.png' %}" alt="Black cat licking its paw" width="60" height="60">
+<h1>Our Services</h1>
+
 
 {% for service in services_list %}
 <article class="d-flex text-container">
     <div class="p-2 bd-highlight">
         <h2>{{ service.service_name }}</h2>
-        <p>{{ service.description }}</p>
+        <p>{{ service.service_description | safe }}</p>
         <p>£{{ service.price }}</p>
         <a href="#">
         <button type="button" class="btn btn-custom-dark mt-2">Book now</button>
@@ -26,12 +28,12 @@
 <div class="accordion pt-2" id="accordionExample">
     <div class="card">
         <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
+            <h3 class="mb-0">
                 <button type="button" class="btn btn-link text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
                     How far in advance should I book a sitter?
                 </button>
-            </h2>
+            </h3>
         </div>
 
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -43,12 +45,12 @@
     </div>
     <div class="card">
         <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
+            <h3 class="mb-0">
                 <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="false" aria-controls="collapseTwo">
                     What if I have special requests for my cats?
                 </button>
-            </h2>
+            </h3>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
@@ -60,12 +62,12 @@
     </div>
     <div class="card">
         <div class="card-header" id="headingThree">
-            <h2 class="mb-0">
+            <h3 class="mb-0">
                 <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="false" aria-controls="collapseThree">
                     My cat has a medical condition, are you willing to administer medication?
                 </button>
-            </h2>
+            </h3>
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
@@ -78,12 +80,12 @@
     </div>
     <div class="card">
         <div class="card-header" id="headingFour">
-            <h2 class="mb-0">
+            <h3 class="mb-0">
                 <button  type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="false" aria-controls="collapseFour">
                     What happens in an emergency?
                 </button>
-            </h2>
+            </h3>
         </div>
         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
             <div class="card-body">
@@ -95,12 +97,12 @@
     </div>
     <div class="card">
         <div class="card-header" id="headingFive">
-            <h2 class="mb-0">
+            <h3 class="mb-0">
                 <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFive"
                     aria-expanded="false" aria-controls="collapseFive">
                     I have more than 3 cats, what is your rate?
                 </button>
-            </h2>
+            </h3>
         </div>
         <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
             <div class="card-body">
@@ -111,12 +113,12 @@
     </div>
     <div class="card">
         <div class="card-header" id="headingSix">
-            <h2 class="mb-0">
+            <h3 class="mb-0">
                 <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseSix"
                     aria-expanded="false" aria-controls="collapseSix">
                     I want the sitter to spend more than 60 minutes with my cat is that possible?
                 </button>
-            </h2>
+            </h3>
         </div>
         <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
             <div class="card-body">

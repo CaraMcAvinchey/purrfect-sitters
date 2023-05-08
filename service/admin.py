@@ -8,4 +8,4 @@ class ServiceAdmin(SummernoteModelAdmin):
 
     list_display = (
         'service_name', 'service_description', 'price', 'service_choice')
-    search_fields = ['service_name', 'service_choice'] 
+    search_fields = ['service_name', 'service_choice']
