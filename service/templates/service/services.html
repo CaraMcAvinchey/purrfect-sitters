@@ -4,38 +4,21 @@
 {% block content %}
 
 <!-- Package Description Section -->
+<h2>Our Services</h2>
+
+{% for service in services_list %}
 <article class="d-flex text-container">
     <div class="p-2 bd-highlight">
-        <h2>Purrfect Package 1<span class="pl-3"><img src="{% static 'images/cat-pose-two.png' %}"
-                    alt="Black cat sitting down" width="45" height="45"></span></h2>
-        <p>
-            This is our basic service which includes a <strong>single 30-minute visit</strong> from our experienced cat
-            sitter.
-            During the visit, we will feed your cat, replace their water and their litter box will be cleaned.
-            The visit also includes play time and socialisation, where you’ll receive some photos or videos at your
-            request.
-        </p>
-        <p>
-            £{{ service.price }}
-        </p>
+        <h2>{{ service.service_name }}</h2>
+        <p>{{ service.description }}</p>
+        <p>£{{ service.price }}</p>
         <a href="#">
         <button type="button" class="btn btn-custom-dark mt-2">Book now</button>
         </a>
     </div>
 </article>
-<article class="d-flex text-container">
-    <div class="p-2 bd-highlight">
-        <h2>Purrfect Package 2<span class="pl-3"><img src="{% static 'images/cat-pose-three.png' %}"
-                    alt="Black cat licking its paw" width="45" height="45"></span></h2>
-        <p>
-            This is our premium package, which consists of a 60-minute visit.
-            This can be used as a single visit or split into two 30-minute visits if desired.
-        </p>
-        <a href="#">
-        <button type="button" class="btn btn-custom-dark mt-2">Book now</button>
-        </a>
-    </div>
-</article>
+{% endfor %}
+<hr class="line-break">
 
 <hr>
 <!-- Frequently Asked Questions -->
@@ -144,4 +127,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

@@ -36,7 +36,7 @@ class Services(models.Model):
     )
 
     class Meta:
-        verbose_name = "Services"
+        verbose_name_plural = "Services"
 
     def __str__(self):
         #  Returns a string of name of the service
