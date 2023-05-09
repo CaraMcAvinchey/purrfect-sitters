@@ -12,7 +12,9 @@
 <article class="d-flex text-container">
     <div class="p-2 bd-highlight">
         <h2>{{ service.service_name }}</h2>
+        <p class="font-weight-bold">{{ service.get_service_choice_display }}</p>
         <p>{{ service.service_description | safe }}</p>
+        
         <p>£{{ service.price }}</p>
         <a href="#">
         <button type="button" class="btn btn-custom-dark mt-2">Book now</button>

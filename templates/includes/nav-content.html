@@ -5,46 +5,48 @@
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'images/site-logo-cropped.png' %}" alt="site logo" width="100" height="100">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link text-white" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'services' %}">Services</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Book</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            {% if user.is_authenticated %}
-                <li class="nav-item dropdown me-4 nav-bg-design">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        {{ user }}
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="{% url 'home' %}">Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'services' %}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Book</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown me-4">
+                    <a class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Hello {{ user }}
                     </a>
                     <ul class="dropdown-menu navbar-dropdown-color">
-                        <li>
-                            <a href="#" class="dropdown-item nav-link text-white">My Bookings</a>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-item nav-link text-dark">My Profile</a>
                         </li>
                         <li class="dropdown-divider"></li>
-                        <li>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item nav-link text-white">Logout</a>
+                        <li class="dropdown-item">
+                            <a href="{% url 'account_logout' %}" class="dropdown-item nav-link text-dark">Logout</a>
                         </li>
                     </ul>
                 </li>
-            {% else %}
+                {% else %}
                 <li class="nav-item nav-bg-design">
                     <a href="{% url 'account_login' %}" class="nav-link text-white">Login/Sign Up</a>
                 </li>
-            {% endif %}
+                {% endif %}
             </ul>
         </div>
-      </nav>
-    
+    </nav>
+
 </header>
