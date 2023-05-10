@@ -62,4 +62,5 @@ class Cat(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        #  Returns a string of name of the service
+        return f"{self.cat_name}"

@@ -12,6 +12,24 @@
 
 {% block content %}
 
-<h1>It works!</h1>
+{% for cat in cat_list %}
+<div class="d-flex text-container align-items-center">
+    <h1>My Cats</h1>
+    <a href="#">
+        <button type="button" class="btn btn-custom-dark ml-3">Add a Cat</button>
+    </a>
+</div>
+<hr>
+<section class="d-flex text-container">
+    <div class="card p-2 bd-highlight" style="width: 18rem;">
+        <img src="{ cat.cat_image.url }" class="card-img-top" alt="A picture of a cat for a cat profile">
+        <div class="card-body">
+            <h3 class="card-title">{{ cat.cat_name }}</h3>
+            <p><span>{{ cat.cat_gender_display }}</span>, {{ cat.cat_age_display }}</p>
+            <a href="#" class="btn btn-custom-dark">View</a>
+        </div>
+    </div>
+</section>
+{% endfor %}
 
 {% endblock %}

@@ -24,8 +24,8 @@ class Services(models.Model):
     )
 
     SERVICE_CHOICES = [
-        (1, "30 minutes"),
-        (2, "60 minutes"),
+        ("1", "30 minutes"),
+        ("2", "60 minutes"),
     ]
 
     service_choice = models.CharField(
