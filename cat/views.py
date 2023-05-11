@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Cat
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class CatList(generic.ListView):
@@ -15,3 +16,11 @@ class CatList(generic.ListView):
 
     def queryset(self):
         return Cat.objects.filter(owner=self.request.user)
+
+
+class CatDetail(generic.TemplateView):
+    """
+    View that displays the details of each cat.
+    """
+    model = Cat
+    template_name = 'cat/cat-detail.html'
