@@ -12,3 +12,6 @@ class CatList(generic.ListView):
 
     queryset = Cat.objects.all()
     template_name = 'cat/cat-profile.html'
+
+    def queryset(self):
+        return Cat.objects.filter(owner=self.request.user)
