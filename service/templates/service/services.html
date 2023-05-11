@@ -4,140 +4,140 @@
 {% block extra_title %} - Services{% endblock %}
 
 {% block extra_meta %}
-<meta name="description"
-    content="Book trusted and affordable cat sitting services online. Our experienced cat sitters offer personalised care for your feline friends. Book now and enjoy peace of mind while you're away.">
-<meta name="keywords"
-    content="cat sitting, cat sitters, cat sitting service, affordable cat sitting, professional cat care, cat sitting rates, cat sitting company, cat sitting booking, cat sitting payment, cat sitters near me, cat sitting for vacation, experienced cat sitters, personalised cat care, cat boarding alternative, reliable cat sitting, trusted cat sitting, cat sitting testimonials">
+    <meta name="description"
+        content="Book trusted and affordable cat sitting services online. Our experienced cat sitters offer personalised care for your feline friends. Book now and enjoy peace of mind while you're away.">
+    <meta name="keywords"
+        content="cat sitting, cat sitters, cat sitting service, affordable cat sitting, professional cat care, cat sitting rates, cat sitting company, cat sitting booking, cat sitting payment, cat sitters near me, cat sitting for vacation, experienced cat sitters, personalised cat care, cat boarding alternative, reliable cat sitting, trusted cat sitting, cat sitting testimonials">
 {% endblock %}
 
 {% block content %}
 
 <!-- Package Description Section -->
 
-<img src="{% static 'images/cat-pose-two.png' %}" alt="Black cat licking its paw" width="60" height="60">
-<h1>Our Services</h1>
-<a href="#">
-    <button type="button" class="btn btn-custom-dark mt-2">Book now</button>
-</a>
+    <img src="{% static 'images/cat-pose-two.png' %}" alt="Black cat licking its paw" width="60" height="60">
+    <h1>Our Services</h1>
+    <a href="#">
+        <button type="button" class="btn btn-custom-dark mt-2">Book now</button>
+    </a>
 
-{% for service in services_list %}
-<article class="d-flex text-container pt-3">
-    <div class="p-2 bd-highlight">
-        <h2>{{ service.service_name }}</h2>
-        <p class="font-weight-bold">{{ service.get_service_choice_display }}</p>
-        <p>{{ service.service_description | safe }}</p>
-        <p>£{{ service.price }}</p>
-    </div>
-</article>
-{% endfor %}
-<hr class="line-break">
+    {% for service in services_list %}
+        <article class="d-flex text-container pt-3">
+            <div class="p-2 bd-highlight">
+                <h2>{{ service.service_name }}</h2>
+                <p class="font-weight-bold">{{ service.get_service_choice_display }}</p>
+                <p>{{ service.service_description | safe }}</p>
+                <p>£{{ service.price }}</p>
+            </div>
+        </article>
+    {% endfor %}
+    <hr class="line-break">
 
-<hr>
-<!-- Frequently Asked Questions -->
-<h2 class="pt-2">Frequently Asked Questions</h2>
-<div class="accordion pt-2" id="accordionExample">
-    <div class="card">
-        <div class="card-header" id="headingOne">
-            <h3 class="mb-0">
-                <button type="button" class="btn btn-link text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    How far in advance should I book a sitter?
-                </button>
-            </h3>
-        </div>
+    <hr>
+    <!-- Frequently Asked Questions -->
+    <h2 class="pt-2">Frequently Asked Questions</h2>
+    <div class="accordion pt-2" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h3 class="mb-0">
+                    <button type="button" class="btn btn-link text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        How far in advance should I book a sitter?
+                    </button>
+                </h3>
+            </div>
 
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
-                The earlier, the better. But of course, we understand that life happens and sometimes you need something at the last minute.
-                Book the date you need and we'll do our best to make a plan!
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    The earlier, the better. But of course, we understand that life happens and sometimes you need something at the last minute.
+                    Book the date you need and we'll do our best to make a plan!
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h3 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        What if I have special requests for my cats?
+                    </button>
+                </h3>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    We love all the quirks and oddities of our feline friends which is why we love what we do!
+                    Please ensure to describe your bestie in as best as possible on their profile.
+                    You can also make special requests when booking, we'll do our best to make it happen.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h3 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">
+                        My cat has a medical condition, are you willing to administer medication?
+                    </button>
+                </h3>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    It can be very stressful leaving your furries when they're not 100% and we understand your concern.
+                    For cats with ongoing conditions, we're happy to ensure their medication is administered as required.
+                    Make sure to add this special request (and any tips for successful ingestion, we know tablets can be tricky!) when making a booking.
+                    For cats that have more acute care needs, we'll need to review on a case by case basis whether we can assist.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h3 class="mb-0">
+                    <button  type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFour"
+                        aria-expanded="false" aria-controls="collapseFour">
+                        What happens in an emergency?
+                    </button>
+                </h3>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    These things happen and our sitters are well equipped to handle it.
+                    Please ensure the correct and up-to-date vet contact details are on your profile.
+                    Prior to your time away, your assigned cat sitter will be in touch to discuss protocols with you so we're on the same page.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h3 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFive"
+                        aria-expanded="false" aria-controls="collapseFive">
+                        I have more than 3 cats, what is your rate?
+                    </button>
+                </h3>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                <div class="card-body">
+                    There is a surcharge added for each additional cat above 3 which accounts for the additional time
+                    and effort by our sitters to make sure each and every member of your feline household are taken care of.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSix">
+                <h3 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseSix"
+                        aria-expanded="false" aria-controls="collapseSix">
+                        I want the sitter to spend more than 60 minutes with my cat is that possible?
+                    </button>
+                </h3>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div class="card-body">
+                    This will have to be handeled on a case by case basis. 
+                    Ensure to add this request to your booking and we'll be in touch.
+                    Please note, our sitters are not live-in.
+                </div>
             </div>
         </div>
     </div>
-    <div class="card">
-        <div class="card-header" id="headingTwo">
-            <h3 class="mb-0">
-                <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="false" aria-controls="collapseTwo">
-                    What if I have special requests for my cats?
-                </button>
-            </h3>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-                We love all the quirks and oddities of our feline friends which is why we love what we do!
-                Please ensure to describe your bestie in as best as possible on their profile.
-                You can also make special requests when booking, we'll do our best to make it happen.
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header" id="headingThree">
-            <h3 class="mb-0">
-                <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseThree"
-                    aria-expanded="false" aria-controls="collapseThree">
-                    My cat has a medical condition, are you willing to administer medication?
-                </button>
-            </h3>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-                It can be very stressful leaving your furries when they're not 100% and we understand your concern.
-                For cats with ongoing conditions, we're happy to ensure their medication is administered as required.
-                Make sure to add this special request (and any tips for successful ingestion, we know tablets can be tricky!) when making a booking.
-                For cats that have more acute care needs, we'll need to review on a case by case basis whether we can assist.
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header" id="headingFour">
-            <h3 class="mb-0">
-                <button  type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFour"
-                    aria-expanded="false" aria-controls="collapseFour">
-                    What happens in an emergency?
-                </button>
-            </h3>
-        </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-            <div class="card-body">
-                These things happen and our sitters are well equipped to handle it.
-                Please ensure the correct and up-to-date vet contact details are on your profile.
-                Prior to your time away, your assigned cat sitter will be in touch to discuss protocols with you so we're on the same page.
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header" id="headingFive">
-            <h3 class="mb-0">
-                <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFive"
-                    aria-expanded="false" aria-controls="collapseFive">
-                    I have more than 3 cats, what is your rate?
-                </button>
-            </h3>
-        </div>
-        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-            <div class="card-body">
-                There is a surcharge added for each additional cat above 3 which accounts for the additional time
-                and effort by our sitters to make sure each and every member of your feline household are taken care of.
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header" id="headingSix">
-            <h3 class="mb-0">
-                <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseSix"
-                    aria-expanded="false" aria-controls="collapseSix">
-                    I want the sitter to spend more than 60 minutes with my cat is that possible?
-                </button>
-            </h3>
-        </div>
-        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
-            <div class="card-body">
-                This will have to be handeled on a case by case basis. 
-                Ensure to add this request to your booking and we'll be in touch.
-                Please note, our sitters are not live-in.
-            </div>
-        </div>
-    </div>
-</div>
 
 {% endblock %}
