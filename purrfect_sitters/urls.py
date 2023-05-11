@@ -23,4 +23,6 @@ urlpatterns = [
     path('', include('home.urls')),
     path('', include('service.urls')),
     path('', include('cat.urls')),
+    # path('', include('booking.urls')),
+
 ]

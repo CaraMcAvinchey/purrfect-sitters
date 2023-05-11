@@ -21,9 +21,9 @@
             <div class="card p-2 bd-highlight" style="width: 18rem;">
                 <img src="{ cat.cat_image.url }" class="card-img-top" alt="A picture of a cat for a cat profile">
                 <div class="card-body">
-                    <h3 class="card-title">{{ cat.cat_name }}</h3>
-                    <p><span>{{ cat.cat_gender_display }}</span>, {{ cat.cat_age_display }}</p>
-                    <a href="#" class="btn btn-custom-dark">View</a>
+                    <h3 class="card-title">{{ cats.cat_name }}</h3>
+                    <p><span>{{ cats.cat_gender_display }}</span>, {{ cats.cat_age_display }}</p>
+                    <a href="{% url 'cat_detail' cats.id %}" class="btn btn-custom-dark">View</a>
                 </div>
             </div>
         </section>
