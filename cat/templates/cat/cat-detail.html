@@ -8,6 +8,13 @@
 
 {% block content %}
 
-<h1>It works!</h1>
+<section class="d-flex text-container">
+    <h1>{{ cat.cat_name }}</h1>
+    <p><span>{{ cat.cat_gender }}</span>, {{ cat.cat_age }}</p>
+    <img src="{ cat.cat_image.url }" alt="A picture of your cat for their profile" width="20" height="20">
+    <p>{{ cat.cat_description | safe }}</p>
+    <p>{{ cat.vet_contact }}</p>
+    <p>{{ cat.profile_updated }}</p>
+</section>
 
 {% endblock %}

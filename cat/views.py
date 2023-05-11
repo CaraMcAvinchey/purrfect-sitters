@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Cat
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class CatList(generic.ListView):
