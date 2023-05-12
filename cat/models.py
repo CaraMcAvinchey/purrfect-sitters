@@ -24,24 +24,24 @@ class Cat(models.Model):
     )
 
     CAT_AGES = [
-        ("kitten", "3 years and younger"),
-        ("teenager", "4-9 years old"),
-        ("adult", "10-15 years old"),
-        ("geriatric", "Above 16 years old"),
+        ("3 years and younger", "3 years and younger"),
+        ("4-9 years old", "4-9 years old"),
+        ("10-15 years old", "10-15 years old"),
+        ("Above 16 years old", "Above 16 years old"),
     ]
 
     cat_age = models.CharField(
-        max_length=10,
+        max_length=50,
         choices=CAT_AGES,
     )
 
     GENDER_CHOICES = [
-        ("M", "Female"),
-        ("F", "Male"),
+        ("Female", "Female"),
+        ("Male", "Male"),
     ]
 
     cat_gender = models.CharField(
-        max_length=2,
+        max_length=10,
         choices=GENDER_CHOICES
     )
 

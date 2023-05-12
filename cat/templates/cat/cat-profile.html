@@ -8,32 +8,52 @@
 
 {% block content %}
 
-<div class="d-flex text-container align-items-center">
+<div>
     <h1>My Cats</h1>
+    <p>These are the cats you have on our system. Please make sure their details are up-to-date.</p>
     <a href="#">
-        <button type="button" class="btn btn-custom-dark ml-3">Add a Cat</button>
+        <button type="button" class="btn btn-custom-dark">Add a Cat</button>
     </a>
 </div>
 <hr>
 
     {% for cats in cat_list %}
-        <section class="d-flex text-container">
+        <section class="d-flex text-container mt-5">
             <div class="card p-2 bd-highlight" style="width: 18rem;">
-                <img src="{{ cat.cat_image.url }}" class="card-img-top" alt="A picture of your cat for their profile">
+                <img src="{{ cats.cat_image.url }}" class="card-img-top" alt="A picture of your cat for their profile">
                 <div class="card-body">
-                    <h3 class="card-title">{{ cat.cat_name }}</h3>
-                    <p><b>Age:</b> {{cat.cat_age}}</p>
-                    <p><b>Gender:</b> {{cat.cat_gender}}</p>
-                    <a href="{% url 'cat_detail' cats.id %}" class="btn btn-custom-dark">View</a>
+                    <h3 class="card-title"><i class="fa-solid fa-paw"></i> {{ cats.cat_name }}</h3>
+                    <p>{{ cats.cat_gender }}, {{ cats.cat_age }}</p>
+                    <a href="{% url 'cat_detail' cats.id %}" class="btn btn-custom-dark">View Details</a>
                 </div>
             </div>
         </section>
+         <!-- set the columns depending on no of items -->
+            {% if forloop.counter|divisibleby:1 %}
+                <div class="col-10 offset-1 d-sm-none mb-5">
+                    <hr>
+                </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+                <div class="col-10 offset-1 d-none d-sm-block d-md-block d-lg-none mb-5">
+                    <hr>
+                </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:3 %}
+                <div class="col-10 offset-1 d-none d-none d-lg-block d-xl-none mb-5">
+                    <hr>
+                </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:4 %}
+                <div class="col-10 offset-1 d-none d-xl-block mb-5">
+                    <hr>
+                </div>
+            {% endif %}
     {% empty %}
+        <section class="text-center mt-5">
             <h1>No cats here!</h1>
             <p>You don't have any cats in the system yet.</p>
-            <a href="#">
-                <button type="button" class="btn btn-custom-dark ml-3">Add a Cat</button>
-            </a>
+        </section>
     {% endfor %}
 
 {% endblock %}
