@@ -18,14 +18,22 @@ Cara McAvinchey
 (table) 
 
 ## DATA MODEL
-<img width="484" alt="image" src="https://user-images.githubusercontent.com/97494262/209538748-6f3cdc41-16c5-43ab-94a8-2341239ffc78.png">
+
+(screenshot)
 
 - [X] C - Site users can create/register their own profile to interact with the plant posts.
 - [X] R - Site users can open and read the plant blog posts and read comments from other users.
 - [X] U - Site users can like a post, updating the details and analytics for a plant detail post.
 - [X] D - Site users can eliminate their like if desired on a plant detail post.
 
-<img width="477" alt="image" src="https://user-images.githubusercontent.com/97494262/209538824-f613791d-53b6-43e4-a305-f14a52026443.png">
+(screenshot)
+
+- [X] C - Site users can create their own comments using a form on each blog post.
+- [X] R - Site users can read comments from other users.
+- [X] U - Site users are able to update/edit their comments using a form.
+- [X] D - Site users are able to delete their comments.
+
+(screenshot)
 
 - [X] C - Site users can create their own comments using a form on each blog post.
 - [X] R - Site users can read comments from other users.
@@ -131,66 +139,6 @@ Cara McAvinchey
 ## TESTING
 
 Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
-
-### Validation Testing
-- HTML
-   - No errors were returned when passing through the official [HTML validator]("#").
-
-(screenshots of each page)
-
-- CSS
-   - No errors were found when passing through the [CSS validator]("#").
-
-(screenshots of each page)
-
-- JavaScript
-   - No errors were found when passing through the [JS validator]("#").
-
-(screenshots of each page)
-
-### Visual (UI) Testing: Cross Browser and Cross Device Testing
-- The below combination of devices, browsers, and operating system were used to test the website. A range of viewport sizes were checked to see if users would have the same experience across multiple devices and browsers.
-
-| **TOOL / Device**           | **BROWSER**      | **OS**  | **SCREEN WIDTH** |
-|-----------------------------|------------------|---------|------------------|
-| dev tools: Galaxy Fold      | Chrome           | android | 280 x 653 px     |
-| dev tools: iPhone SE        | safari           | iOs     | 375 x 667 px     |
-| dev tools: Pixel 2          | Chrome           | android | 411 x 731        |
-| real phone: iPhone XR       | safari           | iOs     | 414 x 896 px     |
-| browserstack: Nexus 7       | Firefox          | android | 960 x 600 px     |
-| browserstack: iPhone 13 Pro | safari           | iOs     | 390px × 844px    |
-| real tablet: iPad Pro 11    | Chrome           | iOs     | 834 x 1075 px    |
-| real laptop: Macbook Pro    | Firefox & Chrome | iOs     | 1400 x 766 px    |
-| broswerstack                | Firefox          | iOs     | 1440 x 672 px    |
-| browserstack                | Edge 99          | windows | 1440 x 672 px    |
-
-### Manual Testing
-- You can view manual testing of the website [here](https://docs.google.com/spreadsheets/d/123Pia98Ms_Fe6at0hPnAWhcNrmeVc4X2RLYmD7VsqX4/edit?usp=sharing).
-
-### Automatic Testing
-- Manual testing was done due to time constraints.
-
-## Performance Testing
-(screenshot)
-- XX
-
-## Accessibility Testing
-
-### WAVE Web Accessibility Evaluation Tool
-(screenshot)
-- XX
-
-### Lighthouse Audit
-- The deployed website was run through lighthouse to check performance, accessibility, best practices and SEO scores.
-
-### Keyboard Navigation
-- The users will be able to use the tab button to navigate the website if required.
-
-### Outstanding Defects
-- XX
-
-### Defects of Note
-- XX
 
 ## TECHNOLOGIES USED
 - GitPod
