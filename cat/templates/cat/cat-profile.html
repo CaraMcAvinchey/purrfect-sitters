@@ -19,10 +19,11 @@
     {% for cats in cat_list %}
         <section class="d-flex text-container">
             <div class="card p-2 bd-highlight" style="width: 18rem;">
-                <img src="{ cat.cat_image.url }" class="card-img-top" alt="A picture of your cat for their profile">
+                <img src="{{ cat.cat_image.url }}" class="card-img-top" alt="A picture of your cat for their profile">
                 <div class="card-body">
                     <h3 class="card-title">{{ cat.cat_name }}</h3>
-                    <p><span>{{ cat.cat_gender }}</span>, {{ cat.cat_age }}</p>
+                    <p><b>Age:</b> {{cat.cat_age}}</p>
+                    <p><b>Gender:</b> {{cat.cat_gender}}</p>
                     <a href="{% url 'cat_detail' cats.id %}" class="btn btn-custom-dark">View</a>
                 </div>
             </div>
