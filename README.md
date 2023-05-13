@@ -185,35 +185,72 @@ Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
 ### Heroku
 1. Create a new app in Heroku, choose a unique name and region.
 2. Go to settings and add a new config var of ``` DATABASE_URL ```python with the value of the URL from ElephantSQL.
+3. Add host name of the Heroku app name to ALLOWED HOSTS in settings.py:
+
+```python
+ALLOWED_HOSTS = ['{heroku deployed site URL here}', 'localhost' ]
+```
 
 ### GitHub/GitPod
 1. Create a new repository on GitHub, open a new workspace with GitPod.
 2. Install django ```pip3 install 'django<4```python to install Django 3.2 the LTS (Long Term Support) version.
-3. Create a new project, .gitignore file and run the server to see if the app has installed.
+3. Create a new project and run the server to see if the app has installed.
 4. Run migrations, create a super-user with a username, email and password. 
-5. Install ```  pip3 install dj_database_url==0.5.0 psycopg2 ```python and freeze requirements ``` pip freeze > requirements.txt```python
+5. Install ```  pip3 install dj_database_url==0.5.0 psycopg2 ``` and freeze requirements ``` pip freeze > requirements.txt```
 6. Add ``` import os``` and ```import dj_database_url``` to settings.py
-7. Connect the new database:
- ```
+7. Connect the new database, paste in the ElephantSQL URL (do not commit at this stage):
+ 
+```python
  # DATABASES = {
  #     'default': {
  #         'ENGINE': 'django.db.backends.sqlite3',
  #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
  #     }
  # }
- ```
- 8. 
- 9. Create env.py file (ensure it is included in .gitignore file) and add environment the below variables. Paste the URL from above:
-10. Include a secret key in the variables:
-11. Include the below code to settings.py file:
-12. Link the database in settings.py and migrate then push to GitHub:
-13. In Heroku, add three config vars:
-14. Login to Cloudinary, copy the API Environmental variable to dashboard and add to env.py (see screenshot above) & to Heroku config vars:
-15. Add cloudinary to installed apps in settings.py, add static/media file settings:
-16. Add template directories in settings.py, add Heroku host name to allowed hosts and add directory files:
-17. Create a Procfile, then commit and push to GitHub:
-18. Connect GitHub account in Heroku, connect and deploy branch. Open app and check:
+ 
+ DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }
+```
+8. Ensure connection to the external database, run ```python3 manage.py showmigrations``` then run ```python3 manage.py migrate```
+ ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ae646775-8f48-41aa-9f5b-d16e807332f9)
+9. Create a new superuser for the new database. 
+10. Create an if else statement to setup development and external databases:
 
+ ```python
+ if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+      'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+      }
+    }
+ ```
+11. Install ```pip3 install gunicorn``` and run ``` pip freeze > requirements.txt```
+12. Create a Procfile in the root directory and include ```web: gunicorn project_name.wsgi:applications```
+13. Add ```DISABLE_COLLECT_STATIC = 1``` to Heroku confiv vars
+14. Save, add, commit and push the changes to GitHub.
+15. Go to settings in Heroku and perform a manual deployment.
+16. Connect the project to the GitHub repository.
+17. Enable automatic deployments in Heroku.
+18. Generate a SECRET_KEY, add it to Heroku config vars.
+19. Edit settings.py to the below:
+```python
+SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
+```
+```python
+DEBUG = 'DEVELOPMENT' in os.environ
+```
+19. Add, commit and push to GitHub.
+20. Setup AWS S3 bucket (see here)[#]
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/f66e1f9e-5f8b-41ec-957a-88961b14574b)
+
+21. Create env.py file (ensure it is included in .gitignore file) and add the environment variables:
+![Screenshot 2023-05-14 at 00 09 44](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/a7eb73f5-da1a-4cd2-8691-5c03a4de197b)
 
 ## CREDITS
 - The Code Institute 'I Think, Therefore I Blog' walkthrough project assisted and guided in the setup and basic structure of this project.
