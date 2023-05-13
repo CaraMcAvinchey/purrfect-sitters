@@ -9,7 +9,8 @@
 {% block content %}
 
 <section class="d-flex text-container mt-5">
-    <h3 class="card-title"><i class="fa-solid fa-paw"></i> Cat details here</h3>
+    <img src="{{ cats.cat_image.url }}" class="card-img-top" alt="A picture of your cat for their profile">
+    <h3 class="card-title"><i class="fa-solid fa-paw"></i> {{ cats.cat_name }}</h3>
 </section>
 
 {% endblock %}
