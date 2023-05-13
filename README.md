@@ -1,23 +1,26 @@
 # Purrfect Sitters - Cat Sitting Service 
+(image)
+
+* You can view the deployed website [here](#).
 
 ## Author
 Cara McAvinchey 
 
-## Project Overview
-*  XX
-* You can view the deployed website [here](#).
+## Contents
 
-(image)
+## User Experience
 
-## UX
-
-### Project Goal
+### Strategy
+#### Project Goals
 * The aim of the project is to provide easily digestible information about popular house plants for beginners and to allow for conversation and sharing of experiences in taking care of them.
 
-### User Stories
-(table) 
+### Scope
+#### Feature Planning
 
-## DATA MODEL
+### Structure
+#### User Stories
+(table) 
+#### Database Schema
 
 (screenshot)
 
@@ -40,36 +43,36 @@ Cara McAvinchey
 - [X] U - Site users are able to update/edit their comments using a form.
 - [X] D - Site users are able to delete their comments.
 
-## WIREFRAMES
+### Skeleton
+#### Wireframes
 
-### Landing Page 
+##### Landing Page 
 (screenshot)
 - XX
 - XX
 
-### Services Page
+##### Services Page
 (screenshot)
 - XX
 - XX
 
-### Account Page
+##### Account Page
 (screenshot)
 - XX
 - XX
 
-### Cat Profile Page
+##### Cat Profile Page
 (screenshot)
 - XX
 - XX
 
-### Bookings Page
+##### Bookings Page
 (screenshot)
 - XX
 - XX
 
-## DESIGN CHOICES (UI)
-
-### Colors
+### Surface
+#### Colors
 (colour palette)
  
 - The natural color palette links to the theme of plants and plant care. 
@@ -77,28 +80,28 @@ Cara McAvinchey
 - The green header and footer ensures clear contrast and delineation between sections.
 - Due to the lighthouse score for accessibility, the background color for the header and footer was adjusted:
 
-### Typography
+#### Typography
 (font pairing)
 
 - The font combination was chosen using guidance article from Mai Knoblovits [here](https://artisanthemes.io/great-google-font-combinations-ready-use/).
 - The logo and headings use Amatic SC with a fallback of cursive and the body text uses Roboto Condensed with a fallback of san-serif.
 - The choice of fonts were selected and installed using [Google Fonts](https://fonts.google.com/).
 
-### Images/Icons
+#### Images/Icons
 (choices of imagery)
 
 - The icons were chosen to provide clear understanding of each plant and its care requirements.
 - Each summary card has the same information structure with all icons standard throughout the site.
 
-### Animations
+#### Animations
 - The navbar, social icons and buttons across the site have a subtle grow effect when hovered over by the user.
 - All links have a color change and underlined effect when hovered for clear distinction from the body text.
 
-### Responsiveness
+#### Responsiveness
 - The website was designed mobile-first using flexbox to ensure responsiveness throughout the website.
 - The standard grid from Bootstrap was used to achieve this.
 
-## FEATURES/STRUCTURE
+## Features
 
 ### Navigation
 - The users will have a choice of home, login/logout & register when visiting the site. 
@@ -130,81 +133,87 @@ Cara McAvinchey
 ### Bookings Page
 - XX
 
-### Features for Future Development
+### Future Features
 - It will become less efficient for the user to scroll through many posts in the list view so a search bar will allow users to find specific plants they want to read more about.
 - It would increase user experience to add a method to 'save' blog posts so users can keep their favourite plants in one place.
 - To increase user interactivity from readers, users could rate blog posts on how helpful the information was and give feedback.
 - Pending comments can be added so users are aware they are awaiting approval. 
 
-## TESTING
+## TECHNOLOGIES USED
+### Languages
+- HTML, CSS, JavaScript, Python
+
+### Database
+- sqlite3, ElephantSQL
+
+### Frameworks
+- Django
+- Bootstrap
+
+### Libraries & Packages
+- Font Awesome
+- Django allauth
+- Django Crispy Forms
+- Summernote
+- gunicorn
+- Pillow
+- psycopg2
+- djangostorages
+- boto3
+
+### Programs
+- GitPod
+- GitHub
+- Favicon.io
+- Balsamiq
+- Diagrams.net
+- Tiny PNG
+- AWS S3
+- Heroku
+- Stripe
+
+## Testing
 
 Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
 
-## TECHNOLOGIES USED
-- GitPod
-- GitHub
-- Django
-- Bootstrap
-- AWS S3
-- Summernote
-- Crispy Forms
-- Heroku
-- Balsamiq
-- Fontawesome
+## Deployment 
 
-## DEPLOYMENT
-**Step 1:** Create a new app in Heroku, choose a unique name and region.
-**Step 2:** Login to ElephantSQL, access the dashboard and create a new instance (input a name, select a region).
-**Step 3:** Return to dashboard, copy the database URL:
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/97494262/209531384-85d95cc3-a381-4c3c-b56f-215238e0daf8.png">
+### ElephantSQL
+1. Login to ElephantSQL, access the dashboard and create a new instance (input a name, choose tiny turtle, select a region).
+2. Return to the dashcoard, copy the URL.
 
-**Step 4:** Create env.py file (ensure it is included in .gitignore file) and add environment the below variables. Paste the URL from above:
+### Heroku
+1. Create a new app in Heroku, choose a unique name and region.
+2. Go to settings and add a new config var of ``` DATABASE_URL ```python with the value of the URL from ElephantSQL.
 
-<img width="372" alt="image" src="https://user-images.githubusercontent.com/97494262/209531222-599282ee-2c54-490f-b543-1f09e5255490.png">
+### GitHub/GitPod
+1. Create a new repository on GitHub, open a new workspace with GitPod.
+2. Install django ```pip3 install 'django<4```python to install Django 3.2 the LTS (Long Term Support) version.
+3. Create a new project, .gitignore file and run the server to see if the app has installed.
+4. Run migrations, create a super-user with a username, email and password. 
+5. Install ```  pip3 install dj_database_url==0.5.0 psycopg2 ```python and freeze requirements ``` pip freeze > requirements.txt```python
+6. Add ``` import os``` and ```import dj_database_url``` to settings.py
+7. Connect the new database:
+ ```
+ # DATABASES = {
+ #     'default': {
+ #         'ENGINE': 'django.db.backends.sqlite3',
+ #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #     }
+ # }
+ ```
+ 8. 
+ 9. Create env.py file (ensure it is included in .gitignore file) and add environment the below variables. Paste the URL from above:
+10. Include a secret key in the variables:
+11. Include the below code to settings.py file:
+12. Link the database in settings.py and migrate then push to GitHub:
+13. In Heroku, add three config vars:
+14. Login to Cloudinary, copy the API Environmental variable to dashboard and add to env.py (see screenshot above) & to Heroku config vars:
+15. Add cloudinary to installed apps in settings.py, add static/media file settings:
+16. Add template directories in settings.py, add Heroku host name to allowed hosts and add directory files:
+17. Create a Procfile, then commit and push to GitHub:
+18. Connect GitHub account in Heroku, connect and deploy branch. Open app and check:
 
-**Step 5:** Include a secret key in the variables:
-
-<img width="800" alt="Screenshot 2022-12-26 at 11 25 13" src="https://user-images.githubusercontent.com/97494262/209531979-9ba177cc-3e44-48a7-80dc-884d06932f54.png">
-
-**Step 6:** Include the below code to settings.py file:
-
-<img width="301" alt="image" src="https://user-images.githubusercontent.com/97494262/209532128-acaa1e29-edea-45c3-93ce-2caaf0f71862.png">
-
-**Step 7:** Link the database in settings.py and migrate then push to GitHub:
-
-<img width="303" alt="image" src="https://user-images.githubusercontent.com/97494262/209532393-5283592f-5caf-4e81-b3fd-9d20bd62b111.png">
-
-**Step 8:** In Heroku, add three config vars:
-
-<img width="243" alt="image" src="https://user-images.githubusercontent.com/97494262/209532605-04bff00b-951f-4084-9ad5-6eff111ac6bf.png">
-
-<img width="350" alt="image" src="https://user-images.githubusercontent.com/97494262/209532533-e9b3d879-a40a-4335-a56b-3c0e5c370a8a.png">
-
-**Step 9:** Login to Cloudinary, copy the API Environmental variable to dashboard and add to env.py (see screenshot above) & to Heroku config vars:
-
-<img width="571" alt="image" src="https://user-images.githubusercontent.com/97494262/209533286-4a79143c-6568-4055-99fc-76dd5821a02b.png">
-
-**Step 10:** Add cloudinary to installed apps in settings.py, add static/media file settings:
-
-<img width="407" alt="image" src="https://user-images.githubusercontent.com/97494262/209533445-8f6670c5-490b-4294-95cf-febaaaed2ab2.png">
-
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97494262/209533629-ab3fb31b-f096-4305-996e-970e4c950a3f.png">
-
-**Step 11:** Add template directories in settings.py, add Heroku host name to allowed hosts and add directory files:
-
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/97494262/209533879-b8284837-e7a1-4315-83e6-9b88d2125882.png">
-
-<img width="501" alt="image" src="https://user-images.githubusercontent.com/97494262/209534100-46723f98-7bd6-40ed-91c1-5226ad6e950d.png">
-
-<img width="313" alt="image" src="https://user-images.githubusercontent.com/97494262/209534271-772afed4-f299-45dc-b72d-d0843b7ad189.png">
-
-**Step 12:** Create a Procfile, then commit and push to GitHub:
-
-<img width="504" alt="image" src="https://user-images.githubusercontent.com/97494262/209534389-5b0cdd3c-54f7-44e8-8a21-99068431365a.png">
-
-**Step 13:** Connect GitHub account in Heroku, connect and deploy branch. Open app and check:
-
-<img width="421" alt="image" src="https://user-images.githubusercontent.com/97494262/209534580-c03fa4fd-8e52-487b-8ecc-23563fd30327.png">
 
 ## CREDITS
 - The Code Institute 'I Think, Therefore I Blog' walkthrough project assisted and guided in the setup and basic structure of this project.
