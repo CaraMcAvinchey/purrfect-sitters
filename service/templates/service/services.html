@@ -9,26 +9,32 @@
 {% block content %}
 
 <!-- Package Description Section -->
+    <div class="row p-4">
+        <div class="col-12">
+            <h1>Our Services</h1>
+            <p>Find out more about our packages and our frequently asked questions.</p>
+            <a href="#">
+                <button type="button" class="btn btn-custom-dark mt-2 btn-lg">Book now</button>
+            </a>
+        </div>
+    </div>
 
-    <img src="{% static 'images/cat-pose-two.png' %}" alt="Black cat licking its paw" width="60" height="60">
-    <h1>Our Services</h1>
-    <a href="#">
-        <button type="button" class="btn btn-custom-dark mt-2">Book now</button>
-    </a>
-
-    {% for service in services_list %}
-        <article class="d-flex text-container pt-3">
-            <div class="p-2 bd-highlight">
-                <h2>{{ service.service_name }}</h2>
-                <p class="font-weight-bold">{{ service.get_service_choice_display }}</p>
-                <p>{{ service.service_description | safe }}</p>
-                <p>£{{ service.price }}</p>
-            </div>
-        </article>
-    {% endfor %}
+    <div class="row p-4">
+        <div class="col-12">
+            {% for service in services_list %}
+                <article class="d-flex text-container pt-3">
+                    <div class="p-2 bd-highlight">
+                        <h2><i class="fa-solid fa-paw"></i> {{ service.service_name }}</h2>
+                        <p class="font-weight-bold">{{ service.get_service_choice_display }}</p>
+                        <p>{{ service.service_description | safe }}</p>
+                        <p>£{{ service.price }}</p>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>  
     <hr class="line-break">
 
-    <hr>
     <!-- Frequently Asked Questions -->
     <h2 class="pt-2">Frequently Asked Questions</h2>
     <div class="accordion pt-2" id="accordionExample">
