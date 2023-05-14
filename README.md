@@ -214,7 +214,7 @@ ALLOWED_HOSTS = ['{heroku deployed site URL here}', 'localhost' ]
 ```
 8. Ensure connection to the external database, run ```python3 manage.py showmigrations``` then run ```python3 manage.py migrate```
  ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ae646775-8f48-41aa-9f5b-d16e807332f9)
-9. Create a new superuser for the new database. 
+9. Create a new superuser for the new database, same as above.
 10. Create an if else statement to setup development and external databases:
 
  ```python
@@ -232,36 +232,34 @@ else:
  ```
 11. Install ```pip3 install gunicorn``` and run ``` pip freeze > requirements.txt```
 12. Create a Procfile in the root directory and include ```web: gunicorn project_name.wsgi:applications```
-13. Add ```DISABLE_COLLECT_STATIC = 1``` to Heroku confiv vars
-14. Save, add, commit and push the changes to GitHub.
-15. Go to settings in Heroku and perform a manual deployment.
-16. Connect the project to the GitHub repository.
-17. Enable automatic deployments in Heroku.
-18. Generate a SECRET_KEY, add it to Heroku config vars.
-19. Edit settings.py to the below:
+13. Generate a SECRET_KEY, add it to Heroku config vars.
+14. Create env.py file (ensure it is included in .gitignore file) and add the SECRET_KEY & DATABASE_URL to environment variables:
+![Screenshot 2023-05-14 at 00 09 44](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/a7eb73f5-da1a-4cd2-8691-5c03a4de197b)
+15. Edit settings.py to the below:
 ```python
 SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
 ```
 ```python
 DEBUG = 'DEVELOPMENT' in os.environ
 ```
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ceb9f1d4-35e8-47cd-ba04-6cd07bd8fe37)
 19. Add, commit and push to GitHub.
-20. Setup AWS S3 bucket (see here)[#]
-![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/f66e1f9e-5f8b-41ec-957a-88961b14574b)
-
-21. Create env.py file (ensure it is included in .gitignore file) and add the environment variables:
-![Screenshot 2023-05-14 at 00 09 44](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/a7eb73f5-da1a-4cd2-8691-5c03a4de197b)
+20. Go to Heroku, add ```DISABLE_COLLECT_STATIC = 1``` to Heroku config vars.
+23. Connect the project to the GitHub repository using personal account login.
+24. Go to settings in Heroku and perform a manual deployment.
+25. Go to Heroku settings, enable automatic deployments.
+27. Setup AWS S3 bucket (these settings might change since time of writing these instructions).
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/7412eec2-b6c2-42ac-aba7-81b80b3b5774)
 
 ## CREDITS
-- The Code Institute 'I Think, Therefore I Blog' walkthrough project assisted and guided in the setup and basic structure of this project.
-- The Stockbook Project by Massimo Ranalli assisted with the setup of the edit/delete functions for comments as well as the messaging alerts.
+- The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
+- Seaside Sewing by Kera Kudmore was a great source of inspiration and best practice regarding testing and README structure.
+- Escape Room by XXX helped to understand the code logic, as the site is structured as a service instead of product.
 - Code Institute Student Template: [gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template).
 - The articles on the blog were written myself and any additional helpful articles were linked to for the user to access for more information.
 
 ### Media
-- The fonts were chosen with guidance from an article written by Mai Knoblovits [here](https://artisanthemes.io/great-google-font-combinations-ready-use/).
-- The colors for the website was generated using [Color Space]([https://coolors.co/image-picker](https://mycolor.space/?hex=%2333C883&sub=1)).
-- The plant images were sourced using [Pexels](https://www.pexels.com) and [Pixabay](https://pixabay.com/).
+- The fonts were sourced using [Google Fonts](https://fonts.google.com/).
 - The icons for the favicon, footer, about page and location headings were taken from [Font Awesome](https://fontawesome.com/).
 - The favicon image was converted using [Favicon.io](https://favicon.io/).
 
