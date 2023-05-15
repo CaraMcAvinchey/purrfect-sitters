@@ -1,11 +1,77 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %} - My Booking{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block extra_title %} - Make a Booking{% endblock %}
 
 {% block extra_meta %}
 {% endblock %}
 
 {% block content %}
-<h1>It works!</h1>
+<div class="container-fluid">
+    <div class="row p-4">
+        <div class="col-12 text-container">
+            <h1 class="pb-3">Make a Booking</h1>
+            <p>
+                If you're in need of a sitter, make a booking with us below. 
+                Ensure to include any special requests for your furries or any 
+                information about your trip that would be helpful for us to know.
+            </p>
+        </div>
+    </div>
+    <div class="row p-4">
+        <div class="col-12">
+            {% if user.is_authenticated %}
+                {% if not booked %}
+                    <div class="container">
+                        <div class="row">
+                        <!-- Error Message -->
+                            {% if error %}
+                            <h1 class="alert alert-success success-msg error-msg">{{error}}</h1>
+                            {% endif %}
+                            <h3>Place Your Booking</h3>
+                            <form method="post">
+                                {{ form | crispy }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-custom-dark btn-lg btn-card submit-btn mt-2">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                {% else %}
+                    <!-- Confimation Message -->
+                    <div class=container>
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Thank you!</h1>
+                                <p>We look forward to meeting your furries!</p>
+                                <p>You will have recieved a confirmation email and we'll soon be in touch to discuss details.</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- If User not not authenticated -->  
+            {% else %}
+                <div class="container-fluid">  
+                    <div class="row">
+                        <div class="col-12">  
+                            <h2>Make a Booking</h2>
+                            <p>
+                                To book a sitter, you need to be logged in.
+                                If you have not created an account yet, then please sign up first.
+                            </p>
+                            <a href="{% url 'account_signup' %}">
+                                <button type="button" class="btn btn-custom-dark mt-2 btn-lg">Sign up</button>
+                            </a>
+                            <a href="{% url 'account_login' %}">
+                                <button type="button" class="btn btn-custom-dark mt-2 btn-lg">Login</button>
+                            </a>
+                        </div> 
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
