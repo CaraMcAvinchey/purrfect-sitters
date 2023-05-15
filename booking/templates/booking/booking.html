@@ -24,21 +24,16 @@
         <div class="col-12">
             {% if user.is_authenticated %}
                 {% if not booked %}
-                    <div class="container">
-                        <div class="row">
-                        <!-- Error Message -->
-                            {% if error %}
-                            <h1 class="alert alert-success success-msg error-msg">{{error}}</h1>
-                            {% endif %}
-                            <h3>Place Your Booking</h3>
-                            <form method="post">
-                                {{ form | crispy }}
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-custom-dark btn-lg btn-card submit-btn mt-2">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                    
+                    <!-- Error Message -->
+                    {% if error %}
+                        <h1 class="alert alert-success success-msg error-msg">{{error}}</h1>
+                    {% endif %}
+                    <h3>Place Your Booking</h3>
+                    <form method="post">
+                        {{ form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-custom-dark btn-lg btn-card submit-btn mt-2">Submit</button>
+                    </form>   
                 {% else %}
                     <!-- Confimation Message -->
                     <div class=container>
