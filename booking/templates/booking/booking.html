@@ -13,9 +13,9 @@
 <div class="row p-4">
     <div class="col-12">
         {% if user.is_authenticated %}
-        <div class="row p-4">
+        <div class="row">
             <div class="col-12 text-container">
-                <h1 class="pb-3">Make a Booking</h1>
+                <h1>Make a Booking</h1>
                 <p>
                     If you're in need of a sitter, make a booking with us below. 
                     Ensure to include any special requests for your furries or any 
@@ -29,9 +29,10 @@
                     <h1 class="alert alert-success success-msg error-msg">{{error}}</h1>
                 {% endif %}
                 <h3>Your Details</h3>
+                {{ form.media }} 
                 <form method="POST">
-                    {{ form | crispy }}
                     {% csrf_token %}
+                    {{ form | crispy }}
                     <button type="submit" class="btn btn-custom-dark btn-lg btn-card submit-btn mt-2">Proceed to Payment</button>
                 </form>   
             {% else %}

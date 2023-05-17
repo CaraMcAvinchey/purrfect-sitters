@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'storages',
     'phonenumber_field',
     'crispy_forms',
+    'bootstrap_datepicker_plus',
 
 ]
 

@@ -1,7 +1,15 @@
 from django import forms
 from .models import Booking, Services
 from phonenumber_field.formfields import PhoneNumberField
+from bootstrap_datepicker_plus.widgets import DatePickerInput, TimePickerInput
 import datetime
+
+
+class DateInput(forms.DateInput):
+    """
+    This class gets the widget working to show a datepicker
+    """
+    input_type = 'date'
 
 
 class BookingForm(forms.ModelForm):
@@ -15,3 +23,8 @@ class BookingForm(forms.ModelForm):
         fields = [
             'service_level', 'booking_date', 'cats', 'phone',
             'special_instructions']
+
+        widgets = {
+            "start_date": DatePickerInput(),
+            "end_date": DatePickerInput(range_from="start_date"),
+        }

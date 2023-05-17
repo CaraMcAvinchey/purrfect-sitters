@@ -84,7 +84,7 @@ footer p {
   }
 
 
-/* ------------------------------- Bootstrap Toasts */
+/*----- Bootstrsp Toasts -----*/
 
 .message-container {
     position: fixed;
@@ -95,10 +95,6 @@ footer p {
 
 .custom-toast {
     overflow: visible;
-}
-
-.toast-capper {
-    height: 2px;
 }
 
 /*----- Media Queries -----*/
@@ -113,7 +109,7 @@ footer p {
     }
 
     .nav-link {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     p {
