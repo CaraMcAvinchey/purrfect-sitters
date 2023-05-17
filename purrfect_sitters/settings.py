@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'service',
     'cat',
     'booking',
+    'checkout',
 
     # Other
     'storages',
