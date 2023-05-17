@@ -52,44 +52,40 @@
 </head>
 
 <body>
-  <!-- SITE NAME & NAV -->
-  <div>
-    {% include 'includes/nav-content.html' %}
-  </div>
-
-  <!-- PAGE CONTENT -->
-  <div class="container-fluid p-5">
-    {% block content %}
-    {% endblock %}
-  </div>
-
-  <!-- FOOTER -->
-  <div>
-    {% include 'includes/footer.html' %}
-  </div>
-
-
-  {% if messages %}
-    <div class="message-container">
-      {% if messages %}
-          <div class="message-container">
-              {% for message in messages %}
-                  {% with message.level as level %}
-                      {% if level == 40 %}
-                          {% include 'includes/toasts/toast_error.html' %}
-                      {% elif level == 30 %}
-                          {% include 'includes/toasts/toast_warning.html' %}
-                      {% elif level == 25 %}
-                          {% include 'includes/toasts/toast_success.html' %}
-                      {% else %}
-                          {% include 'includes/toasts/toast_info.html' %}
-                      {% endif %}
-                  {% endwith %}
-              {% endfor %}
-          </div>
-      {% endif %}
+    <!-- SITE NAME & NAV -->
+    <div>
+      {% include 'includes/nav-content.html' %}
     </div>
-  {% endif %}
+
+    <!-- PAGE CONTENT -->
+    <div class="container-fluid p-5">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <!-- FOOTER -->
+    <div>
+      {% include 'includes/footer.html' %}
+    </div>
+
+    <!-- MESSAGES/TOASTS -->
+    {% if messages %}
+      <div class="message-container">
+          {% for message in messages %}
+              {% with message.level as level %}
+                  {% if level == 40 %}
+                      {% include 'includes/toasts/toast_error.html' %}
+                  {% elif level == 30 %}
+                      {% include 'includes/toasts/toast_warning.html' %}
+                  {% elif level == 25 %}
+                      {% include 'includes/toasts/toast_success.html' %}
+                  {% else %}
+                      {% include 'includes/toasts/toast_info.html' %}
+                  {% endif %}
+              {% endwith %}
+          {% endfor %}
+      </div>
+    {% endif %}
 
   {% block page_header %}
   {% endblock %}

@@ -28,6 +28,7 @@ def booking(request):
                 booking.user = request.user
                 booking.save()
                 booked = True
+                messages.success(request, "Booking successful!")
                 # email_to = booking.email
                 # subject = 'Your booking'
                 message = f'Hi {booking.first_name},\n\n\
@@ -40,7 +41,7 @@ def booking(request):
                 # send_mail(subject, message, email_from, recipient_list)
             # error message for double booking
             else:
-                error = "This slot is not available"
+                messages.error(request, "This date is already booked")
 
     form = BookingForm()
     print(form)
