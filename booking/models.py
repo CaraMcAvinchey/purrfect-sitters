@@ -26,9 +26,7 @@ class Booking(models.Model):
         null=True
         )
 
-    booking_date = models.DateTimeField(
-        auto_now_add=True
-    )
+    booking_date = models.DateTimeField(null=True)
 
     date_created = models.DateTimeField(
         auto_now_add=True
@@ -47,7 +45,14 @@ class Booking(models.Model):
 
     phone = PhoneNumberField()
 
-    def is_time_taken(self):
+    @property
+    def number_cats(self):
+        """ 
+        Get the number of cats associated with the booking
+        """
+        return len(self.cats)
+
+    def is_timeslot_booked(self):
         """
         This ensures that when the user is trying to update
         the booking, it is the user that the booking belongs to.
@@ -69,6 +74,7 @@ class Booking(models.Model):
         """
         if self.date < datetime.date.today():
             raise ValidationError("The date cannot be in the past!")
+
         super(Booking, self).save(*args, **kwargs)
 
     def __str__(self):
