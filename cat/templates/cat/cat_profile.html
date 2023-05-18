@@ -8,22 +8,20 @@
 
 {% block content %}
 
-<div>
-    <h1>My Cats</h1>
-    <p>These are the cats you have on our system. Please make sure their details are up-to-date.</p>
-    <a href="#">
-        <button type="button" class="btn btn-custom-dark btn-lg">Add a Cat</button>
-    </a>
+<div class="row p-4">
+    <div class="col-12">
+        <h1>My Cats</h1>
+        <p>These are the cats you have on our system. Please make sure their details are up-to-date.</p>
+        <a href="#" class="btn btn-custom-dark btn-lg">Add a Cat</a>
+    </div>
 </div>
 <hr>
-
-    
-    <div class="row">
+    <div class="row p-4">
         {% for cats in cat_list %}
-        <div class=" col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4">
             <div class="card-deck">
                 <div class="card">
-                <img class="card-img-top cat-card img-fluid" src="{{ cats.cat_image.url }}" alt="A picture of your cat for their profile">
+                <img class="card-img-top" src="{{ cats.cat_image.url }}" alt="A picture of your cat for their profile">
                 <div class="card-body">
                     <h3 class="card-title"><i class="fa-solid fa-paw"></i> {{ cats.cat_name }}</h3>
                     <p>{{ cats.cat_gender }}, {{ cats.cat_age }}</p>

@@ -28,8 +28,6 @@ class Booking(models.Model):
 
     booking_date = models.DateTimeField(null=True)
 
-    booking_time = models.TimeField(null=True)
-
     date_created = models.DateTimeField(
         auto_now_add=True
     )
@@ -49,7 +47,7 @@ class Booking(models.Model):
 
     @property
     def number_cats(self):
-        """ 
+        """
         Get the number of cats associated with the booking
         """
         return len(self.cats)
@@ -66,9 +64,7 @@ class Booking(models.Model):
             current_user = self.user_id.id
 
         return Booking.objects\
-            .filter(date=self.booking_date)\
-            .filter(service=self.service_level)\
-            .exclude(user_id=current_user)
+            .filter(date=self.booking_date)
 
     def save(self, *args, **kwargs):
         """

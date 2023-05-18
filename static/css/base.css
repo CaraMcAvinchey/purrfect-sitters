@@ -74,15 +74,17 @@ footer p {
     font-size: 1.5rem;
 }
 
-.form-control {
+/*----- Forms -----*/
+
+.form-control, #div_id_booking_date {
     width: 80%;
 }
 
-.cat-card {
-    max-width: 100%;
-    height: auto;
-  }
+/*----- Cat Profile & Detail -----*/
 
+.text-container {
+    width: 50%;
+}
 
 /*----- Bootstrsp Toasts -----*/
 
@@ -122,6 +124,10 @@ footer p {
 
     .text-container {
         max-width: 80%;
+    }
+
+    .form-container {
+        width: 60%;
     }
 
     

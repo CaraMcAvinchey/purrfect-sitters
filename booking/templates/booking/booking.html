@@ -14,41 +14,45 @@
 
 {% block content %}
 
-<div class="row p-4">
+<div class="row p-3">
     <div class="col-12">
-        {% if user.is_authenticated %}
-        <div class="row">
-            <div class="col-12 text-container">
-                <h1>Make a Booking</h1>
-                <p>
-                    If you're in need of a sitter, make a booking with us below. 
-                    Ensure to include any special requests for your furries or any 
-                    information about your trip that would be helpful for us to know.
-                </p>
+            <div class="row">
+                <div class="col-12 text-container">
+                    <h1>Make a Booking</h1>
+                    <p>
+                        If you're in need of a sitter, make a booking with us below.
+                        <br>
+                        Ensure to include any special requests for your furries or any 
+                        information about your trip that would be helpful for us to know. 
+                    </p>
+                </div>
             </div>
-        </div>
             {% if not booked %}
-                <!-- error Message -->
+
+                <!-- Error Message -->
                 {% if error %}
                     <h1 class="alert alert-success success-msg error-msg">{{error}}</h1>
                 {% endif %}
+
                 <h3>Your Details</h3>
+
                 {{ form.media }} 
                 <p>You are making a booking for {{ cats|length }} cat{{ cats|length|pluralize }}: </p>
-                <ul>
-                    {%  for cat in cats %}
-                        <li>{{ cat }}</li>
-                    {% endfor %}
-                </ul>
-                <form method="POST" id="id_time">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <a href="{% url 'checkout' %}">
-                        <button type="submit" class="btn btn-custom-dark btn-card submit-btn mt-2">Proceed to Payment</button>
-                    </a>
-                </form>   
+                    <ul>
+                        {%  for cat in cats %}
+                            <li>{{ cat }}</li>
+                        {% endfor %}
+                    </ul>
+                <div class="form-container">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <a href="{% url 'checkout' %}"class="btn btn-custom-dark btn-card submit-btn mt-2">Proceed to Payment</a>
+                    </form>
+                </div>
+
             {% else %}
-                <!-- confimation Message -->
+                <!-- Confimation Message -->
                 <div class="row p-4">
                     <div class="col-12">
                         <h1>Thank you!</h1>
@@ -57,28 +61,7 @@
                     </div>
                 </div>
             {% endif %}
-            <!-- if User not not authenticated -->  
-        {% else %}
-                <div class="row">
-                    <div class="col-12">  
-                        <h2>You're not logged in!</h2>
-                        <p>
-                            To book a sitter, you need to be logged in.
-                            If you have not created an account yet, then please sign up first.
-                        </p>
-                        <a href="{% url 'account_signup' %}">
-                            <button type="button" class="btn btn-custom-dark mt-2 m-1">Sign up</button>
-                        </a>
-                        <a href="{% url 'account_login' %}">
-                            <button type="button" class="btn btn-custom-dark mt-2 m-1">Login</button>
-                        </a>
-                    </div> 
-                </div>
-        {% endif %}
     </div>
 </div>
-
-<!-- Bootstrap Timepicker JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js" crossorigin="anonymous"></script>
 
 {% endblock %}

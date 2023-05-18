@@ -9,15 +9,15 @@ class CatList(generic.ListView):
     each cat that a user owns.
     """
     model = Cat
-    template_name = 'cat/cat-profile.html'
+    template_name = 'cat/cat_profile.html'
 
     def get_queryset(self):
         return Cat.objects.filter(owner=self.request.user)
 
 
-class CatDetail(generic.TemplateView):
+class CatDetail(generic.DetailView):
     """
     View that displays the details of each cat.
     """
     model = Cat
-    template_name = 'cat/cat-detail.html'
+    template_name = 'cat/cat_detail.html'
