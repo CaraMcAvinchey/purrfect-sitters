@@ -12,6 +12,13 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 
 
+class TimeInput(forms.TimeInput):
+    """
+    This class gets the widget working to show a time picker
+    """
+    input_type = 'text'
+
+
 class BookingForm(forms.ModelForm):
     """
     This class shows what inputs will be used in the form.
@@ -21,10 +28,13 @@ class BookingForm(forms.ModelForm):
         model = Booking
 
         fields = [
-            'service_level', 'booking_date', 'cats', 'phone',
+            'service_level', 'booking_date', 'phone',
             'special_instructions']
 
         widgets = {
-            "start_date": DatePickerInput(),
-            "end_date": DatePickerInput(range_from="start_date"),
+            "booking_date": DatePickerInput(attrs={
+                'min': datetime.date.today()+datetime.timedelta(days=0),
+                'max': datetime.date.today()+datetime.timedelta(days=30)}),
+            "booking_time": TimeInput(attrs={
+                'class': 'timepicker'}),
         }

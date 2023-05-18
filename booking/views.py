@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from .models import Booking, Services
 from .forms import BookingForm
+from cat.models import Cat
 
 
 def booking(request):
@@ -25,7 +26,7 @@ def booking(request):
         if form.is_valid():
             # checks for double booking
             if not booking.is_timeslot_booked():
-                booking.user = request.user
+                booking.owner = request.user
                 booking.save()
                 booked = True
                 messages.success(request, "Booking successful!")
@@ -44,12 +45,14 @@ def booking(request):
                 messages.error(request, "This date is already booked")
 
     form = BookingForm()
+    cats = Cat.objects.filter(owner=request.user)
     print(form)
 
     context = {
         'form': form,
         'booked': booked,
-        "error": error
+        "error": error,
+        'cats': cats
         }
 
     return render(request, 'booking/booking.html', context)

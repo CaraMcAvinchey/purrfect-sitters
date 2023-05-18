@@ -28,6 +28,8 @@ class Booking(models.Model):
 
     booking_date = models.DateTimeField(null=True)
 
+    booking_time = models.TimeField(null=True)
+
     date_created = models.DateTimeField(
         auto_now_add=True
     )

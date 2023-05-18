@@ -8,6 +8,10 @@
 {% block extra_meta %}
 {% endblock %}
 
+{% block extra_js %}
+    <script src ="{% static 'js/appointments.js' %}"></script>
+{% endblock %}  
+
 {% block content %}
 
 <div class="row p-4">
@@ -30,7 +34,13 @@
                 {% endif %}
                 <h3>Your Details</h3>
                 {{ form.media }} 
-                <form method="POST">
+                <p>You are making a booking for {{ cats|length }} cat{{ cats|length|pluralize }}: </p>
+                <ul>
+                    {%  for cat in cats %}
+                        <li>{{ cat }}</li>
+                    {% endfor %}
+                </ul>
+                <form method="POST" id="id_time">
                     {% csrf_token %}
                     {{ form | crispy }}
                     <a href="{% url 'checkout' %}">
@@ -67,4 +77,8 @@
         {% endif %}
     </div>
 </div>
+
+<!-- Bootstrap Timepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js" crossorigin="anonymous"></script>
+
 {% endblock %}

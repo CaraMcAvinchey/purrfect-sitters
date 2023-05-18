@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    
+    <!-- Bootstrap Date Picker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
   {% endblock %}
 
   {% block extra_css %}
@@ -43,9 +46,29 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  {% endblock %}
+  
+    <!-- jQuery styling for Bootstrap Timepicker -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+    {% endblock %}
 
   {% block extra_js %}
+    <script>// make date time picker to start at 10am to 6pm 
+      $(document).ready(function () {
+          console.log("ready function")
+              (document.getElementById("id_time"));
+          $('.timepicker').timepicker({
+              timeFormat: 'HH:mm',
+              interval: 60,
+              minTime: '10',
+              maxTime: '18:00',
+              defaultTime: '10:00',
+              startTime: '10:00',
+              dynamic: false,
+              dropdown: true,
+              scrollbar: true
+          });
+      });
+    </script>
   {% endblock %}
 
   <title>Purrfect Sitters{% block extra_title %}{% endblock %}</title>
@@ -91,6 +114,7 @@
   {% endblock %}
 
   {% block postloadjs %}
+  <!-- Bootstrap Toasts JS -->
   <script type="text/javascript">
     $('.toast').toast('show');
   </script> 
