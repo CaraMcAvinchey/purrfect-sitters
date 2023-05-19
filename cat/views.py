@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Cat
+from .forms import AddCatForm
+from django.views.generic import CreateView, DeleteView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+from django.urls import reverse_lazy
 
 
 class CatList(generic.ListView):
@@ -21,3 +26,19 @@ class CatDetail(generic.DetailView):
     """
     model = Cat
     template_name = 'cat/cat_detail.html'
+
+
+class CatCreateView(LoginRequiredMixin, CreateView):
+    """
+    View that allows the user to add a cat to their profile.
+    """
+    form_class = AddCatForm
+    template_name = 'cat/add_cat.html'
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        messages.success(self.request, "Added a new cat!")
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('cat')
