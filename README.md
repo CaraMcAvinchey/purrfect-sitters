@@ -48,42 +48,44 @@ Cara McAvinchey
 #### Wireframes
 
 ##### Landing Page 
+- XX
+- XX
+
 <img width="916" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/31803c0c-3319-417d-96ed-75e5be05f128">
 
+##### Services Page
 - XX
 - XX
 
-##### Services Page
 <img width="566" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/b8dc6b4f-dc68-4052-95ac-d0222487f34a">
-- XX
-- XX
 
 ##### Account Page
+- XX
+- XX
+
 <img width="832" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/83d9ddab-8c6b-45da-a9e7-5638764526a1">
 <img width="415" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/9c6f36f0-39d7-4965-92b8-58a61203a972">
 
+##### Cat Profile Page
 - XX
 - XX
 
-##### Cat Profile Page
 <img width="631" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/461013da-25d9-42da-a6b2-d2ca1f6203c3">
 <img width="362" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4c2cb889-b839-4350-bb3d-506960722d91">
 <img width="749" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/61774a13-a535-4563-b6f7-da675f15259f">
 
+##### Bookings Page
 - XX
 - XX
 
-##### Bookings Page
 <img width="651" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/6b87bed7-7005-4ee5-8efe-c33b6c3fe37c">
 <img width="687" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/86e85c72-b767-430a-b34b-4d35053c5258">
-
-- XX
-- XX
 
 ### Surface
 
 #### Brand
 <img width="200" height="200" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/38b9714d-8f41-405b-ba32-6b2daa85689d">
+
 - The logo was custom designed myself.
 - The cat icon in the center was found using creative commons search.
 
