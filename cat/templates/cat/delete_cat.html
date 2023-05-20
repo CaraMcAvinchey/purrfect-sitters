@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %} - Add a Cat{% endblock %}
+
+{% block extra_meta %}
+{% endblock %}
+
+{% block content %}
+    <div class="row p-4">
+        <div class="col-sm col-lg-6">
+            <h2>Are you sure you want to delete {{ cat.cat_name }} ?</h2>
+            <p>This action cannot be undone</p>
+            <form method="POST" action="{% url 'delete_cat' cat.pk %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-custom-dark">Delete</button>
+            <a href="{% url 'cat_detail' cat.id %}" class="btn btn-custom-dark">Go Back</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

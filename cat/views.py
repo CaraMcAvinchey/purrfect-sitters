@@ -4,6 +4,7 @@ from .models import Cat
 from .forms import AddCatForm
 from django.views.generic import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
@@ -46,9 +47,9 @@ class CatCreateView(LoginRequiredMixin, CreateView):
         return reverse('cat')
 
 
-class CatEditView(LoginRequiredMixin, UpdateView):
+class EditCat(LoginRequiredMixin, UpdateView):
     """
-    View that allows the user to edit a cat in their profile.
+    View that allows a logged in user to edit a cat in their profile.
     """
     model = Cat
     form_class = AddCatForm
@@ -65,3 +66,19 @@ class CatEditView(LoginRequiredMixin, UpdateView):
         Upon success returns user to the cat detail page.
         """
         return reverse("cat_detail", kwargs={"pk": self.object.pk})
+
+
+class DeleteCat(LoginRequiredMixin, DeleteView):
+    """
+    View that allows logged in users to delete a cat from their profile.
+    """
+    model = Cat
+    template_name = 'cat/delete_cat.html'
+
+    def delete(self, request, *args, **kwargs):
+        return super(DeleteCat, self).delete(request, *args, **kwargs)
+
+    def get_success_url(self, *args, **kwargs):
+        CatDetail.cat_deleted = True
+        messages.success(self.request, 'You have deleted a cat from your profile!')
+        return reverse_lazy("cat")

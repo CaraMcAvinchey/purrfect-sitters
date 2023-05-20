@@ -3,7 +3,6 @@ from .models import Cat
 from phonenumber_field.formfields import PhoneNumberField
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
 
 
 class AddCatForm(forms.ModelForm):
