@@ -25,6 +25,7 @@ class CatList(generic.ListView):
 class CatDetail(generic.DetailView):
     """
     View that displays the details of each cat.
+    This includes additional information not on the cat cards.
     """
     model = Cat
     template_name = 'cat/cat_detail.html'
@@ -33,6 +34,7 @@ class CatDetail(generic.DetailView):
 class CatCreateView(LoginRequiredMixin, CreateView):
     """
     View that allows the user to add a cat to their profile.
+    The user must add a picture of the cat they're trying to add.
     """
     form_class = AddCatForm
     template_name = 'cat/add_cat.html'
@@ -71,6 +73,7 @@ class EditCat(LoginRequiredMixin, UpdateView):
 class DeleteCat(LoginRequiredMixin, DeleteView):
     """
     View that allows logged in users to delete a cat from their profile.
+    The user us prompted with a warning.
     """
     model = Cat
     template_name = 'cat/delete_cat.html'
