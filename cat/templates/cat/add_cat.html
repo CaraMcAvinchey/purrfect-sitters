@@ -12,7 +12,7 @@
             <h2>Add a Cat</h2>
             <p>If you have a new cat you'd like to add to your profile, please complete their information below. 
                 <br>Ensure it is accurate.</p>
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}
             <button type="submit" class="btn btn-custom-dark btn-lg">Save</button>

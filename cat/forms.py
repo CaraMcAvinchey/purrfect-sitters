@@ -11,6 +11,9 @@ class AddCatForm(forms.ModelForm):
         model = Cat
         fields = [
             'cat_name', 'cat_age', 'cat_gender', 'cat_image',
-            'cat_description', 'vet_contact']
+            'cat_description', 'vet_contact'
+        ]
 
-    cat_image = forms.FileField()
+        widgets = {
+            'cat_image': forms.ClearableFileInput(attrs={'required': True})
+        }
