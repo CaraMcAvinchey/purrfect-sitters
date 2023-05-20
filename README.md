@@ -12,7 +12,7 @@ Cara McAvinchey
 
 ### Strategy
 #### Project Goals
-* The aim of the project is to provide easily digestible information about popular house plants for beginners and to allow for conversation and sharing of experiences in taking care of them.
+* A service which allows cat owners to book trusted and affordable cat sitting services online with experienced cat sitters, offering personalised care packages giving enjoy peace of mind whilst travelling.
 
 ### Scope
 #### Feature Planning
@@ -22,80 +22,92 @@ Cara McAvinchey
 (table) 
 #### Database Schema
 
-(screenshot)
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4c20560c-b364-4a58-9fe9-4edd9926a4e7)
 
-- [X] C - Site users can create/register their own profile to interact with the plant posts.
-- [X] R - Site users can open and read the plant blog posts and read comments from other users.
-- [X] U - Site users can like a post, updating the details and analytics for a plant detail post.
-- [X] D - Site users can eliminate their like if desired on a plant detail post.
+* A relational database was designed and the data is represented above in an ERD with four custom models.
+* The checkout model was based off Boutque Ado walkthrough project with some adjustments.
+* The number of cats per profile is connected to the owner.
+* The Cat model was built to have full CRUD functionalities.
+* The Booking model will be implemented with full CRUD in the next interation due to time contraints and therefore will be a future feature.
 
-(screenshot)
+##### Booking
 
-- [X] C - Site users can create their own comments using a form on each blog post.
-- [X] R - Site users can read comments from other users.
-- [X] U - Site users are able to update/edit their comments using a form.
-- [X] D - Site users are able to delete their comments.
+- [X] C - Customers can create a booking through the site when logged in.
+- [-] R - Future feature, users will receive an email with a summary of their booking.
+- [-] U - Future feature, users can contact Purrfect Pets to update their booking for now.
+- [-] D - Future feature, users can contact Purrfect Pets to delete their booking for now.
 
-(screenshot)
+##### Cat
 
-- [X] C - Site users can create their own comments using a form on each blog post.
-- [X] R - Site users can read comments from other users.
-- [X] U - Site users are able to update/edit their comments using a form.
-- [X] D - Site users are able to delete their comments.
+- [X] C - Customers can register and create a profile. 
+- [X] R - Customers can see a list of their cats added to their profile.
+- [X] U - Customers can update their cat detail cards if needed.
+- [X] D - Customers can delete a cat if they no longer need future cat sitting services for that pet.
 
 ### Skeleton
 #### Wireframes
 
 ##### Landing Page 
-(screenshot)
+<img width="916" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/31803c0c-3319-417d-96ed-75e5be05f128">
+
 - XX
 - XX
 
 ##### Services Page
-(screenshot)
+<img width="566" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/b8dc6b4f-dc68-4052-95ac-d0222487f34a">
 - XX
 - XX
 
 ##### Account Page
-(screenshot)
+<img width="832" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/83d9ddab-8c6b-45da-a9e7-5638764526a1">
+<img width="415" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/9c6f36f0-39d7-4965-92b8-58a61203a972">
+
 - XX
 - XX
 
 ##### Cat Profile Page
-(screenshot)
+<img width="631" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/461013da-25d9-42da-a6b2-d2ca1f6203c3">
+<img width="362" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4c2cb889-b839-4350-bb3d-506960722d91">
+<img width="749" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/61774a13-a535-4563-b6f7-da675f15259f">
+
 - XX
 - XX
 
 ##### Bookings Page
-(screenshot)
+<img width="651" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/6b87bed7-7005-4ee5-8efe-c33b6c3fe37c">
+<img width="687" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/86e85c72-b767-430a-b34b-4d35053c5258">
+
 - XX
 - XX
 
 ### Surface
+
+#### Brand
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/38b9714d-8f41-405b-ba32-6b2daa85689d)
+- The logo was custom designed myself.
+- The cat icon in the center was found using creative commons search.
+
 #### Colors
-(colour palette)
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/7c482dfc-a4c1-4b45-b73d-b070970c96a6)
  
-- The natural color palette links to the theme of plants and plant care. 
-- The headings, icons and body text are darker to ensure clear contrast and readability for the user across the site.
-- The green header and footer ensures clear contrast and delineation between sections.
-- Due to the lighthouse score for accessibility, the background color for the header and footer was adjusted:
+- The dark grey colour #2a2727 was chosen and paired with white.
+- The header and footer have a clear contrast and delineation from the body content. 
 
 #### Typography
-(font pairing)
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ad835b75-bd49-4d34-9964-220260adf92e)
 
-- The font combination was chosen using guidance article from Mai Knoblovits [here](https://artisanthemes.io/great-google-font-combinations-ready-use/).
-- The logo and headings use Amatic SC with a fallback of cursive and the body text uses Roboto Condensed with a fallback of san-serif.
+- The font combination was chosen using guidance blog article from Haris Bacic [here]([https://artisanthemes.io/great-google-font-combinations-ready-use/](https://onextrapixel.com/10-great-font-combinations-from-google-web-fonts/)).
+- The logo and headings use ABeeZee and the body text uses Patrick Hand both with a fallback of san-serif.
+- It allows for a more light-hearted aspect to the service and links well to pet care.
 - The choice of fonts were selected and installed using [Google Fonts](https://fonts.google.com/).
 
 #### Images/Icons
-(choices of imagery)
-
-- The icons were chosen to provide clear understanding of each plant and its care requirements.
+- The paw icon and cat images were chosen to add some personality to the page in the context of the service provided.
 - Each summary card has the same information structure with all icons standard throughout the site.
 
 #### Animations
 - The navbar, social icons and buttons across the site have a subtle grow effect when hovered over by the user.
-- All links have a color change and underlined effect when hovered for clear distinction from the body text.
+- All links have a color change and underline when hovered for clear distinction from the body text.
 
 #### Responsiveness
 - The website was designed mobile-first using flexbox to ensure responsiveness throughout the website.
@@ -262,10 +274,11 @@ DEBUG = 'DEVELOPMENT' in os.environ
 - The fonts were sourced using [Google Fonts](https://fonts.google.com/).
 - The icons for the favicon, footer, about page and location headings were taken from [Font Awesome](https://fontawesome.com/).
 - The favicon image was converted using [Favicon.io](https://favicon.io/).
+- The ERD was created with [draw.io](https://www.drawio.com/).
 
 ## ACKNOWLEDGEMENTS
-- Thank you to my mentor for continuous helpful feedback and support throughout the project.
-- The tutors at Code Institute for their patience and support.
+- Thank you to my mentor Malia for continuous helpful feedback and support throughout the project.
+- I greatly appreciate the tutors at Code Institute for their patience and support.
 - The Code Institute Slack community for tips and guidance.
 
 [Back to the beginning](#table-of-contents)
