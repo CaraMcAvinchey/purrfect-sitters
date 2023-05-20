@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404, reverse
 from django.views import generic
 from .models import Cat
 from .forms import AddCatForm
@@ -6,7 +6,7 @@ from django.views.generic import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse_lazy
 
 
 class CatList(generic.ListView):
@@ -44,3 +44,24 @@ class CatCreateView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse('cat')
+
+
+class CatEditView(LoginRequiredMixin, UpdateView):
+    """
+    View that allows the user to edit a cat in their profile.
+    """
+    model = Cat
+    form_class = AddCatForm
+    template_name = 'cat/edit_cat.html'
+    success_url = reverse_lazy('cat:cat_list')
+
+    def form_valid(self, form):
+        super().form_valid(form)
+        messages.success(self.request, "You've edited this cat!")
+        return HttpResponseRedirect(self.get_success_url())
+
+    def get_success_url(self, *args, **kwargs):
+        """
+        Upon success returns user to the cat detail page.
+        """
+        return reverse("cat_detail", kwargs={"pk": self.object.pk})

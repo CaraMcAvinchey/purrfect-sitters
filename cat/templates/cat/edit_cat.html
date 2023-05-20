@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %} - Edit a Cat{% endblock %}
+
+{% block extra_meta %}
+{% endblock %}
+
+{% block content %}
+    <div class="row p-4">
+        <div class="col-sm col-lg-6">
+            <h2>Edit a Cat</h2>
+            <p>If any information about your cat is out-of-date, please update it for our cat sitters. 
+                <br>Ensure it is accurate.</p>
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <button type="submit" class="btn btn-custom-dark btn-lg">Save</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
