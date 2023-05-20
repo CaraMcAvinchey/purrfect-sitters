@@ -87,6 +87,12 @@ footer p {
     width: 50%;
 }
 
+.fixed-image-size {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
 /*----- Bootstrsp Toasts -----*/
 
 .message-container {
