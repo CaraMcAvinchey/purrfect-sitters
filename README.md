@@ -83,7 +83,7 @@ Cara McAvinchey
 ### Surface
 
 #### Brand
-![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/38b9714d-8f41-405b-ba32-6b2daa85689d)
+<img width="200" height="200" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/38b9714d-8f41-405b-ba32-6b2daa85689d">
 - The logo was custom designed myself.
 - The cat icon in the center was found using creative commons search.
 
@@ -255,12 +255,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
 DEBUG = 'DEVELOPMENT' in os.environ
 ```
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ceb9f1d4-35e8-47cd-ba04-6cd07bd8fe37)
+
 19. Add, commit and push to GitHub.
 20. Go to Heroku, add ```DISABLE_COLLECT_STATIC = 1``` to Heroku config vars.
 23. Connect the project to the GitHub repository using personal account login.
 24. Go to settings in Heroku and perform a manual deployment.
 25. Go to Heroku settings, enable automatic deployments.
 27. Setup AWS S3 bucket (these settings might change since time of writing these instructions).
+
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/7412eec2-b6c2-42ac-aba7-81b80b3b5774)
 
 ## CREDITS
