@@ -12,3 +12,5 @@ class AddCatForm(forms.ModelForm):
         fields = [
             'cat_name', 'cat_age', 'cat_gender', 'cat_image',
             'cat_description', 'vet_contact']
+
+    cat_image = forms.FileField()

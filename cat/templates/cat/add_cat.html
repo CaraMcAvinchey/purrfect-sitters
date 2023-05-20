@@ -10,7 +10,8 @@
     <div class="row p-4">
         <div class="col-sm col-lg-6">
             <h2>Add a Cat</h2>
-            <p>If you have a new cat you'd like to add to your profile, please complete their information below. Ensure it is accurate.</p>
+            <p>If you have a new cat you'd like to add to your profile, please complete their information below. 
+                <br>Ensure it is accurate.</p>
             <form method="POST">
             {% csrf_token %}
             {{ form | crispy }}

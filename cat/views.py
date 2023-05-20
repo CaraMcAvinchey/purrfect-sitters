@@ -5,6 +5,7 @@ from .forms import AddCatForm
 from django.views.generic import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 
 
@@ -37,8 +38,9 @@ class CatCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
+        super().form_valid(form)
         messages.success(self.request, "Added a new cat!")
-        return super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url()) 
 
     def get_success_url(self):
-        return reverse_lazy('cat')
+        return reverse('cat')
