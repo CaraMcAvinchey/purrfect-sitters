@@ -27,20 +27,23 @@ Cara McAvinchey
 * A relational database was designed and the data is represented above in an ERD with four custom models.
 * The checkout model was based off Boutque Ado walkthrough project with some adjustments.
 * The number of cats per profile is connected to the owner.
-* The Cat model was built to have full CRUD functionalities.
+* The Cat model is built to have full CRUD functionalities.
 * The Booking model will be implemented with full CRUD in the next interation due to time contraints and therefore will be a future feature.
+* The Service model will add the ability to add, update, delete and edit package information from the client-side in a future implementation.
 
 ##### Booking
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/c0160aa1-0bb2-4019-8dd1-076cc115dfe2)
 
 - [X] C - Customers can create a booking through the site when logged in.
-- [-] R - Future feature, users will receive an email with a summary of their booking.
-- [-] U - Future feature, users can contact Purrfect Pets to update their booking for now.
-- [-] D - Future feature, users can contact Purrfect Pets to delete their booking for now.
+- [] R - Future feature, users will receive an email with a summary of their booking.
+- [] U - Future feature, users can contact Purrfect Pets to update their booking for now.
+- [] D - Future feature, users can contact Purrfect Pets to delete their booking for now.
 
 ##### Cat
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4f775f4f-9df9-49d4-885a-2f86fcf74922)
 
-- [X] C - Customers can register and create a profile. 
-- [X] R - Customers can see a list of their cats added to their profile.
+- [X] C - Customers can sign up and register a profile thanks to Django allauth system. 
+- [X] R - Customers can see a list of their cats added to their profile and click for further information.
 - [X] U - Customers can update their cat detail cards if needed.
 - [X] D - Customers can delete a cat if they no longer need future cat sitting services for that pet.
 
@@ -48,35 +51,37 @@ Cara McAvinchey
 #### Wireframes
 
 ##### Landing Page 
-- XX
-- XX
+- The landing page was designed to have a clear and easy to navigate layout, with a drop down for login/logout and profile information access.
+- The customer can immediately see what the page is about with the page name and description.
+- There is a clear call to action button to book.
 
 <img width="916" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/31803c0c-3319-417d-96ed-75e5be05f128">
 
 ##### Services Page
-- XX
-- XX
+- The page is to summarises the services offered including name, time and price.
+- There is an FAQ section for new or returning users to refer to if needed.
 
 <img width="566" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/b8dc6b4f-dc68-4052-95ac-d0222487f34a">
 
 ##### Account Page
-- XX
-- XX
+- The django allauth system provided all the login/logout and registration functionalities for the page
+- The templates were styled in some areas to account for the brand look and feel.
 
 <img width="832" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/83d9ddab-8c6b-45da-a9e7-5638764526a1">
 <img width="415" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/9c6f36f0-39d7-4965-92b8-58a61203a972">
 
 ##### Cat Profile Page
-- XX
-- XX
+- The users will be able to view a list of their cats in easy to read cards using Bootstrap to achieve this.
+- If they do not have cats, a message will be displayed accordingly.
+- Functionalities will be added to edit and delete cat profiles.
 
 <img width="631" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/461013da-25d9-42da-a6b2-d2ca1f6203c3">
 <img width="362" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4c2cb889-b839-4350-bb3d-506960722d91">
 <img width="749" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/61774a13-a535-4563-b6f7-da675f15259f">
 
 ##### Bookings Page
-- XX
-- XX
+- The bookings page allows the user to choose the Purrfect Package they prefer, the date of service required and special instructions.
+- Plans for viewing past bookings, editing and deleting bookings have been planned for. 
 
 <img width="651" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/6b87bed7-7005-4ee5-8efe-c33b6c3fe37c">
 <img width="687" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/86e85c72-b767-430a-b34b-4d35053c5258">
