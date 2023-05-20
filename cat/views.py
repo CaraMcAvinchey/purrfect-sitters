@@ -40,7 +40,7 @@ class CatCreateView(LoginRequiredMixin, CreateView):
         form.instance.owner = self.request.user
         super().form_valid(form)
         messages.success(self.request, "Added a new cat!")
-        return HttpResponseRedirect(self.get_success_url()) 
+        return HttpResponseRedirect(self.get_success_url())
 
     def get_success_url(self):
         return reverse('cat')

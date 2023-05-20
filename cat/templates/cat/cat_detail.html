@@ -17,9 +17,11 @@
             <p>{{ cat.cat_description | safe }}</p>
             
             <h4>Vet Contact:</h4>
-            <p>{{ cat.vet_contact }}</p>
-
-            <small>Last updated: {{ cat.profile_updated }}<small>
+            <p>{{ cat.vet_contact.as_international }}</p>
+            <hr>
+            <a href="#" class="btn btn-custom-dark mb-3">Edit</a>
+            <a href="#" class="btn btn-custom-dark mb-3">Delete</a>
+            <p><small>Last updated: {{ cat.profile_updated }}</small><p>
         </div>
     </div>
 
