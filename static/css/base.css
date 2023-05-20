@@ -83,6 +83,13 @@ footer p {
     font-size: 1.5rem;
 }
 
+/*----- Newsletter -----*/
+
+#mc_embed_signup {
+    background:#2a2727; 
+    clear:left; 
+}
+
 /*----- Forms -----*/
 
 .form-control, #div_id_booking_date {
