@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_list_or_404, reverse
 from django.views import generic
 from .models import Cat
-from .forms import AddCatForm
+from .forms import AddCatForm, EditCatForm
 from django.views.generic import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -54,7 +54,7 @@ class EditCat(LoginRequiredMixin, UpdateView):
     View that allows a logged in user to edit a cat in their profile.
     """
     model = Cat
-    form_class = AddCatForm
+    form_class = EditCatForm
     template_name = 'cat/edit_cat.html'
     success_url = reverse_lazy('cat:cat_list')
 

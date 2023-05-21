@@ -10,7 +10,6 @@ class AddCatForm(forms.ModelForm):
     This form allows users to add a cat to their profile.
     It assists the user when typing their number with a place holder.
     If a user adds a cat, image field is required.
-    If they are updating a cat, they can keep the existing image.
     """
     vet_contact = PhoneNumberField(
         widget=PhoneNumberPrefixWidget(
@@ -34,10 +33,36 @@ class AddCatForm(forms.ModelForm):
             # Set initial value for cat_image field when editing a cat.
             self.fields['cat_image'].initial = instance.cat_image
 
+
+class EditCatForm(forms.ModelForm):
+    """
+    This form allows users to edit a cat on their profile.
+    If they are updating a cat, they can keep the existing image.
+    """
+    vet_contact = PhoneNumberField(
+        widget=PhoneNumberPrefixWidget(
+            attrs={'placeholder': '079 1138 9779'}))
+
+    class Meta:
+        model = Cat
+        fields = [
+            'cat_name', 'cat_age', 'cat_gender', 'cat_image',
+            'cat_description', 'vet_contact'
+        ]
+
+        widgets = {
+            'cat_image': forms.FileInput()
+        }
+
+    def __init__(self, *args, **kwargs):
+        # This sets all fields to be editable and not required
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.required = False
+
     def clean_cat_image(self):
+        # This returns the orginal image if a new one isn't provided
         cat_image = self.cleaned_data.get('cat_image')
         if self.instance.pk and not cat_image:
-            # The image field is not required when editing an exisiting cat
-            # If left blank, it will keep the existing image.
             return self.instance.cat_image
         return cat_image
