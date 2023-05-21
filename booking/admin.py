@@ -9,23 +9,24 @@ class BookingAdmin(admin.ModelAdmin):
         'owner',
         'cats',
         'date_created',
-        # 'stripe_pid',
     )
 
     fields = (
+        'booking_number'
         'owner',
         'cats',
         'service_level',
         'booking_date',
         'phone',
         'special_instructions',
+        'total'
     )
 
     list_display = [
         'owner',
-        # 'cats',
         'service_level',
         'booking_date',
+        'total',
         'phone'
     ]
 

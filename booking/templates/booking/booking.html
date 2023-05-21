@@ -47,7 +47,7 @@
                     <form method="POST">
                         {% csrf_token %}
                         {{ form | crispy }}
-                        <a href="{% url 'checkout' %}"class="btn btn-custom-dark btn-card submit-btn mt-2">Proceed to Payment</a>
+                        <button type="submit" class="btn btn-custom-dark btn-card submit-btn mt-2">Proceed to Payment</button>
                     </form>
                 </div>
 
