@@ -22,7 +22,7 @@ Cara McAvinchey
 (table) 
 #### Database Schema
 
-![image](<img width="482" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/acccdea1-0c4e-48c3-985f-085105d85a27">)
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/9d8774f5-14a6-4f96-9f3b-1cd70cad3f13)
 
 * A relational database was designed and the data is represented above in an ERD with four custom models.
 * The checkout model was based off Boutque Ado walkthrough project with some adjustments.
@@ -32,7 +32,7 @@ Cara McAvinchey
 * The Service model will add the ability to add, update, delete and edit package information from the client-side in a future implementation.
 
 ##### Booking
-![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/c0160aa1-0bb2-4019-8dd1-076cc115dfe2)
+![image](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/5a9913af-37b9-4ec9-93ed-a4c3fbbf76cc)w)
 
 - [X] C - Customers can create a booking through the site when logged in.
 - [] R - Future feature, users will receive an email with a summary of their booking.
