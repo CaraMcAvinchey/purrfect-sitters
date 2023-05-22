@@ -32,7 +32,8 @@ Cara McAvinchey
 * The Service model will add the ability to add, update, delete and edit package information from the client-side in a future implementation.
 
 ##### Booking
-![image](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/5a9913af-37b9-4ec9-93ed-a4c3fbbf76cc)w)
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/126bbcbf-3db3-4ac2-98ae-e8bf19163749)
+
 
 - [X] C - Customers can create a booking through the site when logged in.
 - [] R - Future feature, users will receive an email with a summary of their booking.
