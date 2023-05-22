@@ -22,7 +22,7 @@ Cara McAvinchey
 (table) 
 #### Database Schema
 
-![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4c20560c-b364-4a58-9fe9-4edd9926a4e7)
+![image](<img width="482" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/acccdea1-0c4e-48c3-985f-085105d85a27">)
 
 * A relational database was designed and the data is represented above in an ERD with four custom models.
 * The checkout model was based off Boutque Ado walkthrough project with some adjustments.
@@ -158,7 +158,44 @@ Cara McAvinchey
 - To increase user interactivity from readers, users could rate blog posts on how helpful the information was and give feedback.
 - Pending comments can be added so users are aware they are awaiting approval. 
 
-## TECHNOLOGIES USED
+## Web Marketing Strategies
+- The following strategies for Purrfect Sitters have been considered and a combination of the below can be implemented.
+
+### SEO
+- The content of the website was written using a combination of short-tail and long-tail keywords without the use of keyword stuffing as a bad practice.
+- The website was designed to extend additional meta descriptions and keywords as the site grows.
+- For now, the home and services page are SEO optimised.  
+
+### Content Marketing
+- The nature of the business allows for fun, engaging and a variety of content types. 
+- There is a lot of opportunity to grow a community of cat lovers via social media and the newsletter. 
+- This business will benefit the most from word-of-mouth and testimonials which will be a key content pillar for social.
+
+## Email Marketing
+
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/acf516c5-22f7-4c49-8f2e-7782cb1c541d)
+
+- The newsletter can allow more detail and article type content to be delivered to those who opt-in. 
+- This can be begin as a monthly update and can increase to weekly once a larger audence is established.
+- The social media pages can be used as a guide to what conent is interesting to followers. 
+- Testing of approaches can be easily done to see which content generates referrals and sales. 
+- If there are competitions, offers or information accounements this channel can assist in information sharing with customers.
+
+## Social Media Marketing
+- The Facebook Business page for Purrfect Sitters will be setup as an initial entry into the social media marketing space. 
+- It would be benefical to setup an Instagram page which can link with Facebook and allow for more engagement with the target market.
+- The content would be a combination of light-hearted cat humour, educational anecdotes about cats, and brand information.
+- This can allow for links to the website content, directing web traffic to the Purrfect Sitters website. 
+- It can also drive traffic to the newsletter to share more long form content. 
+- Brand campaigns can be developed e.g. interviewing customers and getting testimonials in written or video format. 
+- Paid Instagram and Facebook ads can be used as a driver to the webiste
+
+<img width="392" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/99878dcc-fe87-4394-b36d-451797bc081f">
+
+### Paid Advertising
+- For the size of this business, it would be beneficial to look at how social media advertising can drive traffic to the website with engaging content that is relatable to the customer. 
+
+## Technologies
 ### Languages
 - HTML, CSS, JavaScript, Python
 
