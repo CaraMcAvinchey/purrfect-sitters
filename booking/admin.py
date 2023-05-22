@@ -9,10 +9,11 @@ class BookingAdmin(admin.ModelAdmin):
         'owner',
         'cats',
         'date_created',
+        'booking_number'
     )
 
     fields = (
-        'booking_number'
+        'booking_number',
         'owner',
         'cats',
         'service_level',
@@ -27,7 +28,8 @@ class BookingAdmin(admin.ModelAdmin):
         'service_level',
         'booking_date',
         'total',
-        'phone'
+        'phone',
+        'booking_number'
     ]
 
     ordering = ('-date_created',)

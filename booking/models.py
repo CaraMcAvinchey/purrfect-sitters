@@ -49,13 +49,16 @@ class Booking(models.Model):
 
     phone = PhoneNumberField()
 
+    booking_number = models.CharField(
+        max_length=32, null=True, blank=True, editable=False)
+
     @property
     def number_cats(self):
         """
         Get the number of cats associated with the booking
         """
         return len(self.cats)
-  
+
     def is_timeslot_booked(self):
         """
         This ensures that when the user is trying to update
@@ -75,7 +78,7 @@ class Booking(models.Model):
         """
         base_price = self.service_level.price
         cat_count = self.cats.count()
-        extra_cat_fee = 10 if cat_count > 3 else 0
+        extra_cat_fee = 10 * (cat_count - 3) if cat_count > 3 else 0
         total = decimal.Decimal(base_price) + decimal.Decimal(extra_cat_fee)
         return total
 
@@ -94,12 +97,14 @@ class Booking(models.Model):
         if isinstance(self.booking_date, datetime.datetime):
             self.booking_date = self.booking_date.date()
 
-        if not self.id:
+        if not self.booking_number:
             self.booking_number = self._generate_booking_number()
 
-        self.total = self.calculate_total()
         super().save(*args, **kwargs)
+        self.total = self.calculate_total()
         self.cats.set(self.cats.all())
+        super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"Booking for {self.booking_number} - {self.owner.username}"
+        # return self.booking_number
+        return f"Booking #{self.booking_number} - {self.owner} - {self.booking_date}"
