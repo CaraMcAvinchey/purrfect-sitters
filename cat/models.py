@@ -15,7 +15,7 @@ class Cat(models.Model):
 
     owner = models.ForeignKey(
         User,
-        related_name="user_id",
+        related_name="cats",
         on_delete=models.CASCADE,
         )
 

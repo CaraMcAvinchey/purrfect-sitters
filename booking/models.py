@@ -106,5 +106,4 @@ class Booking(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        # return self.booking_number
         return f"Booking #{self.booking_number} - {self.owner} - {self.booking_date}"
