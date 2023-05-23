@@ -1,31 +1,30 @@
 from django.contrib import admin
-from .models import Booking, Cat
+from .models import Booking, Cat, Checkout
 
 
-@admin.register(Booking)
-class CheckingAdmin(admin.ModelAdmin):
+@admin.register(Checkout)
+class CheckoutAdmin(admin.ModelAdmin):
 
     readonly_fields = (
-        'owner',
         'order_number',
         'payment_date',
     )
 
     fields = (
+        'booking',
         'order_number',
         'payment_status',
         'street_address1',
         'town_or_city',
-        'post_code'
+        'postcode'
     )
 
     list_display = [
-        'owner',
         'order_number',
         'payment_status',
         'street_address1',
         'town_or_city',
-        'post_code'
+        'postcode'
     ]
 
     ordering = ('-payment_date',)

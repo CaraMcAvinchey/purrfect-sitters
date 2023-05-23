@@ -4,7 +4,6 @@ from django.db.models import Sum
 from django.conf import settings
 from booking.models import Booking
 from cat.models import Cat
-from service.models import Services
 
 
 class Checkout(models.Model):
