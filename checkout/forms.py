@@ -1,5 +1,5 @@
 from django import forms
-from .models import Checkout
+from .models import Checkout, Cat
 from django.core.exceptions import ValidationError
 import datetime
 
@@ -23,11 +23,10 @@ class CheckoutForm(forms.ModelForm):
 
         self.fields['street_address1'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'country':
-                if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
-                else:
-                    placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False

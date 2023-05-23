@@ -1,13 +1,42 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %} - Payment{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block extra_title %} - Checkout{% endblock %}
 
 {% block extra_meta %}
 {% endblock %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h1>It works!</h1>
+<div class="row p-3">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12 text-container">
+                <h1>Payments</h1>
+                <p>Please complete the final details below so we can secure your booking.</p>
+            </div>
+        </div>
+            <h3>Your Details</h3>
+                {{ form.media }} 
+                <p>Date Booked: {{ booking.service_level }}</p>
+                <p>Package: {{ booking.booking_date }}</p>
+                <p>Order Number: {{ booking.booking_number }}</p>
+                <p>Total: {{ booking.total }}</p>
+
+            <div class="form-container">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button type="submit" class="btn btn-custom-dark btn-card submit-btn mt-2">Make Payment</button>
+                </form>
+            </div>
+    </div>
+</div>
 
 {% endblock %}
