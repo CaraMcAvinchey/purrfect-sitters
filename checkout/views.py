@@ -19,7 +19,7 @@ def checkout(request):
     checkout_form = CheckoutForm()
 
     if request.method == 'POST':
-        booking = request.session.get('booking')
+        booking = request.session.get('booking', {})
         checkout_form = CheckoutForm(request.POST)
         if checkout_form.is_valid():
             checkout = form.save()
@@ -32,6 +32,10 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'checkout_form': checkout_form,
+        # 'booking': booking,
+        'stripe_public_key': 'pk_test_51NC4ooHORblXBXM0yq6SxZajeH1HnLrVMJ7lpdhnf8z4ZGQMeMfSvphmyEzz7mepIohfoLUy9gEUxLRSzuruOON900bQydGd5W',
+        'client_secret': 'test client secret',
+
     }
 
     return render(request, template, context)

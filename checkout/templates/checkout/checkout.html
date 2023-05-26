@@ -33,10 +33,19 @@
                 <form method="POST">
                     {% csrf_token %}
                     {{ checkout_form | crispy }}
+                    <p>Payment:</p>
+                    <div class="mb-3" id="card-element"></div>
                     <button type="submit" class="btn btn-custom-dark btn-card submit-btn mt-2">Make Payment</button>
                 </form>
             </div>
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

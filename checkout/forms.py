@@ -16,7 +16,7 @@ class CheckoutForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'street_address1': 'Street Address 1',
+            'street_address1': 'Street Address',
             'town_or_city': 'Town or City',
             'postcode': 'Postal Code',
         }
