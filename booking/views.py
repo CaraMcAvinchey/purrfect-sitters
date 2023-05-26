@@ -37,7 +37,7 @@ def booking(request):
                 if not booking_form.is_timeslot_booked():
                     booking_form.save()
                     booked = True
-                    messages.success(request, "Booking successful!")
+                    messages.success(request, "Date available, let's go to payment!")
                     return redirect('checkout')
                 # error message for double booking
                 else:

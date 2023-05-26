@@ -1,8 +1,9 @@
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse)
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-from django.views.decorators.http import require_POST
+
 
 from .forms import CheckoutForm
 from booking.models import Booking
@@ -15,16 +16,18 @@ def checkout(request):
     """
     View that returns the checkout page.
     """
+    checkout_form = CheckoutForm()
+
     if request.method == 'POST':
         booking = request.session.get('booking')
         checkout_form = CheckoutForm(request.POST)
-        if form.is_valid():
+        if checkout_form.is_valid():
             checkout = form.save()
             return redirect('checkout_success')
         else:
             messages.error(request, 'There was an error with your form.')
     else:
-        form = CheckoutForm()
+        checkout_form = CheckoutForm()
 
     template = 'checkout/checkout.html'
     context = {

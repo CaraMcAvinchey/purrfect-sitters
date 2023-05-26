@@ -32,7 +32,7 @@
             <div class="form-container">
                 <form method="POST">
                     {% csrf_token %}
-                    {{ form | crispy }}
+                    {{ checkout_form | crispy }}
                     <button type="submit" class="btn btn-custom-dark btn-card submit-btn mt-2">Make Payment</button>
                 </form>
             </div>

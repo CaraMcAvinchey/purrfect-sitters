@@ -22,9 +22,6 @@ class CheckoutAdmin(admin.ModelAdmin):
     list_display = [
         'order_number',
         'payment_status',
-        'street_address1',
-        'town_or_city',
-        'postcode'
     ]
 
     ordering = ('-payment_date',)

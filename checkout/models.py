@@ -38,12 +38,15 @@ class Checkout(models.Model):
     )
 
     postcode = models.CharField(
-        max_length=20, null=True, blank=True
+        max_length=20, null=True, blank=False
     )
 
     order_number = models.CharField(
         max_length=32, unique=True, editable=False
     )
+
+    class Meta:
+        verbose_name_plural = "Checkout"
 
     def _generate_order_number(self):
         """
