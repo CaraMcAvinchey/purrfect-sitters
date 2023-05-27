@@ -23,14 +23,15 @@
             </div>
         </div>
             <h3>Your Details</h3>
-                {{ form.media }} 
-                <p>Date Booked: {{ booking.service_level }}</p>
-                <p>Package: {{ booking.booking_date }}</p>
-                <p>Order Number: {{ booking.booking_number }}</p>
-                <p>Total: {{ booking.total }}</p>
+                {% if booking %} 
+                    <p>Date Booked: {{ booking.booking_date }}</p>
+                    <p>Package: {{ booking.service_level }}</p>
+                    <p>Order Number: {{ booking.booking_number }}</p>
+                    <p>Total: £{{ booking.total }}</p>
+                {% endif %}
 
             <div class="form-container">
-                <form method="POST">
+                <form method="POST" action="{% url 'checkout' pk=booking.pk %}">
                     {% csrf_token %}
                     {{ checkout_form | crispy }}
                     <p>Payment:</p>

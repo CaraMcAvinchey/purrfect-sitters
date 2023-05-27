@@ -3,6 +3,7 @@ from django.shortcuts import (
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 
 from .forms import CheckoutForm
@@ -12,11 +13,17 @@ from booking.models import Booking
 # import json
 
 
-def checkout(request):
+@login_required()
+def checkout(request, pk):
     """
     View that returns the checkout page.
     """
     checkout_form = CheckoutForm()
+
+    if booking.owner != request.user:
+        return HttpResponseForbidden(
+            "You do not have permission \
+                to access this booking.")
 
     if request.method == 'POST':
         booking = request.session.get('booking', {})
@@ -28,14 +35,14 @@ def checkout(request):
             messages.error(request, 'There was an error with your form.')
     else:
         checkout_form = CheckoutForm()
+        booking = get_object_or_404(Booking, pk=pk)
 
     template = 'checkout/checkout.html'
     context = {
         'checkout_form': checkout_form,
-        # 'booking': booking,
+        'booking': booking,
         'stripe_public_key': 'pk_test_51NC4ooHORblXBXM0yq6SxZajeH1HnLrVMJ7lpdhnf8z4ZGQMeMfSvphmyEzz7mepIohfoLUy9gEUxLRSzuruOON900bQydGd5W',
         'client_secret': 'test client secret',
-
     }
 
     return render(request, template, context)

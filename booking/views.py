@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.views import generic
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -37,8 +37,10 @@ def booking(request):
                 if not booking_form.is_timeslot_booked():
                     booking_form.save()
                     booked = True
-                    messages.success(request, "Date available, let's go to payment!")
-                    return redirect('checkout')
+                    messages.success(
+                        request, "Date available, let's go to payment!")
+                    return HttpResponseRedirect(
+                        reverse('checkout', kwargs={'pk': booking_form.id}))
                 # error message for double booking
                 else:
                     messages.error(request, "This date is already booked!")
