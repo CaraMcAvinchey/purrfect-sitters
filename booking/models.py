@@ -14,6 +14,7 @@ import uuid
 class Booking(models.Model):
     """
     Model for the information of each booking made on the website.
+    Includes multiple methods for validation.
     """
 
     owner = models.ForeignKey(
@@ -55,7 +56,7 @@ class Booking(models.Model):
     @property
     def number_cats(self):
         """
-        Get the number of cats associated with the booking
+        This returns the number of cats associated with the booking.
         """
         return len(self.cats)
 
@@ -73,7 +74,7 @@ class Booking(models.Model):
     def calculate_total(self):
         """
         Calculate the total based on the service level chosen
-        and the number of cats.If the cats associated with the user
+        and the number of cats. If the cats associated with the user
         are greater than 3 there is a surcharge.
         """
         base_price = self.service_level.price

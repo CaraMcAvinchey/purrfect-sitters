@@ -32,6 +32,9 @@ class CatDetail(LoginRequiredMixin, generic.DetailView):
     template_name = 'cat/cat_detail.html'
 
     def dispatch(self, request, *args, **kwargs):
+        """
+        Method to validate owner against logged in user.
+        """
         cat = self.get_object()
         if cat.owner != request.user:
             raise PermissionDenied()
@@ -68,6 +71,9 @@ class EditCat(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('cat:cat_list')
 
     def form_valid(self, form):
+        """
+        Method to validate owner against logged in user.
+        """
         cat = self.get_object()
         if cat.owner != self.request.user:
             return PermissionDenied
@@ -77,9 +83,6 @@ class EditCat(LoginRequiredMixin, UpdateView):
         return HttpResponseRedirect(self.get_success_url())
 
     def get_success_url(self, *args, **kwargs):
-        """
-        Upon success returns user to the cat detail page.
-        """
         return reverse("cat_detail", kwargs={"pk": self.object.pk})
 
     def handle_no_permission(self):
@@ -95,6 +98,9 @@ class DeleteCat(LoginRequiredMixin, DeleteView):
     template_name = 'cat/delete_cat.html'
 
     def delete(self, request, *args, **kwargs):
+        """
+        Method to validate owner against logged in user.
+        """
         cat = self.get_object()
         if cat.owner != request.user:
             return PermissionDenied()

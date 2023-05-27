@@ -8,7 +8,7 @@ import datetime
 
 class DateInput(forms.DateInput):
     """
-    This class gets the widget working to show a datepicker
+    This class allows for the datepicker to work.
     """
     input_type = 'date'
 

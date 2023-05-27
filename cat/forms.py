@@ -55,13 +55,17 @@ class EditCatForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
-        # This sets all fields to be editable and not required
+        """
+        Method which sets all fields to be editable and not required.
+        """
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.required = False
 
     def clean_cat_image(self):
-        # This returns the orginal image if a new one isn't provided
+        """
+        Method which returns the orginal image if a new one isn't provided.
+        """
         cat_image = self.cleaned_data.get('cat_image')
         if self.instance.pk and not cat_image:
             return self.instance.cat_image

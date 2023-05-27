@@ -39,5 +39,4 @@ class Services(models.Model):
         verbose_name_plural = "Services"
 
     def __str__(self):
-        #  Returns a string of name of the service
         return f"{self.service_name}"
