@@ -8,12 +8,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from django.core.exceptions import PermissionDenied
 
 
-class CatList(generic.ListView):
+class CatList(LoginRequiredMixin, generic.ListView):
     """
     View that displays the information profiles of
-    each cat that a user owns.
+    each cat that a user owns in summary cards.
     """
     model = Cat
     template_name = 'cat/cat_profile.html'
@@ -22,13 +23,21 @@ class CatList(generic.ListView):
         return Cat.objects.filter(owner=self.request.user)
 
 
-class CatDetail(generic.DetailView):
+class CatDetail(LoginRequiredMixin, generic.DetailView):
     """
     View that displays the details of each cat.
     This includes additional information not on the cat cards.
     """
     model = Cat
     template_name = 'cat/cat_detail.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        cat = self.get_object()
+        if cat.owner != request.user:
+            raise PermissionDenied()
+
+    def handle_no_permission(self):
+        return render(self.request, '403.html', status=403)
 
 
 class CatCreateView(LoginRequiredMixin, CreateView):
@@ -59,6 +68,10 @@ class EditCat(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('cat:cat_list')
 
     def form_valid(self, form):
+        cat = self.get_object()
+        if cat.owner != self.request.user:
+            return PermissionDenied
+
         super().form_valid(form)
         messages.success(self.request, "You've edited this cat!")
         return HttpResponseRedirect(self.get_success_url())
@@ -68,6 +81,9 @@ class EditCat(LoginRequiredMixin, UpdateView):
         Upon success returns user to the cat detail page.
         """
         return reverse("cat_detail", kwargs={"pk": self.object.pk})
+
+    def handle_no_permission(self):
+        return render(self.request, '403.html', status=403)
 
 
 class DeleteCat(LoginRequiredMixin, DeleteView):
@@ -79,9 +95,16 @@ class DeleteCat(LoginRequiredMixin, DeleteView):
     template_name = 'cat/delete_cat.html'
 
     def delete(self, request, *args, **kwargs):
+        cat = self.get_object()
+        if cat.owner != request.user:
+            return PermissionDenied()
         return super(DeleteCat, self).delete(request, *args, **kwargs)
 
     def get_success_url(self, *args, **kwargs):
         CatDetail.cat_deleted = True
-        messages.success(self.request, 'You have deleted a cat from your profile!')
+        messages.success(
+            self.request, 'You have deleted a cat from your profile!')
         return reverse_lazy("cat")
+
+    def handle_no_permission(self):
+        return render(self.request, '403.html', status=403)
