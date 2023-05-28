@@ -13,6 +13,7 @@
         <h1>My Cats</h1>
         <p>These are the cats you have on our system. Please make sure their details are up-to-date.</p>
         <a href="{% url 'add_cat' %}" class="btn btn-custom-dark btn-lg">Add a Cat</a>
+        <a href="{% url 'booking' %}" class="btn btn-custom-dark btn-lg ml-1">Book</a>
     </div>
 </div>
 <hr>
@@ -27,7 +28,7 @@
                     <h3 class="card-title"><i class="fa-solid fa-paw"></i> {{ cats.cat_name }}</h3>
                     <p>{{ cats.cat_gender }}, {{ cats.cat_age }}</p>
                     <p>{{ cats.cat_description | safe }}</p>
-                    <a href="{% url 'cat_detail' cats.id %}" class="btn btn-custom-dark">View Details</a>
+                    <a href="{% url 'cat_detail' cats.id %}" class="btn btn-custom-dark btn-lg">More</a>
                 </div>
                 </div>
             </div>
