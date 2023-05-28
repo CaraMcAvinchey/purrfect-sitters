@@ -38,6 +38,7 @@ class CatDetail(LoginRequiredMixin, generic.DetailView):
         cat = self.get_object()
         if cat.owner != request.user:
             raise PermissionDenied()
+        return super().dispatch(request, *args, **kwargs)
 
     def handle_no_permission(self):
         return render(self.request, '403.html', status=403)
