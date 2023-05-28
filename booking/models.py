@@ -69,7 +69,8 @@ class Booking(models.Model):
         current_user = self.owner
 
         return Booking.objects\
-            .filter(owner=current_user, booking_date=self.booking_date).exists()
+            .filter(
+                owner=current_user, booking_date=self.booking_date).exists()
 
     def calculate_total(self):
         """
@@ -107,4 +108,6 @@ class Booking(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"Booking #{self.booking_number} - {self.owner} - {self.booking_date}"
+        return (
+            f"Booking #{self.booking_number} - {self.owner} - {self.booking_date}"
+        )

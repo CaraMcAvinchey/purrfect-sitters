@@ -9,7 +9,22 @@ from .forms import CheckoutForm
 from booking.models import Booking
 
 import stripe
-# import json
+import json
+
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 
 @login_required()
@@ -33,8 +48,6 @@ def checkout(request, pk):
         amount=stripe_total,
         currency=settings.STRIPE_CURRENCY,
     )
-
-    print(intent)
 
     checkout_form = CheckoutForm()
 

@@ -31,7 +31,11 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['purrfect-sitters-service.herokuapp.com', 'localhost', '8000-caramcavinc-purrfectsit-1w0oy6ze4q3.ws-eu97.gitpod.io']
+ALLOWED_HOSTS = [
+    'purrfect-sitters-service.herokuapp.com',
+    'localhost',
+    '8000-caramcavinc-purrfectsit-1w0oy6ze4q3.ws-eu97.gitpod.io'
+    ]
 
 # Application definition
 
