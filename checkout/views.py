@@ -38,17 +38,17 @@ def checkout(request, pk):
 
     checkout_form = CheckoutForm()
 
-    # if request.method == 'POST':
-    #     checkout_form = CheckoutForm(request.POST)
-    #     if checkout_form.is_valid():
-    #         checkout = checkout_form.save(commit=False)
-    #         checkout.booking = booking
-    #         checkout.save()
-    #         return redirect('checkout_success')
-    #     else:
-    #         messages.error(request, 'There was an error with your form.')
-    # else:
-    #     checkout_form = CheckoutForm()
+    if request.method == 'POST':
+        checkout_form = CheckoutForm(request.POST)
+        if checkout_form.is_valid():
+            checkout = checkout_form.save(commit=False)
+            checkout.booking = booking
+            checkout.save()
+            return redirect(reverse('checkout_success'))
+        else:
+            messages.error(request, 'There was an error with your form.')
+    else:
+        checkout_form = CheckoutForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -65,6 +65,9 @@ def checkout(request, pk):
     return render(request, template, context)
 
 
-# def checkout_success(request):
-#     messages.success(request, "Payment successful!")
-#     return render(request, 'checkout/checkout_success.html')
+def checkout_success(request):
+    messages.success(request, "Payment successful!")
+
+    template = 'checkout/checkout_success.html'
+
+    return render(request, template)
