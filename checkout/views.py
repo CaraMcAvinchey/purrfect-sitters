@@ -5,7 +5,6 @@ from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-
 from .forms import CheckoutForm
 from booking.models import Booking
 
@@ -20,26 +19,15 @@ def checkout(request, pk):
     """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    checkout_form = CheckoutForm()
+
+    booking = get_object_or_404(Booking, pk=pk)
 
     if booking.owner != request.user:
         return HttpResponseForbidden(
             "You do not have permission \
                 to access this booking.")
 
-    if request.method == 'POST':
-        booking = request.session.get('booking', {})
-        checkout_form = CheckoutForm(request.POST)
-        if checkout_form.is_valid():
-            checkout = form.save()
-            return redirect('checkout_success')
-        else:
-            messages.error(request, 'There was an error with your form.')
-    else:
-        checkout_form = CheckoutForm()
-        booking = get_object_or_404(Booking, pk=pk)
-
-    stripe_total = round(total * 100)
+    stripe_total = int(booking.total)
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,
@@ -47,6 +35,20 @@ def checkout(request, pk):
     )
 
     print(intent)
+
+    checkout_form = CheckoutForm()
+
+    # if request.method == 'POST':
+    #     checkout_form = CheckoutForm(request.POST)
+    #     if checkout_form.is_valid():
+    #         checkout = checkout_form.save(commit=False)
+    #         checkout.booking = booking
+    #         checkout.save()
+    #         return redirect('checkout_success')
+    #     else:
+    #         messages.error(request, 'There was an error with your form.')
+    # else:
+    #     checkout_form = CheckoutForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -56,13 +58,13 @@ def checkout(request, pk):
     context = {
         'checkout_form': checkout_form,
         'booking': booking,
-        'stripe_public_key': 'pk_test_51NC4ooHORblXBXM0yq6SxZajeH1HnLrVMJ7lpdhnf8z4ZGQMeMfSvphmyEzz7mepIohfoLUy9gEUxLRSzuruOON900bQydGd5W',
-        'client_secret': 'test client secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
 
 
-def checkout_success(request):
-    messages.success(request, "Payment successful!")
-    return render(request, 'checkout/checkout_success.html')
+# def checkout_success(request):
+#     messages.success(request, "Payment successful!")
+#     return render(request, 'checkout/checkout_success.html')
