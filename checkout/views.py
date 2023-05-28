@@ -27,7 +27,7 @@ def checkout(request, pk):
             "You do not have permission \
                 to access this booking.")
 
-    stripe_total = int(booking.total)
+    stripe_total = int(booking.total * 100)
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,
