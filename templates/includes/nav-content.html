@@ -9,7 +9,7 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        <!-- left aligned navigation -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -23,6 +23,7 @@
                     <a class="nav-link text-white" href="{% url 'booking' %}">Book</a>
                 </li>
             </ul>
+            <!-- right aligned dropdown navigation -->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown me-4">

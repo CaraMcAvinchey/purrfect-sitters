@@ -9,58 +9,45 @@
 {% endblock %}
 
 {% block extra_js %}
-    <script src ="{% static 'js/appointments.js' %}"></script>
 {% endblock %}  
 
 {% block content %}
 
 <div class="row p-3">
     <div class="col-12">
-            <div class="row">
-                <div class="col-12 text-container">
-                    <h1>Make a Booking</h1>
-                    <p>
-                        If you're in need of a sitter, make a booking with us below.
-                        <br>
-                        Ensure to include any special requests for your furries or any 
-                        information about your trip that would be helpful for us to know. 
-                    </p>
-                </div>
+        <div class="row">
+            <div class="col-12 text-container">
+                <h1>Make a Booking</h1>
+                <p>
+                    If you're in need of a sitter, make a booking with us below.
+                    <br>
+                    Ensure to include any special requests for your furries or any 
+                    information about your trip that would be helpful for us to know. 
+                </p>
             </div>
-            {% if not booked %}
-
-                <!-- Error Message -->
-                {% if error %}
-                    <h1 class="alert alert-success success-msg error-msg">{{error}}</h1>
-                {% endif %}
-
-                <h3>Your Details</h3>
-
-                {{ form.media }} 
-                <p>You are making a booking for {{ cats|length }} cat{{ cats|length|pluralize }}: </p>
-                    <ul>
-                        {%  for cat in cats %}
-                            <li>{{ cat }}</li>
-                        {% endfor %}
-                    </ul>
-                <div class="form-container">
-                    <form method="POST">
-                        {% csrf_token %}
-                        {{ form | crispy }}
-                        <button type="submit" class="btn btn-custom-dark btn-card submit-btn mt-2">Proceed to Payment</button>
-                    </form>
-                </div>
-
-            {% else %}
-                <!-- Confimation Message -->
-                <div class="row p-4">
-                    <div class="col-12">
-                        <h1>Thank you!</h1>
-                        <p>We look forward to meeting your furries!</p>
-                        <p>You will have recieved a confirmation email and we'll soon be in touch to discuss details.</p>
-                    </div>
-                </div>
+        </div>
+        {% if not booked %}
+            {% if error %}
+                <h1 class="alert alert-success success-msg error-msg">{{error}}</h1>
             {% endif %}
+            <!-- summary of cat information for the user -->
+            <h3>Your Details</h3>
+            {{ form.media }} 
+            <p>You are making a booking for {{ cats|length }} cat{{ cats|length|pluralize }}: </p>
+                <ul>
+                    {%  for cat in cats %}
+                        <li>{{ cat }}</li>
+                    {% endfor %}
+                </ul>
+            <!-- booking form -->
+            <div class="form-container">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button type="submit" class="btn btn-custom-dark btn-card submit-btn mt-2">Proceed to Payment</button>
+                </form>
+            </div>
+        {% endif %}
     </div>
 </div>
 

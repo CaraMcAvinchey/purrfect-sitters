@@ -5,6 +5,10 @@ import datetime
 
 
 class CheckoutForm(forms.ModelForm):
+    """
+    This class shows what inputs will be used in the form.
+    Also gets the widgets for form placeholders.
+    """
     class Meta:
         model = Checkout
         fields = ('street_address1', 'town_or_city', 'postcode')

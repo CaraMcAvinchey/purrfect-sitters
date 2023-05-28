@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %} - My Profile{% endblock %}
+{% block extra_title %} - Cat Profile{% endblock %}
 
 {% block extra_meta %}
 {% endblock %}
@@ -17,6 +17,7 @@
 </div>
 <hr>
     <div class="row p-4">
+        <!-- displays cat cards in a grid list -->
         {% for cats in cat_list %}
         <div class="col-md-6 col-lg-4">
             <div class="card-deck">
@@ -32,9 +33,11 @@
             </div>
         </div>
         {% empty %}
+            <!-- if no cats associated with the user -->
             <section class="text-center mt-5">
                 <h1>No cats here!</h1>
                 <p>You don't have any cats in the system yet.</p>
+                <a href="{% url 'add_cat' %}" class="btn btn-custom-dark btn-lg">Add a Cat</a>
             </section>
         {% endfor %}
     </div>  

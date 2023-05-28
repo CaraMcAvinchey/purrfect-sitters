@@ -12,6 +12,7 @@
             <h2>Edit a Cat</h2>
             <p>If any information about your cat is out-of-date, please update it for our cat sitters. 
                 <br>Ensure it is accurate.</p>
+            <!-- edit cat form -->
             <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}

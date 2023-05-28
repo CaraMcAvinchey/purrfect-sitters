@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %} - Add a Cat{% endblock %}
+{% block extra_title %} - Delete a Cat{% endblock %}
 
 {% block extra_meta %}
 {% endblock %}
@@ -11,6 +11,7 @@
         <div class="col-sm col-lg-6">
             <h2>Are you sure you want to delete {{ cat.cat_name }} ?</h2>
             <p>This action cannot be undone</p>
+            <!-- delete a cat confirmation -->
             <form method="POST" action="{% url 'delete_cat' cat.pk %}">
             {% csrf_token %}
             <button type="submit" class="btn btn-custom-dark">Delete</button>

@@ -7,6 +7,11 @@ from cat.models import Cat
 
 
 class Checkout(models.Model):
+    """
+    Model for the information of each checkout.
+    Includes methods for order number and overide 
+    for save method. 
+    """
 
     booking = models.ForeignKey(
             Booking,
@@ -50,7 +55,7 @@ class Checkout(models.Model):
 
     def _generate_order_number(self):
         """
-        Generate a random, unique order number using UUID
+        This method generates a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
 
