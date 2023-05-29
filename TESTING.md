@@ -24,19 +24,20 @@
 
 | Page | Result | Evidence |
 | :--- | :--- | :---: |
-| Home Page | Pass | [Home Page Validation](#) |
-| Services | Pass | [Privacy Page Validation](#) |
-| Cat Profile | Pass | [Terms & Conditions Page Validation](#) |
-| Cat Detail| Pass | [Delivery Page Validation](#) |
-| Edit Cat | Pass | [Contact Form Page Validation](#)|
-| Delete Cat | Pass | [Contact Success Page Validation](#) |
-| Booking | Pass |[Product Page Validation](#) |
-| Booking Success | Pass | [Product Detail Page](#) |
-| 400 Error | Pass | [Profile Page Validation](#) |
-| 403 Error | Pass | [Bag Page Validation](#) |
-| 404 Error | Pass | [Checkout Page Validation](#) |
-| 500 Error | Pass | [Checkout Success Page](#) |
-| 404 Error Page | Pass | [404 Page Validation](#) |
+| Home Page | Pass | [Home Page](#) |
+| Services | Pass | [Service Page](#) |
+| Cat Profile | Pass | [Cat Profile](#) |
+| Cat Detail| Pass | [Cat Detail](#) |
+| Edit Cat | Pass | [Edit Cat Page](#)|
+| Delete Cat | Pass | [Delete Cat Page](#) |
+| Booking | Fail |[Booking Page](#) |
+| My Bookings | Pass | [My Bookings](#) |
+| Checkout | Pass | [Checkout Page](#) |
+| Checkout Success | Fail | [Checkout Success Page](#) |
+| 404 Error | Pass | [Checkout Page](#) |
+
+**Please note:**
+The screenshots will show two warnings which I chose to ignore, both concerning the "type" attribute is unnecessary for JavaScript resources. Because these scripts concern my AWS S3 and I had a lot of difficulty getting my static files to load, didn't want to risk any issues on my deployed site. 
 
 ### CSS
 
@@ -60,38 +61,45 @@
 
 | File | Result | Evidence |
 | :--- | :--- | :---: |
-| custom_storages.py | Pass | [custom_storages.py validation](#) |
+| custom_storages.py | Pass | [urls.py validation](#) |
 | **PURRFECT SITTERS** |
-| seaside_sewing/settings.py | Pass | [settings.py validation](#) |
-| seaside_sewing/urls.py | Pass | [urls.py validation](#) |
+| purrfect_sitters/urls.py | Pass | [urls.py validation](#) |
 | **HOME** |
-| bag/apps.py | Pass | [apps.py validation](#) |
-| bag/contexts.py | Pass | [contexts.py validation](#) |
+| home/views.py | Pass | [apps.py validation](#) |
+| home/urls.py | Pass | [contexts.py validation](#) |
 | **SERVICES** |
-| checkout/admin.py | Pass | [admin.py validation](#) |
-| checkout/apps.py | Pass | [apps.py validation](#) |
+| service/models.py | Pass | [admin.py validation](#) |
+| service/views.py | Pass | [apps.py validation](#) |
+| service/admin.py | Pass | [apps.py validation](#) |
+| service/urls.py | Pass | [apps.py validation](#) |
 | **CAT** |
-| home/apps.py | Pass | [apps.py validation](#) |
-| home/urls.py | Pass | [urls.py validation](#)|
+| cat/models.py | Pass | [apps.py validation](#) |
+| cat/views.py | Pass | [urls.py validation](#)|
+| cat/urls.py | Pass | [urls.py validation](#)|
+| cat/admin.py | Pass | [urls.py validation](#)|
+| cat/form.py | Pass | [urls.py validation](#)|
 | **BOOKING** |
-| products/admin.py | Pass | [admin.py validation](#) |
-| products/apps.py | Pass | [apps.py validation](#) |
+| booking/models.py | Pass | [apps.py validation](#) |
+| booking/views.py | Pass | [urls.py validation](#)|
+| booking/urls.py | Pass | [urls.py validation](#)|
+| booking/admin.py | Pass | [urls.py validation](#)|
+| booking/form.py | Pass | [urls.py validation](#)|
 
 ## Visual (UI) Testing: Cross Browser and Cross Device Testing
-- The below combination of devices, browsers, and operating system were used to test the website. A range of viewport sizes were checked to see if users would have the same experience across multiple devices and browsers.
+- The below combination of devices, browsers, and operating system were used to test the website. A range of viewport sizes were checked to see if users would have the same experience across multiple devices and browsers. Priority was given to mobile devices and tablets. 
 
-| **TOOL / Device**           | **BROWSER**      | **OS**  | **SCREEN WIDTH** |
-|-----------------------------|------------------|---------|------------------|
-| dev tools: Galaxy Fold      | Chrome           | android | 280 x 653 px     |
-| dev tools: iPhone SE        | safari           | iOs     | 375 x 667 px     |
-| dev tools: Pixel 2          | Chrome           | android | 411 x 731        |
-| real phone: iPhone XR       | safari           | iOs     | 414 x 896 px     |
-| browserstack: Nexus 7       | Firefox          | android | 960 x 600 px     |
-| browserstack: iPhone 13 Pro | safari           | iOs     | 390px × 844px    |
-| real tablet: iPad Pro 11    | Chrome           | iOs     | 834 x 1075 px    |
-| real laptop: Macbook Pro    | Firefox & Chrome | iOs     | 1400 x 766 px    |
-| broswerstack                | Firefox          | iOs     | 1440 x 672 px    |
-| browserstack                | Edge 99          | windows | 1440 x 672 px    |
+| **TOOL / Device**           | **BROWSER**      | **OS**  | **SCREEN WIDTH** | Passed 
+|-----------------------------|------------------|---------|------------------|---------
+| dev tools: Galaxy Fold      | Chrome           | android | 280 x 653 px     |Yes
+| dev tools: iPhone SE        | safari           | iOs     | 375 x 667 px     |Yes
+| dev tools: Samsung S8+      | Chrome           | android | 360 x 740 px     |Yes
+| real phone: Pixel 6         | Chrome           | android | 393 x 851 px     |Yes
+| real phone: iPhone 14 Pro   | safari           | iOs     | 390 x 844 px     |Yes
+| browserstack: Nexus 7       | Firefox          | android | 960 x 600 px     |Yes
+| real tablet: Pixel Tablet   | Chrome           | android | 834 x 1075 px    |Yes
+| real laptop: Macbook Pro    | Firefox & Chrome | iOs     | 1400 x 766 px    |Yes
+| broswerstack                | Firefox          | iOs     | 1440 x 672 px    |Yes
+| browserstack                | Edge 99          | windows | 1440 x 672 px    |Yes
 
 ## Lighthouse
 
