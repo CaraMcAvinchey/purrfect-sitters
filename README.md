@@ -143,9 +143,9 @@ Cara McAvinchey
 
 
 - [X] C - Customers can create a booking through the site when logged in.
-- [] R - Future feature, users will receive an email with a summary of their booking. This is top priority for the next sprint.
-- [] U - Future feature, users can contact Purrfect Pets to update their booking for now.
-- [] D - Future feature, users can contact Purrfect Pets to delete their booking for now.
+- [ ] R - Future feature, users will receive an email with a summary of their booking. This is top priority for the next sprint.
+- [ ] U - Future feature, users can contact Purrfect Pets to update their booking for now.
+- [ ] D - Future feature, users can contact Purrfect Pets to delete their booking for now.
 
 ##### Cat
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4f775f4f-9df9-49d4-885a-2f86fcf74922)
@@ -158,18 +158,18 @@ Cara McAvinchey
 ##### Service
 <img width="277" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/35e58951-bdc2-4b9a-ad54-e9ecd32b3cac">
 
-- [] C - Customers can sign up and register a profile thanks to Django allauth system. 
-- [] R - Customers can view the packages on offer via the service page.
-- [] U - Customers can update their cat detail cards if needed.
-- [] D - Customers can delete a cat if they no longer need future cat sitting services for that pet.
+- [ ] C - This is a static model, future feature will allow creation of packages via a managmement panel.
+- [X] R - Customers can view the packages on offer via the service page.
+- [ ] U - Creation of a management panel on the frontend in a future iteration can allow for this.
+- [ ] D - Deletion of packages is managed via the admin panel for now.
 
 ##### Checkout
 <img width="277" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/35e58951-bdc2-4b9a-ad54-e9ecd32b3cac">
 
-- [] C - Customers can create a new payment once they've made a booking. 
-- [] R - Customers will be able to view a booking summary and payment information in a future implementation.
-- [] U - The user is unable to edit their checkout once processed.
-- [] D - The user will be able to delete their booking and request a refund in a later interation.
+- [X] C - Customers can create a new payment once they've made a booking. 
+- [ ] R - Customers will be able to view a booking summary and payment information in a future implementation.
+- [ ] U - The user is unable to edit their checkout once processed.
+- [ ] D - The user will be able to delete their booking and request a refund in a later interation.
 
 ### Skeleton
 #### Wireframes
@@ -304,6 +304,7 @@ Cara McAvinchey
 | 3 | Allowing reviews of the service can increase interaction with customer to brand and can be helpful in converting new customers who visit the site. | MEDIUM |
 | 4 | Creation of optional registration/sign-in using social media accounts would improve user experience and increase trust of the brand | MEDIUM |
 | 5 | Instead of deleting a cat, a softer feature can allow for users to 'check' a cat for booking in the event a pet is deceased. | LOW |
+| 6 | Building an management dashboard for the owner on the front-end to easily manage bookings and payments | MEDIUM |
 
 ## Web Marketing Strategies
 - The following strategies for Purrfect Sitters have been considered and a combination of strategies can be implemented as the company grows.
