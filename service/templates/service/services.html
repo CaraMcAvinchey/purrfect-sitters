@@ -24,8 +24,8 @@
                     <div class="p-2 bd-highlight">
                         <h2><i class="fa-solid fa-paw"></i> {{ service.service_name }}</h2>
                         <p class="font-weight-bold">{{ service.get_service_choice_display }}</p>
-                        <span>{{ service.service_description | safe }}</span>
-                        <d>£{{ service.price }}</p>
+                        <div>{{ service.service_description | safe }}</div>
+                        <p>£{{ service.price }}</p>
                     </div>
                 </article>
             {% endfor %}
