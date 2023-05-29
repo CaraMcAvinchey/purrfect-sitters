@@ -15,7 +15,6 @@
 - [Automatic Testing](#automatic-testing)
 - [Manual Testing](#manual-testing)
   * [Testing User Stories](#testing-user-stories)
-- [Usability Testing](#usability-testing)
 - [Outstanding Defects](#outstanding-defects)
 - [Defects of Note](#defects-of-note)
 
@@ -31,10 +30,10 @@
 | [Edit Cat Page](documentation/testing/html/edit-cat-page-html.jpg) | Pass |
 | [Delete Cat Page](documentation/testing/html/delete-cat-page-html.jpg) | Pass |
 | [Booking Page](documentation/testing/html/booking-page-html.jpg) | Fail |
-| [My Bookings](documentation/testing/html/home-page.jpg) | Pass |
-| [Checkout Page](documentation/testing/html/home-page.jpg) | Pass |
-| [Checkout Success Page](documentation/testing/html/home-page.jpg) | Pass |
-| [Error 404](documentation/testing/html/home-page.jpg) | Pass |
+| [My Bookings](documentation/testing/html/my-booking-page-html.jpg) | Pass |
+| [Checkout Page](documentation/testing/html/checkout-html.jpg) | Pass |
+| [Checkout Success Page](documentation/testing/html/checkout-success-html.jpg) | Pass |
+| [Error 404](documentation/testing/html/error404-page-html.jpg) | Pass |
 
 **Please note:**
 - The screenshots will show two warnings which I chose to ignore, both concerning the "type" attribute is unnecessary for JavaScript resources. Because these scripts concern my AWS S3 and I had a lot of difficulty getting my static files to load, didn't want to risk any issues on my deployed site. 
@@ -108,42 +107,58 @@
 
 ## Lighthouse
 
-I have used Googles Lighthouse testing to test the performance, accessibility, best practices and SEO of the site.
+For the performance, accessibility, best practices and SEO of the site for mobile and desktop, [Page Speed](https://pagespeed.web.dev/) and the major pages were passed through the validation. 
 
 #### Desktop Results
 
 | Page | Result |
 | :--- | :--- |
-| Home Page | ![Home Desktop Lighthouse Testing](#) |
-| Products Page | ![Products Desktop Lighthouse Testing](#) |
+| Home Page | ![Home Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/44b1ea5d-7249-44c6-ac9a-182ac96675e5)) |
+| Service Page | ![Service Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/46ec7bd9-d9b6-4310-96df-163b0002fb53)) |
+| Cat Profile | ![Cat Profile Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4ee1c5c2-3c1b-4319-b567-3bff7b618991)) |
+| Booking | ![Products Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4a296c73-ea93-4a6b-a212-8d09b828e3b1)) |
+| Checkout | ![Products Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/8cf8aaf8-c844-47ec-bce1-a7692134348c)) |
+
+- Desktop performed well on all major pages of the site with minimal improvements needed.
 
 #### Mobile Results
 
 | Page | Result |
 | :--- | :--- |
-| Home Page | ![Home Page Mobile Lighthouse Testing](#) |
-| Products Page | ![Product Mobile Lighthouse Testing](#) |
+| Home Page | ![Home Page Mobile Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/3f6e7683-ab77-4ac4-be30-ba032f97999a)) |
+| Service Page | ![Service Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ca279d62-faca-400f-8f4c-a1acdcf2770b)) |
+| Cat Profile | ![Cat Profile Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/73b6a7fc-dfd1-4495-ae10-dd2289de1825)) |
+| Booking | ![Products Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/34339825-73d0-472e-b55b-9f9e12cb9c8b)) |
+| Checkout | ![Products Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ef87ed91-7e76-41a1-848f-b7f0eafc8f8b)) |
+
+- Mobile performance can improve, where performance was slowed in first contentful paint and largest contentful paint metrics.
+- This is a result of render-blocking resources mostly from Bootstrap and AWS which requires further investigation to resolve.
+
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/38e7a58e-e690-440a-8a8a-fc6015dbcc87)
+
 
 ### Wave
 
-WAVE(Web Accessibility Evaluation Tool) allows developers to create content that is more accessible to users with disabilities. It does this by identifying accessibility and WGAC errors.
+WAVE(Web Accessibility Evaluation Tool) allows developers to create content that is more accessible to users with disabilities. It does this by identifying accessibility and WGAC errors. The following pages were tested:
 
 | Page | Errors |
 | :--- | :--- |
-| Home Page | No errors|
-| Products Page | No errors |
-| Product Details Page | No errors |
-| Add Product Page | No errors |
-| Edit Product Page | No errors |
-| Bag Page | No errors |
-| Checkout Page | No errors |
-| Checkout Success Page | No errors |
-| Profile Page |No errors. |
-| Contact Us Page | No errors |
-| Privacy Policy Page| No errors |
-| Terms & Conditions Page | No errors |
-| Delivery Policy Page | No errors |
-| 404 Error Page | No errors |
+| Home Page | 1 error|
+| Service Page | No errors |
+| Cat Profile | No errors |
+| Cat Detail| No errors |
+| Add Cat | No errors |
+| Edit Cat| No errors |
+| Booking | No errors |
+| Checkout | No errors |
+
+- Below highlights one error which is rooted in the footer caused by a missing form label in the embedded MailChimp newsletter code. This isn't for the input field that the user sees but a hidden field included in the code to prevent spam bots. No changes made to this as to not risk it's functionalities.
+
+<img width="1437" alt="wave-home" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/65355df7-62dd-46ae-a596-9586de536eec">
+
+<img width="575" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/e86ff1a7-aad4-4bd3-8db9-88d54d97a3c3">
+
+- This error therefore is present on all pages but is recorded above on the home page and to confirm every other page doesn't have additional errors over and above the one mentioned.
 
 ## Automated Testing
 - Manual testing was done due to time constraints.
@@ -154,22 +169,38 @@ WAVE(Web Accessibility Evaluation Tool) allows developers to create content that
 ## Manual Testing
 
 ### Testing User Stories
- User Story ID | As a/an | I want to be able to ... | So that I can... | How is this achieved? | Evidence |
-| :--- | :--- | :--- | :---| :--- | :---: |
-| **VIEWING & NAVIGATION** |
-| 1 | User | XX | XX | XX | [1](#) & [2](#) |
-| 2 | User | XX | XX | XX | [1](#) & [2](#) |
-| 3 | User | XX | XX | XX | [1](#) & [2](#) |
-| 4 | User | XX | XX | XX | [1](#) & [2](#) |
+- Each completed user story on the [sprint backlog](https://github.com/users/CaraMcAvinchey/projects/5) was tested against the acceptance criteria, see the corresponding screenshots as evidence.
+- This included reviewing each feature to check the usability, visual design and performance.
 
-## Usability Testing
-- You can view manual testing of the website [here](#).
+ User Story ID | User Story| Acceptance Criteria | Evidence | Evidence | Evidence |
+| :--- | :--- | :--- | :---| :---| :---|
+| **VIEWING & NAVIGATION** |
+| 1 | As a user, I can view the landing page so that I can find key information about the company and it's services. | XX | XX | XX | XX |
+| 2 | As a user, I can view the packages offered by Purrfect Sitters, so that I can learn more about the service in detail. | XX | XX | XX | XX |
+| 3 | As a new user, I can easily find the contact information of Purrfect Sitters, so that I can reach out to them for more information. | XX | XX | XX | XX |
+| 4 | As a user, I can easily connect with the social media accounts of Purrfect Sitters, so that I can learn more about the activities of the brand. | XX | XX | XX | XX |
+| 5 | As a user, I can sign up to receive a newsletter from Purrfect Pets, so that I can get updates about the company and its services. | XX | XX | XX | XX |
+| 6 | As a new or authenticated user, I can be notified once completing an important action on the website, so I know what I was last doing. | XX | XX | XX | XX |
+| 7 | As a new user, I can safely register for an account with an email and password, so that I can book cat-sitting services with Purrfect Sitters. | XX | XX | XX | XX |
+| 8 | As an authenticated user, I can view my profile information when logged in, so that I can ensure it is complete and up-to-date. | XX | XX | XX | XX |
+| 9 | As a user, I can safely login and logout of my account so that I can keep my information private. | XX | XX | XX | XX |
+| 10 | As an authenticated user, I can create a profile with information about each of my cats, so that I can get personalised service from the cat sitter. | XX | XX | XX | XX |
+| 11 | As an authenticated user, I can edit/update information about each cat in my profile, so that I can receive accurate services for my cats. | XX | XX | XX | XX |
+| 12 | As an authenticated user, I can delete a cat from my profile, so that I can remove a cat that is no longer in need of cat-sitting services. | XX | XX | XX | XX |
+| 13 | As an authenticated user, I can receive a notification confirming if I've added, edited or deleted a cat profile so that I can keep track of my cat profiles. | XX | XX | XX | XX |
+| 14 | As the site owner, I can access the admin panel as a superuser, so that I can view and manage user profiles when required. | XX | XX | XX | XX |
+| 15 | As an authenticated user, I can easily make a booking using a form, so that I can schedule cat-sitting services with Purrfect Sitters. | XX | XX | XX | XX |
+| 16 | As an authenticated user, I can easily enter my payment information, so that I can check out quickly and with no hassles. | XX | XX | XX | XX |
+| 17 | As a site owner, I want to collect payment for sittings so I do not have to deal with checks or cash collections for my services. | XX | XX | XX | XX |
+| 18 | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. | XX | XX | XX | XX |
+| 19 | As a site owner, I can charge a customer an extra fee if they have more than three cats, so that I can be prepared for the additional care required during a visit. | XX | XX | XX | XX |
+| 20 | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. | XX | XX | XX | XX |
 
 ## Outstanding Defects
 - The following outstanding defects are listed below and are ongoing, with steps of how these issues were investigated and dealt with thus far:
 
 **Booking**
-- The booking page did not pass validation and raised two errors with can be seen [here](documentation/testing/html/booking-html-error-max.jpg) and [here](documentation/testing/html/booking-html-error-min.jpg) which were a result of the Django date picker widget including min and max value attributes in the input tag.
+- The booking page did not pass html validation and raised two errors with can be seen [here](documentation/testing/html/booking-html-error-max.jpg) and [here](documentation/testing/html/booking-html-error-min.jpg) which were a result of the Django date picker widget including min and max value attributes in the input tag.
 - To fix this error the SelectDateWidget was investigated as an alternative: https://docs.djangoproject.com/en/4.2/ref/forms/widgets/.
 - However, this altered the structure of the form to a less user friendly structure rendering an additonal three fields (one for day, one for month, one for year) which wasn't visually pleasing compared to the calender form and added increased the time to make a booking.
 - For the sake of user experience, and concern that the new format would distrupt the passing of data between views, this issue is ongoing and a solution was not found prior to the hand in date. 
