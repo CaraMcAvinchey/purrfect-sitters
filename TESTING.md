@@ -1,4 +1,23 @@
-## TESTING
+# Purrfect Sitters - Testing Documentation
+
+[image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/d696328a-dc32-434a-9083-ba7c8d9e99ab)
+
+## Contents
+- [Validation Testing](#validation-testing)
+  * [CSS](#css)
+  * [JavaScript](#javascript)
+  * [Python](#python)
+- [Visual (UI) Testing: Cross Browser and Cross Device Testing](#visual--ui--testing--cross-browser-and-cross-device-testing)
+- [Lighthouse](#lighthouse)
+    + [Desktop Results](#desktop-results)
+    + [Mobile Results](#mobile-results)
+  * [Wave](#wave)
+- [Automatic Testing](#automatic-testing)
+- [Manual Testing](#manual-testing)
+  * [Testing User Stories](#testing-user-stories)
+- [Usability Testing](#usability-testing)
+- [Outstanding Defects](#outstanding-defects)
+- [Defects of Note](#defects-of-note)
 
 ## Validation Testing
 [W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the site. It was also used to validate the CSS. As the site is created with Django and utilises Django templating language within the HTML, I have checked the HTML by inspecting the page source and then running this through the validator.
@@ -135,3 +154,5 @@ WAVE(Web Accessibility Evaluation Tool) allows developers to create content that
 
 ## Defects of Note
 - XX
+
+[Back to the beginning](#table-of-contents)
