@@ -1,7 +1,7 @@
 # Purrfect Sitters - Cat Sitting Service 
-(image)
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/d696328a-dc32-434a-9083-ba7c8d9e99ab)
 
-* You can view the deployed website [here](#).
+* You can view the deployed website [here](https://purrfect-sitters-service.herokuapp.com/).
 
 ## Author
 Cara McAvinchey 
@@ -22,21 +22,21 @@ Cara McAvinchey
 (table) 
 #### Database Schema
 
-![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/9d8774f5-14a6-4f96-9f3b-1cd70cad3f13)
+<img width="489" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/afbea4c5-1f02-44d7-a0bc-160975ffa296">
 
 * A relational database was designed and the data is represented above in an ERD with four custom models.
-* The checkout model was based off Boutque Ado walkthrough project with some adjustments.
+* The checkout model was based off Boutique Ado walkthrough project with some adjustments.
 * The number of cats per profile is connected to the owner.
 * The Cat model is built to have full CRUD functionalities.
 * The Booking model will be implemented with full CRUD in the next interation due to time contraints and therefore will be a future feature.
-* The Service model will add the ability to add, update, delete and edit package information from the client-side in a future implementation.
+* The Service model will add the ability to add, update, delete and edit package information from the frontend in a future implementation.
 
 ##### Booking
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/126bbcbf-3db3-4ac2-98ae-e8bf19163749)
 
 
 - [X] C - Customers can create a booking through the site when logged in.
-- [] R - Future feature, users will receive an email with a summary of their booking.
+- [] R - Future feature, users will receive an email with a summary of their booking. This is top priority for the next sprint.
 - [] U - Future feature, users can contact Purrfect Pets to update their booking for now.
 - [] D - Future feature, users can contact Purrfect Pets to delete their booking for now.
 
@@ -47,6 +47,22 @@ Cara McAvinchey
 - [X] R - Customers can see a list of their cats added to their profile and click for further information.
 - [X] U - Customers can update their cat detail cards if needed.
 - [X] D - Customers can delete a cat if they no longer need future cat sitting services for that pet.
+
+##### Service
+<img width="277" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/35e58951-bdc2-4b9a-ad54-e9ecd32b3cac">
+
+- [] C - Customers can sign up and register a profile thanks to Django allauth system. 
+- [] R - Customers can view the packages on offer via the service page.
+- [] U - Customers can update their cat detail cards if needed.
+- [] D - Customers can delete a cat if they no longer need future cat sitting services for that pet.
+
+##### Checkout
+<img width="277" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/35e58951-bdc2-4b9a-ad54-e9ecd32b3cac">
+
+- [] C - Customers can create a new payment once they've made a booking. 
+- [] R - Customers will be able to view a booking summary and payment information in a future implementation.
+- [] U - The user is unable to edit their checkout once processed.
+- [] D - The user will be able to delete their booking and request a refund in a later interation.
 
 ### Skeleton
 #### Wireframes
@@ -127,6 +143,7 @@ Cara McAvinchey
 - The users will have a choice of home, login/logout & register when visiting the site. 
 - There is a subtle hover state on each of the navigation items for better user experience.
 - For mobile devices, the navigation toggles to a hamburger menu.
+- The user name is displayed when logged in and a drop down is displayed for my profile and logout buttons.
 
 ### Register 
 - The user will be able to easily sign up as a user using the below form.
@@ -135,29 +152,49 @@ Cara McAvinchey
 ### Login/Logout 
 - The users can easily sign in using the below form with an option to 'remember me' if desired.
 - If a user hasn't registered, there is a link to easily navigate to sign up instead.
+- For any user accessing a page which requires an account, they will be directed to the sign up page.
 
 ### Footer
-- The footer links directly to the social media pages of the plant care blog.
+- The footer links directly to the social media pages of the plant care blog using ```rel="noopener noreferrer"``` attributes.
 - There is a subtle hover state on each icon for better user experience.
+- All users are able to access the contact information of the service via the footer.
+- There is a small description of the page which summarises the page intent.
+- If users wish to sign up to a newsletter, they can do so easily by inputting their email address. 
 
 ### Error 400/404/403/500
 - There are error pages in place in case a user is taken to a restricted area or the page doesn't exist.
-- The return home button will take the user back to the plant list page.
+- The customised pages give information about the error and next steps to take.
 
 ### Services Page
-- XX
+- Both new and registered users can see the current packages on offer with a name, price and description.
+- This is updated via the admin panel, with future plans to create a management dashboard on the front-end.
 
 ### Cat Profile Page
-- XX
+- If a user has registered a profile, they can add a cat and complete information about their pet for the cat sitter using a form.
+- For users who don't have any cats, a helpful message will guide them to add one.
+- This profile is displayed alongside other cats on the user profile in a stacked card format using Bootstrap cards.
+- Each action taken on a cat profile is notified using Bootstrap Toasts.
+
+### Cat Detail Pages
+- If a user has registered a profile and have loaded cats onto their profile, they can click on the card to see additional information.
+- The user is able to read the additional information they added about their cat and can edit/update the information via a form.
+- This form allows for the original photo of the cat to be kept.
+- If the user would like to delete their cat, they can do so via this page with a warning to prompt them before hand.
 
 ### Bookings Page
-- XX
+- The user has multiple access points to the booking form including via the navigation, landing page and my profile page when viewing cats.
+- If not logged in, they'll be directed to the login page.
+- The form has checks in place for double booking dates, dates booked in the past and for phone number formatting.
+- Thanks to crispy forms, input validation is present for required fields and toasts will update the user if the booking went through.
 
 ### Future Features
-- It will become less efficient for the user to scroll through many posts in the list view so a search bar will allow users to find specific plants they want to read more about.
-- It would increase user experience to add a method to 'save' blog posts so users can keep their favourite plants in one place.
-- To increase user interactivity from readers, users could rate blog posts on how helpful the information was and give feedback.
-- Pending comments can be added so users are aware they are awaiting approval. 
+- This is a project with a lot of potential and due to the time constraints of the current implementation, I am very excited to be able to roll-out the below future features in the next sprint:
+
+1. Being able to add full CRUD to bookings will ensure a smoother user experience and an easier management for the site owner. 
+2. Creating webhooks for a more robust payment system. Due to ongoing errors this was not able to be implemented.
+3. Allowing reviews of the service can increase interaction with customer to brand and can be helpful in converting new customers who visit the site.
+4. Creation of optional registration/sign-in using social media accounts would improve user experience and increase trust of the brand.  
+5. Instead of deleting a cat, a softer feature can allow for users to 'check' a cat for booking in the event a pet is deceased.
 
 ## Web Marketing Strategies
 - The following strategies for Purrfect Sitters have been considered and a combination of the below can be implemented.
@@ -189,7 +226,7 @@ Cara McAvinchey
 - This can allow for links to the website content, directing web traffic to the Purrfect Sitters website. 
 - It can also drive traffic to the newsletter to share more long form content. 
 - Brand campaigns can be developed e.g. interviewing customers and getting testimonials in written or video format. 
-- Paid Instagram and Facebook ads can be used as a driver to the webiste
+- Paid Instagram and Facebook ads can be used as a driver to the webiste.
 
 <img width="392" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/99878dcc-fe87-4394-b36d-451797bc081f">
 
