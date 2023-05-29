@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /accounts/
+Sitemap: https://purrfect-sitters-service.herokuapp.com/sitemap.xml
