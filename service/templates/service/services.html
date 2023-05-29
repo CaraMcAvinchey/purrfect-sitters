@@ -13,9 +13,7 @@
         <div class="col-12">
             <h1>Our Services</h1>
             <p>Find out more about our packages and our frequently asked questions.</p>
-            <a href="{% url 'booking' %}">
-                <button type="button" class="btn btn-custom-dark mt-2 btn-lg">Book now</button>
-            </a>
+            <a href="{% url 'booking' %}" class="btn btn-custom-dark mt-2 btn-lg">Book now</a>
         </div>
     </div>
 
@@ -26,8 +24,8 @@
                     <div class="p-2 bd-highlight">
                         <h2><i class="fa-solid fa-paw"></i> {{ service.service_name }}</h2>
                         <p class="font-weight-bold">{{ service.get_service_choice_display }}</p>
-                        <p>{{ service.service_description | safe }}</p>
-                        <p>£{{ service.price }}</p>
+                        <span>{{ service.service_description | safe }}</span>
+                        <d>£{{ service.price }}</p>
                     </div>
                 </article>
             {% endfor %}
@@ -41,7 +39,7 @@
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h3 class="mb-0">
-                    <button type="button" class="btn btn-link text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne"
+                    <button class="btn btn-link text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne"
                         aria-expanded="true" aria-controls="collapseOne">
                         How far in advance should I book a sitter?
                     </button>
@@ -58,7 +56,7 @@
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h3 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                    <button class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="false" aria-controls="collapseTwo">
                         What if I have special requests for my cats?
                     </button>
@@ -75,7 +73,7 @@
         <div class="card">
             <div class="card-header" id="headingThree">
                 <h3 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseThree"
+                    <button class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseThree"
                         aria-expanded="false" aria-controls="collapseThree">
                         My cat has a medical condition, are you willing to administer medication?
                     </button>
@@ -93,7 +91,7 @@
         <div class="card">
             <div class="card-header" id="headingFour">
                 <h3 class="mb-0">
-                    <button  type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFour"
+                    <button class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFour"
                         aria-expanded="false" aria-controls="collapseFour">
                         What happens in an emergency?
                     </button>
@@ -110,7 +108,7 @@
         <div class="card">
             <div class="card-header" id="headingFive">
                 <h3 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFive"
+                    <button class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseFive"
                         aria-expanded="false" aria-controls="collapseFive">
                         I have more than 3 cats, what is your rate?
                     </button>
@@ -126,7 +124,7 @@
         <div class="card">
             <div class="card-header" id="headingSix">
                 <h3 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseSix"
+                    <button class="btn btn-link collapsed text-body accordion-button" type="button" data-toggle="collapse" data-target="#collapseSix"
                         aria-expanded="false" aria-controls="collapseSix">
                         I want the sitter to spend more than 60 minutes with my cat is that possible?
                     </button>
