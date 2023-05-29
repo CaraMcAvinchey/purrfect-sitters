@@ -297,11 +297,13 @@ Cara McAvinchey
 ### Future Features
 - This is a project with a lot of potential and due to the time constraints of the current implementation, I am very excited to be able to roll-out the below future features in the next sprint:
 
-1. Being able to add full CRUD to bookings will ensure a smoother user experience and an easier management for the site owner. 
-2. Creating webhooks for a more robust payment system. Due to ongoing errors this was not able to be implemented.
-3. Allowing reviews of the service can increase interaction with customer to brand and can be helpful in converting new customers who visit the site.
-4. Creation of optional registration/sign-in using social media accounts would improve user experience and increase trust of the brand.  
-5. Instead of deleting a cat, a softer feature can allow for users to 'check' a cat for booking in the event a pet is deceased.
+|  | FEATURE | PRIORITY |
+|---|---|---|
+| 1 | Creating webhooks for a more robust payment system. Due to ongoing errors this was not able to be implemented. | HIGH |
+| 2 | Being able to add full CRUD to bookings will ensure a smoother user experience and an easier management for the site owner. | HIGH |
+| 3 | Allowing reviews of the service can increase interaction with customer to brand and can be helpful in converting new customers who visit the site. | MEDIUM |
+| 4 | Creation of optional registration/sign-in using social media accounts would improve user experience and increase trust of the brand | MEDIUM |
+| 5 | Instead of deleting a cat, a softer feature can allow for users to 'check' a cat for booking in the event a pet is deceased. | LOW |
 
 ## Web Marketing Strategies
 - The following strategies for Purrfect Sitters have been considered and a combination of strategies can be implemented as the company grows.
