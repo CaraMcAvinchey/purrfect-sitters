@@ -1,6 +1,6 @@
 # Purrfect Sitters - Testing Documentation
 
-[image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/d696328a-dc32-434a-9083-ba7c8d9e99ab)
+![241733671-d696328a-dc32-434a-9083-ba7c8d9e99ab](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/069a88aa-b43d-4e61-a5b5-57a3cef85e77)
 
 ## Contents
 - [Validation Testing](#validation-testing)
@@ -58,7 +58,7 @@
 
 | File | Result |
 | :--- | :--- |
-| [checkout/static/stripe_elements.js](documentation/testing/js/js-hint-stripe.jpg)
+| [checkout/static/stripe_elements.js](documentation/testing/js/js-hint-stripe.jpg) | Pass |
 
 ### Python
 
