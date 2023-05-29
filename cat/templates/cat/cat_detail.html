@@ -14,7 +14,7 @@
             <p>{{ cat.cat_gender }}, {{ cat.cat_age }}</p>
 
             <h4>Description:</h4>
-            <p>{{ cat.cat_description | safe }}</p>
+            <div>{{ cat.cat_description | safe }}</div>
             
             <h4>Vet Contact:</h4>
             <p>{{ cat.vet_contact.as_international }}</p>
