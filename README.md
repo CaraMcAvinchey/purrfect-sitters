@@ -3,7 +3,7 @@
 
 Purrfect Sitters is an online cat sitting service which offers trusted and affordable care for your beloved feline friends. Book a cat sitter to visit your home whilst you are away and choose between various time packages. Register a profile, add your cats information to our site and complete a simple booking and online payment to get started.
 
-* You can view the deployed website [here](https://purrfect-sitters-service.herokuapp.com/).
+You can view the deployed website [here](https://purrfect-sitters-service.herokuapp.com/).
 
 ## Author
 Cara McAvinchey 
@@ -11,8 +11,6 @@ Cara McAvinchey
 ## Contents
 
 - [Purrfect Sitters - Cat Sitting Service](#purrfect-sitters---cat-sitting-service)
-  * [Author](#author)
-  * [Contents](#contents)
   * [User Experience](#user-experience)
     + [Strategy](#strategy)
       - [Project Goals](#project-goals)
@@ -67,9 +65,9 @@ Cara McAvinchey
     + [ElephantSQL](#elephantsql)
     + [Heroku](#heroku)
     + [GitHub/GitPod](#github-gitpod)
-  * [CREDITS](#credits)
+  * [Credits](#credits)
     + [Media](#media)
-  * [ACKNOWLEDGEMENTS](#acknowledgements)
+  * [Acknowledgements](#acknowledgements)
 
 ## User Experience
 
@@ -184,8 +182,8 @@ Cara McAvinchey
 <img width="916" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/31803c0c-3319-417d-96ed-75e5be05f128">
 
 ##### Services Page
-- The page is to summarises the services offered including name, time and price.
-- There is an FAQ section for new or returning users to refer to if needed.
+- The page is to summarises the services offered including name, time and price with a call to action button.
+- There is an FAQ section for new or returning users to refer to if needed. Designed using Bootstrap accordian feature.
 
 <img width="566" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/b8dc6b4f-dc68-4052-95ac-d0222487f34a">
 
@@ -197,9 +195,9 @@ Cara McAvinchey
 <img width="415" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/9c6f36f0-39d7-4965-92b8-58a61203a972">
 
 ##### Cat Profile Page
-- The users will be able to view a list of their cats in easy to read cards using Bootstrap to achieve this.
+- The users can view a list of their cats in easy to read cards using Bootstrap to achieve this.
 - If they do not have cats, a message will be displayed accordingly.
-- Functionalities will be added to edit and delete cat profiles.
+- Functionalities to edit and delete cat profiles from the front-end to increase user experience.
 
 <img width="631" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/461013da-25d9-42da-a6b2-d2ca1f6203c3">
 <img width="362" alt="image" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4c2cb889-b839-4350-bb3d-506960722d91">
@@ -457,7 +455,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/7412eec2-b6c2-42ac-aba7-81b80b3b5774)
 
-## CREDITS
+## Credits
 - The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
 - Seaside Sewing by Kera Kudmore was a great source of inspiration and best practice regarding testing and README structure.
 - Escape Room by Freddie Boys helped to understand the code logic for a service based website and was a great reference point.
@@ -470,7 +468,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 - The favicon image was converted using [Favicon.io](https://favicon.io/).
 - The ERD was created with [draw.io](https://www.drawio.com/).
 
-## ACKNOWLEDGEMENTS
+## Acknowledgements
 - Thank you to my mentor Malia for continuous helpful feedback and support throughout the project.
 - I greatly appreciate the tutors at Code Institute for their patience and support.
 - The Code Institute Slack community for tips and guidance.
