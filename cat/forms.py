@@ -12,8 +12,8 @@ class AddCatForm(forms.ModelForm):
     If a user adds a cat, image field is required.
     """
     vet_contact = PhoneNumberField(
-        widget=PhoneNumberPrefixWidget(
-            attrs={'placeholder': '079 1138 9779'}))
+        widget=PhoneNumberPrefixWidget(),
+    )
 
     class Meta:
         model = Cat
@@ -40,8 +40,8 @@ class EditCatForm(forms.ModelForm):
     If they are updating a cat, they can keep the existing image.
     """
     vet_contact = PhoneNumberField(
-        widget=PhoneNumberPrefixWidget(
-            attrs={'placeholder': '079 1138 9779'}))
+        widget=PhoneNumberPrefixWidget()
+    )
 
     class Meta:
         model = Cat
