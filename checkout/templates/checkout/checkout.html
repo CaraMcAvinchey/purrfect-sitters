@@ -44,17 +44,17 @@
                     <!-- Pass the client secret to the view so we can get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
 
-                    <button type="submit-button" id="submit-button" class="btn btn-custom-dark btn-lg submit-btn mt-2">Confirm</button>
+                    <button type="submit" id="submit-button" class="btn btn-custom-dark btn-lg submit-btn mt-2">Confirm</button>
                 </form>
             </div>
     </div>
 </div>
 <div id="loading-overlay">
-    <h1 class="text-light logo-font loading-spinner">
+    <div class="text-light logo-font loading-spinner">
         <span class="icon">
             <i class="fas fa-3x fa-sync-alt fa-spin"></i>
         </span>
-    </h1>
+    </div>
 </div>
 
 {% endblock %}
