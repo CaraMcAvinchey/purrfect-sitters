@@ -57,3 +57,15 @@ def booking(request):
         }
 
     return render(request, 'booking/booking.html', context)
+
+
+@login_required
+def my_bookings(request):
+    """
+    View to display the users booking page.
+    """
+    bookings = Booking.objects.filter(owner=request.user)
+    context = {
+        'bookings': bookings
+    }
+    return render(request, 'booking/my_bookings.html', context)
