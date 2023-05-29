@@ -27,9 +27,6 @@
             </div>
         </div>
         {% if not booked %}
-            {% if error %}
-                <h1 class="alert alert-success success-msg error-msg">{{error}}</h1>
-            {% endif %}
             <!-- summary of cat information for the user -->
             <h3>Your Details</h3>
             {{ form.media }} 

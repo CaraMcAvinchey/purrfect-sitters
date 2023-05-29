@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <h3 class="card-title"><i class="fa-solid fa-paw"></i> {{ cats.cat_name }}</h3>
                     <p>{{ cats.cat_gender }}, {{ cats.cat_age }}</p>
-                    <p>{{ cats.cat_description | safe }}</p>
+                    <div>{{ cats.cat_description | safe }}</div>
                     <a href="{% url 'cat_detail' cats.id %}" class="btn btn-custom-dark btn-lg">More</a>
                 </div>
                 </div>
