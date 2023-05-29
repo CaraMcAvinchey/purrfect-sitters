@@ -10,6 +10,67 @@ Cara McAvinchey
 
 ## Contents
 
+- [Purrfect Sitters - Cat Sitting Service](#purrfect-sitters---cat-sitting-service)
+  * [Author](#author)
+  * [Contents](#contents)
+  * [User Experience](#user-experience)
+    + [Strategy](#strategy)
+      - [Project Goals](#project-goals)
+    + [Scope](#scope)
+      - [Feature Planning](#feature-planning)
+    + [Structure](#structure)
+      - [User Stories](#user-stories)
+      - [Database Schema](#database-schema)
+        * [Booking](#booking)
+        * [Cat](#cat)
+        * [Service](#service)
+        * [Checkout](#checkout)
+    + [Skeleton](#skeleton)
+      - [Wireframes](#wireframes)
+        * [Landing Page](#landing-page)
+        * [Services Page](#services-page)
+        * [Account Page](#account-page)
+        * [Cat Profile Page](#cat-profile-page)
+        * [Bookings Page](#bookings-page)
+    + [Surface](#surface)
+      - [Brand](#brand)
+      - [Colors](#colors)
+      - [Typography](#typography)
+      - [Images/Icons](#images-icons)
+      - [Animations](#animations)
+      - [Responsiveness](#responsiveness)
+  * [Features](#features)
+    + [Navigation](#navigation)
+    + [Register](#register)
+    + [Login/Logout](#login-logout)
+    + [Footer](#footer)
+    + [Error 400/404/403/500](#error-400-404-403-500)
+    + [Services Page](#services-page-1)
+    + [Cat Profile Page](#cat-profile-page-1)
+    + [Cat Detail Pages](#cat-detail-pages)
+    + [Bookings Page](#bookings-page-1)
+    + [Future Features](#future-features)
+  * [Web Marketing Strategies](#web-marketing-strategies)
+    + [SEO](#seo)
+    + [Content Marketing](#content-marketing)
+      - [Email Marketing](#email-marketing)
+      - [Social Media Marketing](#social-media-marketing)
+    + [Paid Advertising](#paid-advertising)
+  * [Technologies](#technologies)
+    + [Languages](#languages)
+    + [Database](#database)
+    + [Frameworks](#frameworks)
+    + [Libraries & Packages](#libraries---packages)
+    + [Programs](#programs)
+  * [Testing](#testing)
+  * [Deployment](#deployment)
+    + [ElephantSQL](#elephantsql)
+    + [Heroku](#heroku)
+    + [GitHub/GitPod](#github-gitpod)
+  * [CREDITS](#credits)
+    + [Media](#media)
+  * [ACKNOWLEDGEMENTS](#acknowledgements)
+
 ## User Experience
 
 ### Strategy
@@ -245,7 +306,8 @@ Cara McAvinchey
 5. Instead of deleting a cat, a softer feature can allow for users to 'check' a cat for booking in the event a pet is deceased.
 
 ## Web Marketing Strategies
-- The following strategies for Purrfect Sitters have been considered and a combination of the below can be implemented.
+- The following strategies for Purrfect Sitters have been considered and a combination of strategies can be implemented as the company grows.
+- For an online service, word of mouth will be the strongest tool alongside online support as described below.
 
 ### SEO
 - The content of the website was written using a combination of short-tail and long-tail keywords without the use of keyword stuffing as a bad practice.
@@ -257,7 +319,7 @@ Cara McAvinchey
 - There is a lot of opportunity to grow a community of cat lovers via social media and the newsletter. 
 - This business will benefit the most from word-of-mouth and testimonials which will be a key content pillar for social.
 
-## Email Marketing
+#### Email Marketing
 
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/acf516c5-22f7-4c49-8f2e-7782cb1c541d)
 
@@ -267,7 +329,7 @@ Cara McAvinchey
 - Testing of approaches can be easily done to see which content generates referrals and sales. 
 - If there are competitions, offers or information accounements this channel can assist in information sharing with customers.
 
-## Social Media Marketing
+#### Social Media Marketing
 - The Facebook Business page for Purrfect Sitters will be setup as an initial entry into the social media marketing space. 
 - It would be benefical to setup an Instagram page which can link with Facebook and allow for more engagement with the target market.
 - The content would be a combination of light-hearted cat humour, educational anecdotes about cats, and brand information.
@@ -398,9 +460,9 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ## CREDITS
 - The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
 - Seaside Sewing by Kera Kudmore was a great source of inspiration and best practice regarding testing and README structure.
-- Escape Room by XXX helped to understand the code logic, as the site is structured as a service instead of product.
+- Escape Room by Freddie Boys helped to understand the code logic for a service based website and was a great reference point.
 - Code Institute Student Template: [gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template).
-- The articles on the blog were written myself and any additional helpful articles were linked to for the user to access for more information.
+- The website content was written myself.
 
 ### Media
 - The fonts were sourced using [Google Fonts](https://fonts.google.com/).
