@@ -1,6 +1,8 @@
 # Purrfect Sitters - Cat Sitting Service 
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/d696328a-dc32-434a-9083-ba7c8d9e99ab)
 
+Purrfect Sitters is an online cat sitting service which offers trusted and affordable care for your beloved feline friends. Book a cat sitter to visit your home whilst you are away and choose between various time packages. Register a profile, add your cats information to our site and complete a simple booking and online payment to get started.
+
 * You can view the deployed website [here](https://purrfect-sitters-service.herokuapp.com/).
 
 ## Author
@@ -12,46 +14,59 @@ Cara McAvinchey
 
 ### Strategy
 #### Project Goals
-* A service which allows cat owners to book trusted and affordable cat sitting services online with experienced cat sitters, offering personalised care packages giving enjoy peace of mind whilst travelling.
+* Build an easy to use and information website that allows cat owners to book cat sitting services online.
+* Ensure users are able to build and edit a cat profile.
+* Create a user friendly booking and payment mechanism.
 
 ### Scope
 #### Feature Planning
 
 ### Structure
 #### User Stories
+- The 28 user stories were generated using an agile approach in a *"As a [role], I can [action], so that [benefit]"* format with acceptance criteria in gherkin syntax.
+- These were documented as issues in GitHub and added to GitHub projects in a kanban board found [here](https://github.com/users/CaraMcAvinchey/projects/5) 
+- This was utilised throughout the development process to build the project in increments.
+- Record of progress or issues where documented in each user story as development progressed.
+- The order of implementation was as follows:
+    - Landing page, navigation and footer with contact and social links.
+    - Service page with package information and FAQs.
+    - Registration, login and logout features. 
+    - My profile page, to view/add/edit/delete cats.
+    - Booking page
+    - Checkout page
 
-|  | **VIEWING AND NAVIGATION** |  |  |
-|---|---|---|---|
-| 1 | As a user, I can view the landing page so that I can find key information about the company and it's services. |  |  |
-| 2 | As a user, I can view the packages offered by Purrfect Sitters, so that I can learn more about the service in detail. |  |  |
-| 3 | As a new user, I can easily find the contact information of Purrfect Sitters, so that I can reach out to them for more information. |  |  |
-| 4 | As a user, I can easily connect with the social media accounts of Purrfect Sitters, so that I can learn more about the activities of the brand. |  |  |
-| 5 | As a user, I can sign up to receive a newsletter from Purrfect Pets, so that I can get updates about the company and its services. |  |  |
-| 6 | As a new or authenticated user, I can be notified once completing an important action on the website, so I know what I was last doing. |  |  |
-| 7 | As an authenticated user, I can write an optional rating/review, so that I can provide feedback to Purrfect Sitters about my experience. |  |  |
-|  | **REGISTRATION AND ACCOUNTS** |  |  |
-| 8 | As a new user, I can safely register for an account with an email and password, so that I can book cat-sitting services with Purrfect Sitters. |  |  |
-| 9 | As an authenticated user, I can view my profile information when logged in, so that I can ensure it is complete and up-to-date. |  |  |
-| 10 | As a user, I can safely login and logout of my account so that I can keep my information private. |  |  |
-| 11 | As an authenticated user, I can create a profile with information about each of my cats, so that I can get personalised service from the cat sitter. |  |  |
-| 12 | As an authenticated user, I can edit/update information about each cat in my profile, so that I can receive accurate services for my cats. |  |  |
-| 13 | As an authenticated user, I can delete a cat from my profile, so that I can remove a cat that is no longer in need of cat-sitting services. |  |  |
-| 14 | As an authenticated user, I can receive a notification confirming if I've added, edited or deleted a cat profile so that I can keep track of my cat profiles. |  |  |
-| 15 | As the site owner, I can access the admin panel as a superuser, so that I can view and manage user profiles when required. |  |  |
-| 16 | As a new user, I can register my profile using my social media accounts so that I can verify my credentials faster. |  |  |
-|  | **BOOKING AND CHECKOUT** |  |  |
-| 17 | As an authenticated user, I can easily make a booking using a form, so that I can schedule cat-sitting services with Purrfect Sitters. |  |  |
-| 18 | As an authenticated user, I can easily enter my payment information, so that I can check out quickly and with no hassles. |  |  |
-| 19 | As a site owner, I want to collect payment for sittings so I do not have to deal with checks or cash collections for my services. |  |  |
-| 20 | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. |  |  |
-| 21 | As a site owner, I can charge a customer an extra fee if they have more than three cats, so that I can be prepared for the additional care required during a visit. |  |  |
-| 22 | As an authenticated user, I can view my previous bookings, so that I can see how often I've used the service in the past and which service level I chose. |  |  |
-| 23 | As an authenticated user, I can update my existing booking, so that I can make changes to my cat-sitting services if needed. |  |  |
-| 24 | As an authenticated user, I can delete a booking, so that I can cancel my cat-sitting services if needed. |  |  |
-| 25 | As an authenticated user, I can receive an email confirming if I've edited or deleted my booking so that I can keep track of my cat-sitting services. |  |  |
-| 26 | As an authenticated user, I can receive an email after a successful payment, so that I can keep the confirmation of what I've booked for my records. |  |  |
-| 27 | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. |  |  |
-| 28 | As a site owner, I can charge a customer an extra fee if they have more than three cats, so that I can be prepared for the additional care required during a visit. |  |  |
+|  | **VIEWING AND NAVIGATION** |
+|---|---|
+| 1 | As a user, I can view the landing page so that I can find key information about the company and it's services. |
+| 2 | As a user, I can view the packages offered by Purrfect Sitters, so that I can learn more about the service in detail. |
+| 3 | As a new user, I can easily find the contact information of Purrfect Sitters, so that I can reach out to them for more information. |
+| 4 | As a user, I can easily connect with the social media accounts of Purrfect Sitters, so that I can learn more about the activities of the brand. |
+| 5 | As a user, I can sign up to receive a newsletter from Purrfect Pets, so that I can get updates about the company and its services. |
+| 6 | As a new or authenticated user, I can be notified once completing an important action on the website, so I know what I was last doing. |
+| 7 | As an authenticated user, I can write an optional rating/review, so that I can provide feedback to Purrfect Sitters about my experience. |
+|  | **REGISTRATION AND ACCOUNTS** |
+| 8 | As a new user, I can safely register for an account with an email and password, so that I can book cat-sitting services with Purrfect Sitters. |
+| 9 | As an authenticated user, I can view my profile information when logged in, so that I can ensure it is complete and up-to-date. |
+| 10 | As a user, I can safely login and logout of my account so that I can keep my information private. |
+| 11 | As an authenticated user, I can create a profile with information about each of my cats, so that I can get personalised service from the cat sitter. |
+| 12 | As an authenticated user, I can edit/update information about each cat in my profile, so that I can receive accurate services for my cats. |
+| 13 | As an authenticated user, I can delete a cat from my profile, so that I can remove a cat that is no longer in need of cat-sitting services. |
+| 14 | As an authenticated user, I can receive a notification confirming if I've added, edited or deleted a cat profile so that I can keep track of my cat profiles. |
+| 15 | As the site owner, I can access the admin panel as a superuser, so that I can view and manage user profiles when required. |
+| 16 | As a new user, I can register my profile using my social media accounts so that I can verify my credentials faster. |
+|  | **BOOKING AND CHECKOUT** |
+| 17 | As an authenticated user, I can easily make a booking using a form, so that I can schedule cat-sitting services with Purrfect Sitters. |
+| 18 | As an authenticated user, I can easily enter my payment information, so that I can check out quickly and with no hassles. |
+| 19 | As a site owner, I want to collect payment for sittings so I do not have to deal with checks or cash collections for my services. |
+| 20 | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. |
+| 21 | As a site owner, I can charge a customer an extra fee if they have more than three cats, so that I can be prepared for the additional care required during a visit. |
+| 22 | As an authenticated user, I can view my previous bookings, so that I can see how often I've used the service in the past and which service level I chose. |
+| 23 | As an authenticated user, I can update my existing booking, so that I can make changes to my cat-sitting services if needed. |
+| 24 | As an authenticated user, I can delete a booking, so that I can cancel my cat-sitting services if needed. |
+| 25 | As an authenticated user, I can receive an email confirming if I've edited or deleted my booking so that I can keep track of my cat-sitting services. |
+| 26 | As an authenticated user, I can receive an email after a successful payment, so that I can keep the confirmation of what I've booked for my records. |
+| 27 | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. |
+| 28 | As a site owner, I can charge a customer an extra fee if they have more than three cats, so that I can be prepared for the additional care required during a visit. |
 
 #### Database Schema
 
