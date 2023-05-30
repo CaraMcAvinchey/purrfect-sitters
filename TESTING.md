@@ -231,5 +231,3 @@ WAVE(Web Accessibility Evaluation Tool) allows developers to create content that
     - The following Stackoverflow was referred to: https://stackoverflow.com/questions/17716624/django-csrf-cookie-not-set
     - Despite the above, this feature was removed to ensure MVP deliverable of the project.   
 3. The lighthouse performance for first contentful paint on mobile view is caused by render blocking resources, mostly from Bootstrap and AWS which were difficult to resolve with my level of experience. I was able to research minification, which I would strongly consider to improve the performance of my mobile site going forward. 
-
-[Back to the beginning](#table-of-contents)
