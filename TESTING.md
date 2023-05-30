@@ -190,11 +190,8 @@ WAVE(Web Accessibility Evaluation Tool) allows developers to create content that
 |  | As the site owner, I can access the admin panel as a superuser, so that I can view and manage user profiles when required. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/42 | PASS |
 |  | As an authenticated user, I can easily make a booking using a form, so that I can schedule cat-sitting services with Purrfect Sitters. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/43 | PASS |
 |  | As an authenticated user, I can easily enter my payment information, so that I can check out quickly and with no hassles. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/44 | PASS |
-|  | As a site owner, I want to collect payment for sittings so I do not have to deal with checks or cash collections for my services. |  |  |
+|  | As a site owner, I want to collect payment for sittings so I do not have to deal with checks or cash collections for my services. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/45 | PASS |
 |  | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/44 | PASS |
-|  | As a site owner, I can charge a customer an extra fee if they have more than three cats, so that I can be prepared for the additional care required during a visit. |  |  |
-|  | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. |  |  |
-|  |  |  |  |
 
 ## Outstanding Defects
 - The following outstanding defects are listed below and are ongoing, with steps of how these issues were investigated and dealt with thus far:
