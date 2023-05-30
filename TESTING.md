@@ -139,7 +139,7 @@ For the performance, accessibility, best practices and SEO of the site for mobil
 | :--- | :--- |
 | Home Page | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/a074dbc9-ec82-40fc-babb-3358a231e132) |
 | Service Page | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/0da89845-2457-4256-b13d-58c7225520c6) |
-| Cat Profile | https://purrfect-sitters-service.herokuapp.com/cat/ |
+| Cat Profile | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/6f396352-1d34-4617-8d6d-505197a30eab)|
 | Booking | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/7a0b04f9-80a9-41dc-9ef1-e6d2d2f17da7) |
 | Checkout | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/56d3d867-acc3-49d0-a717-437a8397b4e5) |
 
@@ -210,23 +210,26 @@ WAVE(Web Accessibility Evaluation Tool) allows developers to create content that
 - The following outstanding defects are listed below and are ongoing, with steps of how these issues were investigated and dealt with thus far:
 
 **Booking**
-- The booking page did not pass html validation and raised two errors with can be seen [here](documentation/testing/html/booking-html-error-max.jpg) and [here](documentation/testing/html/booking-html-error-min.jpg) which were a result of the Django date picker widget including min and max value attributes in the input tag.
-- To fix this error the SelectDateWidget was investigated as an alternative: https://docs.djangoproject.com/en/4.2/ref/forms/widgets/.
-- However, this altered the structure of the form to a less user friendly structure rendering an additonal three fields (one for day, one for month, one for year) which wasn't visually pleasing compared to the calender form and added increased the time to make a booking.
-- For the sake of user experience (and time constraints of the project) and concern that the new format would distrupt the passing of data between views, this issue is ongoing and a solution was not found prior to the hand in date. 
+- The booking page did not pass html validation and raised two errors with can be seen [here](documentation/testing/html/booking-html-error-max.jpg) and [here](documentation/testing/html/booking-html-error-min.jpg) which were a result of the Django date picker widget having min and max value attributes in the input element.
+- To address this defect, the SelectDateWidget was investigated as an alternative: https://docs.djangoproject.com/en/4.2/ref/forms/widgets/.
+- However, this altered the structure of the form to a less user friendly design rendering an additonal three fields (one for day, one for month, one for year) 
+- It wasn't visually pleasing compared to the date picker and added increased the time to make a booking.
+- For the sake of user experience, time constraints of the project and concern that the new format would distrupt the passing of data between views, this issue is ongoing and a solution was not found prior to the hand in date. 
 - This issue will be returned to the product backlog and prioritised as high for the next sprint. 
 
 **Extra Cat Fee**
 - It was discovered that the calculate total method was not correctly adding the additional fee per cat if the owner had more than 3 cats.
-- Adjustments were made to the base price, attempting to correctly pull the service_level from the Service model for the calculation
+- Adjustments were made to the base price, attempting to correctly pull the service_level from the Service model for the calculation.
 - This was removed from scope as it was not able to be fixed due to time constraints and will be added to the product backlog with a high priority to fix in the next sprint.
 
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/cccfa72b-f829-401b-bc57-85236dc8b3d1)
 
-- This was removed from scope as it was not able to be fixed due to time constraints and will be added to the product backlog with a high priority to fix in the next sprint.
-
 ## Defects of Note
-- The footer was an ongoing fixing to the bottom of the screen on various screen sizes. It was resolved using this video from Kevin Powell: https://www.youtube.com/watch?v=yc2olxLgKLk&t=207s
-- The lighthouse performance for first contentful paint on mobile view is caused by render blocking resources, mostly from Bootstrap and AWS which were difficult to resolve with my level of experience. I was able to research minification, which I would strongly consider to improve the performance of my mobile site going forward. 
+1. The footer was an ongoing fixing to the bottom of the screen on various screen sizes. It was resolved using this video from Kevin Powell: https://www.youtube.com/watch?v=yc2olxLgKLk&t=207s
+2. Building the webhooks was unsuccessful due to a 403 error from Stripe stating the csrf token was not set.
+    - The form had a csrf token, the @csrf_exempt decorator was used on the view, all middleware settings were correct according to the documentation and the JS used same settings as Boutique Ado.
+    - The following Stackoverflow was referred to: https://stackoverflow.com/questions/17716624/django-csrf-cookie-not-set
+    - Despite the above, this feature was removed to ensure MVP deliverable of the project.   
+3. The lighthouse performance for first contentful paint on mobile view is caused by render blocking resources, mostly from Bootstrap and AWS which were difficult to resolve with my level of experience. I was able to research minification, which I would strongly consider to improve the performance of my mobile site going forward. 
 
 [Back to the beginning](#table-of-contents)
