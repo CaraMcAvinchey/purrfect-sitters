@@ -2,6 +2,18 @@
 
 ![241733671-d696328a-dc32-434a-9083-ba7c8d9e99ab](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/069a88aa-b43d-4e61-a5b5-57a3cef85e77)
 
+I recently had the opportunity to sit the ISTQB foundation level and used my new knowledge to follow the 7 testing principles:
+
+1. Testing shows the presence, not absence, of defects
+2. Exhaustive testing is impossible
+3. Early testing saves time and money
+4. Defects cluster together 
+5. Be aware of the pesticide paradox 
+6. Testing is context dependent
+7. Absence-of-errors is a fallacy
+
+In considering the above, the below is the documentation of my testing process. This will be a living document and I hope to include more robust and automated testing frameworks in the future.
+
 ## Contents
 - [Validation Testing](#validation-testing)
   * [CSS](#css)
@@ -12,7 +24,7 @@
     + [Desktop Results](#desktop-results)
     + [Mobile Results](#mobile-results)
   * [Wave](#wave)
-- [Automatic Testing](#automatic-testing)
+- [Automated Testing](#automatic-testing)
 - [Manual Testing](#manual-testing)
   * [Testing User Stories](#testing-user-stories)
 - [Outstanding Defects](#outstanding-defects)
@@ -36,7 +48,7 @@
 | [Error 404](documentation/testing/html/error404-page-html.jpg) | Pass |
 
 **Please note:**
-- The screenshots will show two warnings which I chose to ignore, both concerning the "type" attribute is unnecessary for JavaScript resources. Because these scripts concern my AWS S3 and I had a lot of difficulty getting my static files to load, didn't want to risk any issues on my deployed site. 
+- The screenshots will show two warnings which I chose to ignore, both stating that the "type" attribute is unnecessary for JavaScript resources. Because these scripts concern my AWS S3 and I had a lot of difficulty getting my static files to load during setup, I didn't want to risk any issues on my deployed site with the time constraint remaining until handing in. 
 
 **Booking:**
 - The booking page did not pass validation and raised two errors with can be seen [here](documentation/testing/html/booking-html-error-max.jpg) and [here](documentation/testing/html/booking-html-error-min.jpg) which were a result of the Django date picker widget including min and max value attributes in the input tag.
@@ -44,7 +56,7 @@
 
 ### CSS
 
-[W3C](https://validator.w3.org/) was used to validate the CSS. You can click each page to see the corresponding screenshot evidence.
+[W3C](https://validator.w3.org/) was used to validate the CSS. 
 
 | File | Result | 
 | :--- | :--- |
@@ -63,8 +75,8 @@
 
 [Code Institute Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python. I have also installed [PyCodeStyle](https://pycodestyle.pycqa.org/en/latest/intro.html#configuration) in my IDE to enable me to check my code meets PEP8 guidelines during development.
 
-| File | Result | Evidence |
-| :--- | :--- | :---: |
+| File | Result |
+| :--- | :--- |
 | [custom_storages.py](documentation/testing/python/custom-storages.jpg)  | Pass | 
 | **PURRFECT SITTERS** |
 | [purrfect_sitters/urls.py](documentation/testing/python/purrfectsitters-urls.jpg) | Pass |  
@@ -120,8 +132,6 @@ For the performance, accessibility, best practices and SEO of the site for mobil
 | Checkout | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/6e05133f-74de-4ab6-a532-6484748598ab) |
 
 - Desktop performed well on all major pages of the site with minimal improvements needed.
-- Mobile had issues with first contentful paint caused by render-blocking resources.
-- Placing async in the MailChimp script improved the score, but for Stripe this broke the rendering of the credit card field and was removed.
 
 #### Mobile Results
 
@@ -134,7 +144,9 @@ For the performance, accessibility, best practices and SEO of the site for mobil
 | Checkout | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/56d3d867-acc3-49d0-a717-437a8397b4e5) |
 
 - Mobile performance can improve, where performance was slower due to first contentful paint and largest contentful paint metrics.
-- This is a result of render-blocking resources mostly from Bootstrap and AWS which requires further investigation to resolve.
+- This is a result of render-blocking resources mostly from Bootstrap, Stripe and AWS scripts which requires further investigation to resolve.
+- Placing async in the MailChimp script improved the score, but for Stripe this broke the rendering of the credit card field and was removed.
+- More investigation needed to see if defer/async is a better option including code minification and seeing if moving the scripts out of the head would in base.html would affect the performance or not.
 
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/38e7a58e-e690-440a-8a8a-fc6015dbcc87)
 
