@@ -307,7 +307,8 @@ Cara McAvinchey
 ### SEO
 - The content of the website was written using a combination of short-tail and long-tail keywords without the use of keyword stuffing as a bad practice.
 - The website was designed to extend additional meta descriptions and keywords as the site grows.
-- For now, the home and services page are SEO optimised.  
+- For now, the home and services page are SEO optimised which can be reworked if Google Adwords are implemented at a later stage.
+- There is a robots.txt and site-map.xml for search engine crawlers and proper indexing.   
 
 ### Content Marketing
 - The nature of the business allows for fun, engaging and a variety of content types. 
