@@ -65,29 +65,29 @@
 
 | File | Result | Evidence |
 | :--- | :--- | :---: |
-| custom_storages.py | Pass | [validation](documentation/testing/python/custom-storages.jpg) |
+| [custom_storages.py](documentation/testing/python/custom-storages.jpg)  | Pass | 
 | **PURRFECT SITTERS** |
-| purrfect_sitters/urls.py | Pass | [validation](documentation/testing/python/purrfectsitters-urls.jpg) |
+| [purrfect_sitters/urls.py](documentation/testing/python/purrfectsitters-urls.jpg) | Pass |  
 | **HOME** |
-| home/views.py | Pass | [validation](documentation/testing/python/home-views.jpg) |
-| home/urls.py | Pass | [validation](documentation/testing/python/home-urls.jpg) |
+| [home/views.py](documentation/testing/python/home-views.jpg) | Pass | 
+| [home/urls.py](documentation/testing/python/home-urls.jpg) | Pass | 
 | **SERVICES** |
-| service/models.py | Pass | [validation](documentation/testing/python/service-models.jpg) |
-| service/views.py | Pass | [validation](documentation/testing/python/service-views.jpg) |
-| service/admin.py | Pass | [validation](documentation/testing/python/service-admin.jpg) |
-| service/urls.py | Pass | [validation](documentation/testing/python/service-urls.jpg) |
+| [service/models.py](documentation/testing/python/service-models.jpg) | Pass | 
+| [service/views.py](documentation/testing/python/service-views.jpg) | Pass | 
+| [service/admin.py](documentation/testing/python/service-admin.jpg) | Pass | 
+| [vservice/urls.py](documentation/testing/python/service-urls.jpg) | Pass |  
 | **CAT** |
-| cat/models.py | Pass | [validation](documentation/testing/python/cat-models.jpg) |
-| cat/views.py | Pass | [validation](documentation/testing/python/cat-views.jpg)|
-| cat/urls.py | Pass | [validation](documentation/testing/python/cat-urls.jpg)|
-| cat/admin.py | Pass | [validation](documentation/testing/python/cat-admin.jpg)|
-| cat/forms.py | Pass | [validation](documentation/testing/python/cat-form.jpg)|
+| [cat/models.py](documentation/testing/python/cat-models.jpg) | Pass | 
+| [cat/views.py](documentation/testing/python/cat-views.jpg) | Pass | 
+| [cat/urls.py](documentation/testing/python/cat-urls.jpg) | Pass | 
+| [cat/admin.py](documentation/testing/python/cat-admin.jpg) | Pass | 
+| [cat/forms.py](documentation/testing/python/cat-form.jpg) | Pass | 
 | **BOOKING** |
-| booking/models.py | Pass | [validation](documentation/testing/python/booking-models.jpg) |
-| booking/views.py | Pass | [validation](documentation/testing/python/booking-views.jpg)|
-| booking/urls.py | Pass | [validation](documentation/testing/python/booking-urls.jpg)|
-| booking/admin.py | Pass | [validation](documentation/testing/python/booking-admin.jpg)|
-| booking/forms.py | Pass | [validation](documentation/testing/python/booking-forms.jpg)|
+| [booking/models.py](documentation/testing/python/booking-models.jpg) | Pass | 
+| [booking/views.py](documentation/testing/python/booking-views.jpg) | Pass | 
+| [booking/urls.py](documentation/testing/python/booking-urls.jpg) | Pass | |
+| [booking/admin.py](documentation/testing/python/booking-admin.jpg) | Pass | 
+| [booking/forms.py](documentation/testing/python/booking-forms.jpg) | Pass | 
 
 ## Visual (UI) Testing: Cross Browser and Cross Device Testing
 - The below combination of devices, browsers, and operating system were used to test the website. A range of viewport sizes were checked to see if users would have the same experience across multiple devices and browsers. Priority was given to mobile devices and tablets. 
@@ -103,7 +103,7 @@
 | real tablet: Pixel Tablet   | Chrome           | android | 834 x 1075 px    |Yes
 | real laptop: Macbook Pro    | Firefox & Chrome | iOs     | 1400 x 766 px    |Yes
 | broswerstack                | Firefox          | iOs     | 1440 x 672 px    |Yes
-| browserstack                | Edge 99          | windows | 1440 x 672 px    |Yes
+| browserstack                | Edge 113         | windows | 1440 x 672 px    |Yes
 
 ## Lighthouse
 
@@ -113,11 +113,11 @@ For the performance, accessibility, best practices and SEO of the site for mobil
 
 | Page | Result |
 | :--- | :--- |
-| Home Page | ![Home Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/44b1ea5d-7249-44c6-ac9a-182ac96675e5)) |
-| Service Page | ![Service Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/46ec7bd9-d9b6-4310-96df-163b0002fb53)) |
-| Cat Profile | ![Cat Profile Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4ee1c5c2-3c1b-4319-b567-3bff7b618991)) |
-| Booking | ![Products Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/4a296c73-ea93-4a6b-a212-8d09b828e3b1)) |
-| Checkout | ![Products Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/8cf8aaf8-c844-47ec-bce1-a7692134348c)) |
+| Home Page | ![Home Desktop Lighthouse Testing]() |
+| Service Page | ![Service Desktop Lighthouse Testing]() |
+| Cat Profile | ![Cat Profile Desktop Lighthouse Testing]() |
+| Booking | ![Products Desktop Lighthouse Testing]() |
+| Checkout | ![Products Desktop Lighthouse Testing]() |
 
 - Desktop performed well on all major pages of the site with minimal improvements needed.
 
@@ -172,29 +172,29 @@ WAVE(Web Accessibility Evaluation Tool) allows developers to create content that
 - Each completed user story on the [sprint backlog](https://github.com/users/CaraMcAvinchey/projects/5) was tested against the acceptance criteria, see the corresponding screenshots as evidence.
 - This included reviewing each feature to check the usability, visual design and performance.
 
- User Story ID | User Story| Acceptance Criteria | Evidence | Evidence | Evidence |
-| :--- | :--- | :--- | :---| :---| :---|
-| **VIEWING & NAVIGATION** |
-| 1 | As a user, I can view the landing page so that I can find key information about the company and it's services. | XX | XX | XX | XX |
-| 2 | As a user, I can view the packages offered by Purrfect Sitters, so that I can learn more about the service in detail. | XX | XX | XX | XX |
-| 3 | As a new user, I can easily find the contact information of Purrfect Sitters, so that I can reach out to them for more information. | XX | XX | XX | XX |
-| 4 | As a user, I can easily connect with the social media accounts of Purrfect Sitters, so that I can learn more about the activities of the brand. | XX | XX | XX | XX |
-| 5 | As a user, I can sign up to receive a newsletter from Purrfect Pets, so that I can get updates about the company and its services. | XX | XX | XX | XX |
-| 6 | As a new or authenticated user, I can be notified once completing an important action on the website, so I know what I was last doing. | XX | XX | XX | XX |
-| 7 | As a new user, I can safely register for an account with an email and password, so that I can book cat-sitting services with Purrfect Sitters. | XX | XX | XX | XX |
-| 8 | As an authenticated user, I can view my profile information when logged in, so that I can ensure it is complete and up-to-date. | XX | XX | XX | XX |
-| 9 | As a user, I can safely login and logout of my account so that I can keep my information private. | XX | XX | XX | XX |
-| 10 | As an authenticated user, I can create a profile with information about each of my cats, so that I can get personalised service from the cat sitter. | XX | XX | XX | XX |
-| 11 | As an authenticated user, I can edit/update information about each cat in my profile, so that I can receive accurate services for my cats. | XX | XX | XX | XX |
-| 12 | As an authenticated user, I can delete a cat from my profile, so that I can remove a cat that is no longer in need of cat-sitting services. | XX | XX | XX | XX |
-| 13 | As an authenticated user, I can receive a notification confirming if I've added, edited or deleted a cat profile so that I can keep track of my cat profiles. | XX | XX | XX | XX |
-| 14 | As the site owner, I can access the admin panel as a superuser, so that I can view and manage user profiles when required. | XX | XX | XX | XX |
-| 15 | As an authenticated user, I can easily make a booking using a form, so that I can schedule cat-sitting services with Purrfect Sitters. | XX | XX | XX | XX |
-| 16 | As an authenticated user, I can easily enter my payment information, so that I can check out quickly and with no hassles. | XX | XX | XX | XX |
-| 17 | As a site owner, I want to collect payment for sittings so I do not have to deal with checks or cash collections for my services. | XX | XX | XX | XX |
-| 18 | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. | XX | XX | XX | XX |
-| 19 | As a site owner, I can charge a customer an extra fee if they have more than three cats, so that I can be prepared for the additional care required during a visit. | XX | XX | XX | XX |
-| 20 | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. | XX | XX | XX | XX |
+|  | USER STORY | TEST CASE | RESULT |
+|---|---|---|---|
+|  | As a user, I can view the landing page so that I can find key information about the company and it's services. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/30 | PASS |
+|  | As a user, I can view the packages offered by Purrfect Sitters, so that I can learn more about the service in detail. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/31 | PASS |
+|  | As a new user, I can easily find the contact information of Purrfect Sitters, so that I can reach out to them for more information. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/32 | PASS |
+|  | As a user, I can easily connect with the social media accounts of Purrfect Sitters, so that I can learn more about the activities of the brand. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/33 | PASS |
+|  | As a user, I can sign up to receive a newsletter from Purrfect Pets, so that I can get updates about the company and its services. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/34 | PASS |
+|  | As a new or authenticated user, I can be notified once completing an important action on the website, so I know what I was last doing. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/35 | PASS |
+|  | As a new user, I can safely register for an account with an email and password, so that I can book cat-sitting services with Purrfect Sitters. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/36 | PASS |
+|  | As an authenticated user, I can view my profile information when logged in, so that I can ensure it is complete and up-to-date. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/37 | PASS |
+|  | As a user, I can safely login and logout of my account so that I can keep my information private. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/35 | PASS |
+|  | As an authenticated user, I can create a profile with information about each of my cats, so that I can get personalised service from the cat sitter. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/38 | PASS |
+|  | As an authenticated user, I can edit/update information about each cat in my profile, so that I can receive accurate services for my cats. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/39 | PASS |
+|  | As an authenticated user, I can delete a cat from my profile, so that I can remove a cat that is no longer in need of cat-sitting services. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/40 | PASS |
+|  | As an authenticated user, I can receive a notification confirming if I've added, edited or deleted a cat profile so that I can keep track of my cat profiles. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/41 | PASS |
+|  | As the site owner, I can access the admin panel as a superuser, so that I can view and manage user profiles when required. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/42 | PASS |
+|  | As an authenticated user, I can easily make a booking using a form, so that I can schedule cat-sitting services with Purrfect Sitters. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/43 | PASS |
+|  | As an authenticated user, I can easily enter my payment information, so that I can check out quickly and with no hassles. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/44 | PASS |
+|  | As a site owner, I want to collect payment for sittings so I do not have to deal with checks or cash collections for my services. |  |  |
+|  | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. | https://github.com/CaraMcAvinchey/purrfect-sitters/issues/44 | PASS |
+|  | As a site owner, I can charge a customer an extra fee if they have more than three cats, so that I can be prepared for the additional care required during a visit. |  |  |
+|  | As a site user, I want to pay for my bookings in a secure manner online so I don’t have my personal information stolen. |  |  |
+|  |  |  |  |
 
 ## Outstanding Defects
 - The following outstanding defects are listed below and are ongoing, with steps of how these issues were investigated and dealt with thus far:
