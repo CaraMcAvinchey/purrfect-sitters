@@ -113,29 +113,30 @@ For the performance, accessibility, best practices and SEO of the site for mobil
 
 | Page | Result |
 | :--- | :--- |
-| Home Page | ![Home Desktop Lighthouse Testing]() |
-| Service Page | ![Service Desktop Lighthouse Testing]() |
-| Cat Profile | ![Cat Profile Desktop Lighthouse Testing]() |
-| Booking | ![Products Desktop Lighthouse Testing]() |
-| Checkout | ![Products Desktop Lighthouse Testing]() |
+| Home Page | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/dccf2a24-45c2-41b7-b1c9-6469270384dc) |
+| Service Page | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/315e242e-4f5b-4ca8-ba08-696fbb4ec714) |
+| Cat Profile | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/8f403d7e-a091-4753-b34a-9179cf285ec5) |
+| Booking | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/1f52da42-5d79-4067-980e-c4a069e4ab0c) |
+| Checkout | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/6e05133f-74de-4ab6-a532-6484748598ab) |
 
 - Desktop performed well on all major pages of the site with minimal improvements needed.
+- Mobile had issues with first contentful paint caused by render-blocking resources.
+- Placing async in the MailChimp script improved the score, but for Stripe this broke the rendering of the credit card field and was removed.
 
 #### Mobile Results
 
 | Page | Result |
 | :--- | :--- |
-| Home Page | ![Home Page Mobile Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/3f6e7683-ab77-4ac4-be30-ba032f97999a)) |
-| Service Page | ![Service Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ca279d62-faca-400f-8f4c-a1acdcf2770b)) |
-| Cat Profile | ![Cat Profile Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/73b6a7fc-dfd1-4495-ae10-dd2289de1825)) |
-| Booking | ![Products Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/34339825-73d0-472e-b55b-9f9e12cb9c8b)) |
-| Checkout | ![Products Desktop Lighthouse Testing](![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ef87ed91-7e76-41a1-848f-b7f0eafc8f8b)) |
+| Home Page | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/a074dbc9-ec82-40fc-babb-3358a231e132) |
+| Service Page | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/0da89845-2457-4256-b13d-58c7225520c6) |
+| Cat Profile | https://purrfect-sitters-service.herokuapp.com/cat/ |
+| Booking | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/7a0b04f9-80a9-41dc-9ef1-e6d2d2f17da7) |
+| Checkout | ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/56d3d867-acc3-49d0-a717-437a8397b4e5) |
 
-- Mobile performance can improve, where performance was slowed in first contentful paint and largest contentful paint metrics.
+- Mobile performance can improve, where performance was slower due to first contentful paint and largest contentful paint metrics.
 - This is a result of render-blocking resources mostly from Bootstrap and AWS which requires further investigation to resolve.
 
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/38e7a58e-e690-440a-8a8a-fc6015dbcc87)
-
 
 ### Wave
 
@@ -200,9 +201,20 @@ WAVE(Web Accessibility Evaluation Tool) allows developers to create content that
 - The booking page did not pass html validation and raised two errors with can be seen [here](documentation/testing/html/booking-html-error-max.jpg) and [here](documentation/testing/html/booking-html-error-min.jpg) which were a result of the Django date picker widget including min and max value attributes in the input tag.
 - To fix this error the SelectDateWidget was investigated as an alternative: https://docs.djangoproject.com/en/4.2/ref/forms/widgets/.
 - However, this altered the structure of the form to a less user friendly structure rendering an additonal three fields (one for day, one for month, one for year) which wasn't visually pleasing compared to the calender form and added increased the time to make a booking.
-- For the sake of user experience, and concern that the new format would distrupt the passing of data between views, this issue is ongoing and a solution was not found prior to the hand in date. 
+- For the sake of user experience (and time constraints of the project) and concern that the new format would distrupt the passing of data between views, this issue is ongoing and a solution was not found prior to the hand in date. 
+- This issue will be returned to the product backlog and prioritised as high for the next sprint. 
+
+**Extra Cat Fee**
+- It was discovered that the calculate total method was not correctly adding the additional fee per cat if the owner had more than 3 cats.
+- Adjustments were made to the base price, attempting to correctly pull the service_level from the Service model for the calculation
+- This was removed from scope as it was not able to be fixed due to time constraints and will be added to the product backlog with a high priority to fix in the next sprint.
+
+![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/cccfa72b-f829-401b-bc57-85236dc8b3d1)
+
+- This was removed from scope as it was not able to be fixed due to time constraints and will be added to the product backlog with a high priority to fix in the next sprint.
 
 ## Defects of Note
-- XX
+- The footer was an ongoing fixing to the bottom of the screen on various screen sizes. It was resolved using this video from Kevin Powell: https://www.youtube.com/watch?v=yc2olxLgKLk&t=207s
+- The lighthouse performance for first contentful paint on mobile view is caused by render blocking resources, mostly from Bootstrap and AWS which were difficult to resolve with my level of experience. I was able to research minification, which I would strongly consider to improve the performance of my mobile site going forward. 
 
 [Back to the beginning](#table-of-contents)
