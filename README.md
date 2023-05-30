@@ -14,8 +14,6 @@ Cara McAvinchey
   * [User Experience](#user-experience)
     + [Strategy](#strategy)
       - [Project Goals](#project-goals)
-    + [Scope](#scope)
-      - [Feature Planning](#feature-planning)
     + [Structure](#structure)
       - [User Stories](#user-stories)
       - [Database Schema](#database-schema)
@@ -77,13 +75,10 @@ Cara McAvinchey
 * Ensure users are able to build and edit a cat profile.
 * Create a user friendly booking and payment mechanism.
 
-### Scope
-#### Feature Planning
-
 ### Structure
 #### User Stories
-- The 27 user stories were generated using an agile approach in a *"As a [role], I can [action], so that [benefit]"* format with acceptance criteria in gherkin syntax.
-- They were prioritised according to low, medium and high priority during the planning phase.
+- The 27 user stories were generated using an agile approach in a *"As a [role], I can [action], so that [benefit]"* format with acceptance criteria in declarative gherkin syntax.
+- They were prioritised according to low, medium and high priority during the planning phase, focusing on the basic requirements as high priority.
 - These were documented as issues in GitHub and added to GitHub projects in a kanban board found [here](https://github.com/users/CaraMcAvinchey/projects/5) 
 - This was utilised throughout the development process to build the project in increments.
 - Record of progress or issues where documented in each user story as development progressed.
@@ -142,7 +137,7 @@ Cara McAvinchey
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/126bbcbf-3db3-4ac2-98ae-e8bf19163749)
 
 
-- [X] C - Customers can create a booking through the site when logged in.
+- [X] C - Customers can create a booking through the site when logged in via a form.
 - [ ] R - Future feature, users will receive an email with a summary of their booking. This is top priority for the next sprint.
 - [ ] U - Future feature, users can contact Purrfect Pets to update their booking for now.
 - [ ] D - Future feature, users can contact Purrfect Pets to delete their booking for now.
@@ -215,14 +210,14 @@ Cara McAvinchey
 #### Brand
 <img width="200" height="200" src="https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/38b9714d-8f41-405b-ba32-6b2daa85689d">
 
-- The logo was custom designed myself.
+- The logo was custom designed myself using Canva.
 - The cat icon in the center was found using creative commons search.
 
 #### Colors
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/7c482dfc-a4c1-4b45-b73d-b070970c96a6)
  
-- The dark grey colour #2a2727 was chosen and paired with white.
-- The header and footer have a clear contrast and delineation from the body content. 
+- The dark grey colour #2a2727 was chosen and paired with white to ensure high contrast whilst keeping with a black cat theme.
+- The header and footer have a clear delineation from the body content. 
 
 #### Typography
 ![image](https://github.com/CaraMcAvinchey/purrfect-sitters/assets/97494262/ad835b75-bd49-4d34-9964-220260adf92e)
@@ -241,24 +236,23 @@ Cara McAvinchey
 - All links have a color change and underline when hovered for clear distinction from the body text.
 
 #### Responsiveness
-- The website was designed mobile-first using flexbox to ensure responsiveness throughout the website.
-- The standard grid from Bootstrap was used to achieve this.
+- The website was designed mobile-first using Bootstrap grid and flexbox to ensure responsiveness throughout the website.
+- Limited media queries required with some adjustments for extra large screens.
 
 ## Features
 
 ### Navigation
 - The users will have a choice of home, login/logout & register when visiting the site. 
-- There is a subtle hover state on each of the navigation items for better user experience.
 - For mobile devices, the navigation toggles to a hamburger menu.
 - The user name is displayed when logged in and a drop down is displayed for my profile and logout buttons.
+- The navigation is personalised to the logged-in user by displaying their username. 
 
 ### Register 
-- The user will be able to easily sign up as a user using the below form.
-- If users are already registered, there is a link to easily navigate to login instead
+- The user will be able to easily sign up for an account which includes an email confirmation feature for added security. 
+- If users are already registered, there is a link to easily navigate to login instead.
 
 ### Login/Logout 
 - The users can easily sign in using the below form with an option to 'remember me' if desired.
-- If a user hasn't registered, there is a link to easily navigate to sign up instead.
 - For any user accessing a page which requires an account, they will be directed to the sign up page.
 
 ### Footer
@@ -371,6 +365,7 @@ Cara McAvinchey
 - GitHub
 - Favicon.io
 - Balsamiq
+- Canva
 - Diagrams.net
 - Tiny PNG
 - AWS S3
