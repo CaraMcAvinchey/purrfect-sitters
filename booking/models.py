@@ -78,7 +78,7 @@ class Booking(models.Model):
         and the number of cats. If the cats associated with the user
         are greater than 3 there is a surcharge.
         """
-        base_price = self.service_level.price
+        base_price = self.service_level.price if self.service_level else 0
         cat_count = self.cats.count()
         extra_cat_fee = 10 * (cat_count - 3) if cat_count > 3 else 0
         total = decimal.Decimal(base_price) + decimal.Decimal(extra_cat_fee)
